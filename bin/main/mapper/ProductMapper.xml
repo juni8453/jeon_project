@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lcom_test.example.mapper.ProductMapper">
+
+<resultMap type = "Images" id="Images1">
+		<result column="i_id" property="iId"/>
+		<result column="i_name" property="iName"/>
+		<result column="p_name" property="pName"/>
+</resultMap>
+
+<resultMap type = "Heart" id="Heart1">
+		<result column="h_id" property="hId"/>
+		<result column="p_id" property="pId"/>
+		<result column="u_id" property="username"/>
+</resultMap>
+
+<resultMap type = "UserInfo" id="UserInfo1">
+		<result column="u_id" property="username"/>
+</resultMap>
+	
+<resultMap type = "Product" id="Product1">
+		<result column="p_id" property="pId"/>
+		<result column="p_name" property="pName"/>
+		<result column="p_date" property="pDate"/>
+		<result column="p_price" property="pPrice"/>
+		<result column="p_from" property="pFrom"/>
+		<result column="p_brand" property="pBrand"/>
+		<result column="p_like" property="pLike"/>
+		<result column="p_quantity" property="pQuantity"/>
+		<collection property="listImages" resultMap="Images1"/>
+		<collection property="listHeart" resultMap="Heart1"/>
+		<collection property="listUserInfo" resultMap="UserInfo1"/>
+</resultMap>
+
+<select id="selectProductList" resultMap="Product1">
+SELECT		*
+FROM		vue_product	ta
+LEFT JOIN	(
+			SELECT		*
+			FROM		vue_heart
+			WHERE 		u_id = #{username}
+			) 
+			tb ON ta.p_id = tb.p_id
+LEFT JOIN 	vue_img	tc ON ta.p_name = tc.p_name
+LEFT JOIN	userlist td ON tb.u_id = td.u_id
+LIMIT		#{pageOpt},8
+</select>
+
+<resultMap type = "Images" id="Images5">
+		<result column="i_id" property="iId"/>
+		<result column="i_name" property="iName"/>
+		<result column="p_name" property="pName"/>
+</resultMap>
+
+<resultMap type = "Heart" id="Heart5">
+		<result column="h_id" property="hId"/>
+		<result column="p_id" property="pId"/>
+		<result column="u_id" property="username"/>
+</resultMap>
+
+<resultMap type = "UserInfo" id="UserInfo5">
+		<result column="u_id" property="username"/>
+</resultMap>
+	
+<resultMap type = "Product" id="Product5">
+		<result column="p_id" property="pId"/>
+		<result column="p_name" property="pName"/>
+		<result column="p_date" property="pDate"/>
+		<result column="p_price" property="pPrice"/>
+		<result column="p_from" property="pFrom"/>
+		<result column="p_brand" property="pBrand"/>
+		<result column="p_like" property="pLike"/>
+		<collection property="listImages" resultMap="Images5"/>
+		<collection property="listHeart" resultMap="Heart5"/>
+		<collection property="listUserInfo" resultMap="UserInfo5"/>
+</resultMap>
+
+<select id="selectHotList" resultMap="Product5">
+SELECT		*
+FROM		vue_product	ta
+LEFT JOIN	(
+			SELECT		*
+			FROM		vue_heart
+			WHERE 		u_id = #{username}
+			) 
+			tb ON ta.p_id = tb.p_id
+LEFT JOIN 	vue_img	tc ON ta.p_name = tc.p_name
+LEFT JOIN	userlist td ON tb.u_id = td.u_id ORDER BY p_like DESC
+LIMIT		#{pageOpt},8
+</select>
+
+<select id="selectHomeImgList" resultType="HomeImg">
+	SELECT	hi_id as hiId,
+			hi_name as hiName
+			
+	FROM 	vue_homeimg
+</select>
+
+<resultMap type = "Images" id="Images2">
+		<result column="i_id" property="iId"/>
+		<result column="i_name" property="iName"/>
+		<result column="p_name" property="pName"/>
+</resultMap>
+	
+<resultMap type = "Product" id="Product2">
+		<result column="p_id" property="pId"/>
+		<result column="p_name" property="pName"/>
+		<result column="p_date" property="pDate"/>
+		<result column="p_price" property="pPrice"/>
+		<result column="p_from" property="pFrom"/>
+		<result column="p_brand" property="pBrand"/>
+		<result column="p_like" property="pLike"/>
+		<result column="p_quantity" property="pQuantity"/>  
+		<collection property="listImages" resultMap="Images2"/>
+</resultMap>
+
+<select id="getProduct" resultMap="Product2">
+	SELECT			*
+	FROM			vue_product ta
+	LEFT JOIN		vue_img 	tb
+	ON				ta.p_name = tb.p_name
+	WHERE			ta.p_name = #{pName}
+</select>
+
+ 
+<resultMap type = "Images" id="Images4">
+		<result column="i_id" property="iId"/>
+		<result column="i_name" property="iName"/>
+		<result column="p_name" property="pName"/>
+</resultMap>
+	
+<resultMap type = "Product" id="Product4">
+		<result column="p_id" property="pId"/>
+		<result column="p_name" property="pName"/>
+		<result column="p_date" property="pDate"/>
+		<result column="p_price" property="pPrice"/>
+		<result column="p_from" property="pFrom"/>
+		<result column="p_brand" property="pBrand"/>
+		<result column="p_like" property="pLike"/> 
+		<result column="p_quantity" property="pQuantity"/>
+		<collection property="listImages" resultMap="Images4"/>
+</resultMap>
+
+<select id="selectRankList" resultMap="Product4">
+	SELECT 			*
+	FROM 			vue_product p
+	LEFT JOIN		vue_img		i
+	ON 				p.p_name = i.p_name
+	ORDER BY		p_like DESC
+</select>
+
+<resultMap type = "Images" id="Images6">
+		<result column="i_id" property="iId"/>
+		<result column="i_name" property="iName"/>
+		<result column="p_name" property="pName"/>
+</resultMap>
+	
+<resultMap type = "Order" id="Order1">
+		<result column="o_num" property="oNum"/>
+		<result column="p_name" property="pName"/>
+		<result column="p_price" property="pPrice"/>
+		<result column="u_id" property="username"/>
+		<result column="r_name" property="rName"/>
+		<result column="o_name" property="oName"/>
+		<result column="o_address" property="oAddress"/>
+		<result column="o_detailaddress" property="oDetailAddress"/>
+		<result column="o_email" property="oEmail"/>
+		<result column="o_demand" property="oDemand"/>
+		<result column="o_date" property="oDate"/>
+		<collection property="listImages" resultMap="Images6"/>
+</resultMap>
+
+<select id="selectOrderList" resultMap="Order1">
+	SELECT 			*
+	FROM 			vue_order ta
+	LEFT JOIN		vue_img	 tb
+	ON 				ta.p_name = tb.p_name
+	WHERE			ta.u_id = #{username}
+	GROUP BY		ta.o_num
+</select>
+
+
+<update id="updateQuantity" parameterType="Order">
+	UPDATE			vue_product
+	SET				p_quantity = p_quantity-1
+	WHERE			p_name = #{pName}
+</update>
+
+<insert id="insertProduct" parameterType="Product">
+	      INSERT INTO vue_product(
+			p_name,
+			p_price,
+			p_from,
+			p_brand,
+			p_quantity
+			
+		)VALUES(
+			#{pName},
+			#{pPrice},
+			#{pFrom},
+			#{pBrand},
+			#{pQuantity}
+		)
+</insert>
+
+<insert id="insertHomeImg" parameterType="HomeImg">
+	      INSERT INTO vue_homeimg(
+			hi_name
+			
+		)VALUES(
+			#{hiName}
+		)
+</insert>
+
+<insert id="insertImage" parameterType="Images">
+	INSERT INTO vue_img(
+		
+		p_name,
+		i_name
+
+	)VALUES(
+		
+		#{pName},
+		#{iName}
+	)
+</insert>
+ 
+<delete id="deleteProduct" parameterType="Product">
+	DELETE 		a,b,c
+	FROM 	 	vue_product a
+	LEFT JOIN 	vue_img b	ON a.p_name = b.p_name
+	LEFT JOIN	vue_cart c 	ON a.p_id = c.p_id
+	WHERE		a.p_id = #{pId}
+</delete>
+
+<update id="cancelLike" parameterType="Product">
+	UPDATE		vue_product
+	SET			p_like = p_like-1
+	WHERE 		p_id = #{pId}
+</update>
+
+<delete id="deleteCart" parameterType="Cart">
+	DELETE 		
+	FROM 	 	vue_cart 
+	WHERE		ct_id = #{ctId}
+</delete>
+ 
+<!-- vue_cart 테이블에서 조건절에 맞는 부분을 SELECT했을때 해당 값이 존재하지 않는다면 INSERT 하는 구문 -->
+<insert id="insertPutCart" parameterType="Cart">
+   INSERT INTO vue_cart(
+		p_id,
+		u_id
+	)
+	SELECT	
+		#{pId},
+		#{username}
+	FROM 	dual
+	WHERE	NOT EXISTS(
+		SELECT 	*
+		FROM	vue_cart
+		WHERE	p_id = #{pId}
+		AND		u_id = #{username}
+	) 
+</insert>
+
+<insert id="buyProduct" parameterType="Order">
+	      INSERT INTO vue_order(
+			p_name,
+			p_price,
+			u_id,
+			r_name,
+			o_name,
+			o_address,
+			o_detailaddress,
+			o_email,
+			o_demand
+			
+		)VALUES(
+			#{pName},
+			#{pPrice},
+			#{username},
+			#{rName},
+			#{oName},
+			#{oAddress},
+			#{oDetailAddress},
+			#{oEmail},
+			#{oDemand}
+		)
+</insert>
+
+<insert id="insertHeart" parameterType="Heart">
+	INSERT INTO vue_heart(
+		p_id,
+		u_id
+	)
+	SELECT
+		#{pId},
+		#{username}
+	FROM 	dual
+	WHERE	NOT EXISTS(
+		SELECT	*
+		FROM	vue_heart
+		WHERE	p_id = #{pId}
+		AND		u_id = #{username}
+	)
+</insert>
+
+<delete id="deleteHeart" parameterType="Heart">
+	DELETE
+	FROM		vue_heart
+	WHERE		p_id = #{pId}
+	AND			u_id = #{username}
+</delete>
+
+<delete id="deleteHomeImg" parameterType="HomeImg">
+	DELETE
+	FROM		vue_homeimg
+	WHERE		hi_id = #{hiId}
+</delete>
+
+<update id="likeProduct" parameterType="Product">
+	UPDATE		vue_product
+	SET			p_like = p_like+1
+	WHERE 		p_id = #{pId}
+</update>
+
+<resultMap type = "Product" id="Product3">
+	<result column="p_id" property="pId"/>
+	<result column="p_name" property="pName"/>
+	<result column="p_price" property="pPrice"/>
+	<result column="p_from" property="pFrom"/>
+	<result column="p_brand" property="pBrand"/>
+	<collection property="listImages" resultMap="Images3"/>
+</resultMap>
+
+<resultMap type = "Images" id="Images3">	
+	<result column="i_id" property="iId"/>
+	<result column="i_name" property="iName"/>
+	<result column="p_name" property="pName"/>
+</resultMap>
+	
+<resultMap type = "Cart" id="Cart1">
+	<result column="ct_id" property="ctId"/>
+	<result column="p_id" property="pId"/>
+	<result column="u_id" property="username"/>	
+	<collection property="listCart" resultMap="Product3"/>
+</resultMap>
+
+<select id="selectCartList" resultMap="Cart1">
+	SELECT 			*
+
+	FROM 			vue_cart c
+	LEFT JOIN 		vue_product p 
+	ON				c.p_id = p.p_id
+	LEFT JOIN		vue_img i
+	ON				i.p_name = p.p_name
+	WHERE			u_id = #{username}
+	LIMIT			#{pageOpt},8
+</select>
+
+</mapper>
