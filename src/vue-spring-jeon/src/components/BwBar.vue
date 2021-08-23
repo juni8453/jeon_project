@@ -2,55 +2,71 @@
     <v-container fluid class="fixed-bar">
         <v-row dense>
             <v-col cols="12" md="12" sm="12">
-              <v-card class="text-center pa-3" outlined color="black">
-                  <v-row dense align="center" justify="space-around">
-                      <v-col cols="2">
-                          <v-btn text color="white" exact
+              <v-card color="indigo" class="text-center">
+                  <v-row dense align="center">                      
+                      <v-col cols="6" md="6" sm="6">
+                        <v-btn text color="white" exact
                           router :to="{name:'BoardList'}"
                           >
-                              커뮤니티 바로가기
+                          <v-icon>
+                              mdi-account-group
+                          </v-icon>
+                            커뮤니티
                           </v-btn>
                       </v-col>
-                      <v-col cols="2">
+                      <v-col cols="6" md="6" sm="6">
                           <v-btn text color="white" exact
-                          router :to="{name:'Home'}"
+                            router :to="{name:'Home'}"
                           >
-                              쇼핑몰 바로가기
+                          <v-icon>
+                              mdi-shopping-outline
+                          </v-icon>
+                            쇼핑몰
                           </v-btn>
                       </v-col>
-                      <v-col cols="2">
+                      <v-col cols="6" md="6" sm="6">
                           <v-btn text color="white" exact
-                          router :to="{name:'PutCart'}">
-                              내 장바구니
+                            router :to="{name:'PutCart'}">
+                            <v-icon>
+                                mdi-cart
+                            </v-icon>
+                            장바구니
                           </v-btn>
                       </v-col>
-                      <v-col cols="2">
+                      <v-col cols="6" md="6" sm="6">
                           <v-btn text color="white" exact
-                          router :to="{name:'OrderList'}">
-                              내 주문내역
+                            router :to="{name:'OrderList'}">
+                            <v-icon>
+                                mdi-tshirt-crew-outline
+                            </v-icon>
+                            주문내역
                           </v-btn>
-                      </v-col>
+                      </v-col>  
                   </v-row>
               </v-card>
 
               <v-card class="text-center pa-3" outlined color="white">
                   <v-row dense align="center" justify="space-around">
-                      <v-col cols="4">
+                      <v-col cols="4" md="4" sm="4">
                           Jeon Shopping Mall
                       </v-col>
                       <v-col cols="2">
                           <v-btn text exact
                           router :to="{name:'HotItems'}"
                           >
-                              인기상품
+                            <v-icon>
+                                mdi-thumb-up
+                            </v-icon>
+                            <strong>인기상품</strong>
                           </v-btn>
                       </v-col>
                       
-                      <v-col cols="2">
+                      <v-col cols="2" md="4" sm="4">
                           <v-btn text exact
                           router :to="{name:'LatestItems'}"
                           >
-                              상품 리스트
+                            <v-icon>mdi-view-list</v-icon>                         
+                              <strong>상품 리스트</strong>
                           </v-btn>
                       </v-col>
                           
