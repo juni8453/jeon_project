@@ -2,12 +2,27 @@
     <v-container>
       <BwBar></BwBar>
       <v-row no-gutters>  
-        <v-simple-table style="width:100%"
+        <v-row>
+          <v-col cols="6" md="6" sm="6"
+            v-for="item in boardlist" :key="item.bId">
+            <v-row>
+              <v-col cols="12" md="12" sm="12"> 
+                <v-card outlined>
+                  <v-card-title class="Center">
+                    {{item.bTitle}}
+                  </v-card-title>
+                  <v-card-text class="Center">
+                    {{item.bDateTime}} | {{item.username}}
+                  </v-card-text>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+        <!-- <v-simple-table style="width:100%"
           dense
         >
-        <template 
-         v-slot:default
-        >
+        <template v-slot:default>
           <thead>
             <tr>
               <th class="text-center">
@@ -35,7 +50,7 @@
                 수정
               </th>
               <th class="text-center">
-                삭제
+                삭제 
               </th>
             </tr>
           </thead>
@@ -83,7 +98,7 @@
                 <v-btn
                   v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
                   router :to="{name:'BoardEdit',
-                  params: {bId:item.bId} }"
+                  params: {bId:item.bId} }" 
                 >
                   <v-icon>mdi-file-document-edit</v-icon>
                 </v-btn>
@@ -104,25 +119,18 @@
             </tr>
           </tbody>
         </template>
-      </v-simple-table>
+      </v-simple-table> -->
     </v-row>
     <v-row>
       <v-col cols="12" md="12" sm="12">
-       
-          <v-pagination
-            v-model="page"
-            :length="Pagination.lastPage" 
-            circle
-            @input="move({page:page})"
-          ></v-pagination>
-       
+        <v-pagination
+          v-model="page"
+          :length="Pagination.lastPage" 
+          circle
+          @input="move({page:page})"
+        ></v-pagination>
       </v-col>
     </v-row>
-    <!-- <v-row>
-      <v-col>
-        <Footer></Footer>
-      </v-col>
-    </v-row> -->
   </v-container> 
 </template>
 <style scoped>
@@ -172,7 +180,7 @@ export default {
         console.log('next')
         console.log(payload)
         this.$store.dispatch('BoardList', payload)
-      }
+      },
     }
   }  
 </script>

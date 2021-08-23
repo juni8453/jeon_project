@@ -7,13 +7,14 @@
                     <v-row dense align="center" justify="space-around">
                         <v-col cols="12">
                             <v-file-input
-                                v-if="Userinfo.User_auth[0] === 'ROLE_ADMIN'"
+                                v-if="isLogin === true && Userinfo.User_auth.includes('ROLE_ADMIN')"
                                 id="uploadFile"
                                 label="클릭해서 대표 이미지를 업로드하세요."
                                 v-model="fileinput"
                                 > 
                             </v-file-input>
-                            <v-btn v-if="Userinfo.User_auth[0] === 'ROLE_ADMIN'"
+                            <v-btn 
+                                v-if="isLogin === true && Userinfo.User_auth.includes('ROLE_ADMIN')"
                                 outlined
                                 color="indigo"
                                 @click="insertHomeImg(
@@ -38,7 +39,7 @@
                                 <v-row>
                                     <v-col cols="3" md="3" sm="3">
                                         <v-btn 
-                                            v-if="Userinfo.User_auth[0] === 'ROLE_ADMIN'"
+                                            v-if="isLogin === true && Userinfo.User_auth.includes('ROLE_ADMIN')"
                                             outlined 
                                             color="indigo"
                                             @click="deletehomeImg({item})"
@@ -90,7 +91,7 @@ export default {
     },
 
     computed:{
-        ...mapState(['Userinfo','homeimglist'])
+        ...mapState(['Userinfo','homeimglist','isLogin'])
     },
 
     components:{
