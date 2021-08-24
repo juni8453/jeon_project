@@ -138,5 +138,11 @@ public class ProductServiceImpl implements ProductService {
 		productMapper.insertHomeImg(homeimg);
 	}
 
+	@Override
+	public List<Order> checkOrderList(Order order) {
+		return productMapper.checkOrderList(order);
+		
+	}
+
 	
 }

@@ -1,0 +1,231 @@
+15:55:05.654 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Starting LcomTestApplication on DESKTOP-1ECNFRJ with PID 2012 (C:\Users\user\Documents\GitHub\jeon_project\bin\main started by user in C:\Users\user\Documents\GitHub\jeon_project) 
+15:55:05.659 DEBUG --- [restartedMain] c.l.example.LcomTestApplication : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE 
+15:55:05.659 INFO  --- [restartedMain] c.l.example.LcomTestApplication : The following profiles are active: local 
+15:55:08.848 DEBUG --- [restartedMain] c.l.example.config.AuthTokenFilter : Filter 'authenticationJwtTokenFilter' configured for use 
+15:55:09.719 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Started LcomTestApplication in 4.72 seconds (JVM running for 6.342) 
+15:55:22.697 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.selectHotList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id ORDER BY p_like DESC LIMIT ?,8 
+15:55:22.837 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.selectHotList : ==> Parameters: admin(String), 0(Integer) 
+15:55:22.840 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.ProductMapper.selectHotList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id ORDER BY p_like DESC LIMIT ?,8 
+15:55:22.841 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.ProductMapper.selectHotList : ==> Parameters: admin(String), 8(Integer) 
+15:55:22.893 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.ProductMapper.selectHotList : <==      Total: 0 
+15:55:22.893 TRACE --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.selectHotList : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, h_id, p_id, u_id, i_id, i_name, p_name, u_id, u_password, u_name, u_phone, u_datetime, u_isAccountNonExpired, u_isAccountNonLocked, u_isCredentialNonExpired, u_isEnabled 
+15:55:22.896 TRACE --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.selectHotList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 202, 202108201123171.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+15:55:22.905 INFO  --- [http-nio-9000-exec-2] c.l.e.controller.AuthController : [] 
+15:55:22.906 TRACE --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.selectHotList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 203, 202108201123172.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+15:55:22.910 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.selectHotList : <==      Total: 2 
+15:55:22.910 INFO  --- [http-nio-9000-exec-1] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Product@7c893e35] 
+15:55:24.342 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectProductList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id LIMIT ?,8 
+15:55:24.343 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectProductList : ==> Parameters: admin(String), 0(Integer) 
+15:55:24.350 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectProductList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id LIMIT ?,8 
+15:55:24.352 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectProductList : ==> Parameters: admin(String), 8(Integer) 
+15:55:24.355 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectProductList : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, h_id, p_id, u_id, i_id, i_name, p_name, u_id, u_password, u_name, u_phone, u_datetime, u_isAccountNonExpired, u_isAccountNonLocked, u_isCredentialNonExpired, u_isEnabled 
+15:55:24.357 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectProductList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 202, 202108201123171.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+15:55:24.360 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectProductList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 203, 202108201123172.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+15:55:24.362 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectProductList : <==      Total: 2 
+15:55:24.363 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectProductList : <==      Total: 0 
+15:55:24.363 INFO  --- [http-nio-9000-exec-3] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Product@6101e134] 
+15:55:24.364 INFO  --- [http-nio-9000-exec-4] c.l.e.controller.AuthController : [] 
+16:01:42.495 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+16:01:42.496 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+16:01:42.506 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+16:01:42.507 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+16:01:42.510 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+16:01:42.511 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+16:01:42.512 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+16:01:42.512 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+16:01:42.513 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+16:01:42.514 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+16:06:30.640 ERROR --- [http-nio-9000-exec-10] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-18T20:23:19Z. Current time: 2021-08-23T16:06:30Z, a difference of 416591639 milliseconds.  Allowed clock skew: 0 milliseconds. 
+16:06:30.640 ERROR --- [http-nio-9000-exec-1] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-18T20:23:19Z. Current time: 2021-08-23T16:06:30Z, a difference of 416591639 milliseconds.  Allowed clock skew: 0 milliseconds. 
+16:06:30.663 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectCartList : ==>  Preparing: SELECT * FROM vue_cart c LEFT JOIN vue_product p ON c.p_id = p.p_id LEFT JOIN vue_img i ON i.p_name = p.p_name WHERE u_id = ? LIMIT ?,8 
+16:06:30.664 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectCartList : ==>  Preparing: SELECT * FROM vue_cart c LEFT JOIN vue_product p ON c.p_id = p.p_id LEFT JOIN vue_img i ON i.p_name = p.p_name WHERE u_id = ? LIMIT ?,8 
+16:06:30.664 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectCartList : ==> Parameters: admin(String), 8(Integer) 
+16:06:30.664 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectCartList : ==> Parameters: admin(String), 0(Integer) 
+16:06:30.674 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectCartList : <==      Total: 0 
+16:06:30.674 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectCartList : <==      Total: 0 
+16:06:30.675 DEBUG --- [http-nio-9000-exec-1] c.l.e.controller.AuthController : username:admin 
+16:06:30.675 DEBUG --- [http-nio-9000-exec-10] c.l.e.controller.AuthController : username:admin 
+16:06:33.536 ERROR --- [http-nio-9000-exec-6] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-18T20:23:19Z. Current time: 2021-08-23T16:06:33Z, a difference of 416594535 milliseconds.  Allowed clock skew: 0 milliseconds. 
+16:06:33.556 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectOrderList : ==>  Preparing: SELECT * FROM vue_order ta LEFT JOIN vue_img tb ON ta.p_name = tb.p_name WHERE ta.u_id = ? GROUP BY ta.o_num 
+16:06:33.557 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectOrderList : ==> Parameters: admin(String) 
+16:06:33.566 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectOrderList : <==      Total: 0 
+16:06:36.306 ERROR --- [http-nio-9000-exec-8] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-18T20:23:19Z. Current time: 2021-08-23T16:06:36Z, a difference of 416597306 milliseconds.  Allowed clock skew: 0 milliseconds. 
+16:06:36.360 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+16:06:36.361 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+16:06:36.372 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+16:06:36.372 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+16:06:36.373 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+16:06:36.374 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+16:06:36.375 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+16:06:36.376 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+16:06:36.377 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+16:06:36.378 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+16:06:38.442 ERROR --- [http-nio-9000-exec-2] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-18T20:23:19Z. Current time: 2021-08-23T16:06:38Z, a difference of 416599442 milliseconds.  Allowed clock skew: 0 milliseconds. 
+16:06:38.451 ERROR --- [http-nio-9000-exec-1] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-18T20:23:19Z. Current time: 2021-08-23T16:06:38Z, a difference of 416599451 milliseconds.  Allowed clock skew: 0 milliseconds. 
+16:06:38.454 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.ProductMapper.selectHotList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id ORDER BY p_like DESC LIMIT ?,8 
+16:06:38.455 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.ProductMapper.selectHotList : ==> Parameters: admin(String), 0(Integer) 
+16:06:38.461 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.selectHotList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id ORDER BY p_like DESC LIMIT ?,8 
+16:06:38.462 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.selectHotList : ==> Parameters: admin(String), 8(Integer) 
+16:06:38.466 TRACE --- [http-nio-9000-exec-2] c.l.e.m.ProductMapper.selectHotList : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, h_id, p_id, u_id, i_id, i_name, p_name, u_id, u_password, u_name, u_phone, u_datetime, u_isAccountNonExpired, u_isAccountNonLocked, u_isCredentialNonExpired, u_isEnabled 
+16:06:38.467 TRACE --- [http-nio-9000-exec-2] c.l.e.m.ProductMapper.selectHotList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 202, 202108201123171.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+16:06:38.471 TRACE --- [http-nio-9000-exec-2] c.l.e.m.ProductMapper.selectHotList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 203, 202108201123172.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+16:06:38.472 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.selectHotList : <==      Total: 0 
+16:06:38.473 INFO  --- [http-nio-9000-exec-1] c.l.e.controller.AuthController : [] 
+16:06:38.473 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.ProductMapper.selectHotList : <==      Total: 2 
+16:06:38.474 INFO  --- [http-nio-9000-exec-2] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Product@7354fa25] 
+16:06:39.132 ERROR --- [http-nio-9000-exec-3] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-18T20:23:19Z. Current time: 2021-08-23T16:06:39Z, a difference of 416600132 milliseconds.  Allowed clock skew: 0 milliseconds. 
+16:06:39.143 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectProductList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id LIMIT ?,8 
+16:06:39.144 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectProductList : ==> Parameters: admin(String), 0(Integer) 
+16:06:39.152 ERROR --- [http-nio-9000-exec-6] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-18T20:23:19Z. Current time: 2021-08-23T16:06:39Z, a difference of 416600152 milliseconds.  Allowed clock skew: 0 milliseconds. 
+16:06:39.160 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectProductList : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, h_id, p_id, u_id, i_id, i_name, p_name, u_id, u_password, u_name, u_phone, u_datetime, u_isAccountNonExpired, u_isAccountNonLocked, u_isCredentialNonExpired, u_isEnabled 
+16:06:39.161 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectProductList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 202, 202108201123171.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+16:06:39.164 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectProductList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 203, 202108201123172.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+16:06:39.165 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectProductList : <==      Total: 2 
+16:06:39.165 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectProductList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id LIMIT ?,8 
+16:06:39.166 INFO  --- [http-nio-9000-exec-3] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Product@34fa7623] 
+16:06:39.166 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectProductList : ==> Parameters: admin(String), 8(Integer) 
+16:06:39.176 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectProductList : <==      Total: 0 
+16:06:39.176 INFO  --- [http-nio-9000-exec-6] c.l.e.controller.AuthController : [] 
+16:06:40.357 ERROR --- [http-nio-9000-exec-7] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-18T20:23:19Z. Current time: 2021-08-23T16:06:40Z, a difference of 416601356 milliseconds.  Allowed clock skew: 0 milliseconds. 
+16:06:40.379 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+16:06:40.380 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+16:06:40.389 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+16:06:40.389 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+16:06:40.390 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+16:06:40.390 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+16:06:40.391 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+16:06:40.393 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+16:06:40.393 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+16:06:40.394 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+16:13:03.982 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+16:13:03.983 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+16:13:03.993 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+16:13:03.993 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+16:13:03.994 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+16:13:03.996 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+16:13:03.996 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+16:13:03.996 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+16:13:03.997 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+16:13:03.998 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+16:34:26.556 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.getBoardCount : ==>  Preparing: SELECT COUNT(*) as count FROM vue_board 
+16:34:26.559 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.getBoardCount : ==> Parameters:  
+16:34:26.572 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.getBoardCount : <==    Columns: count 
+16:34:26.572 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.getBoardCount : <==        Row: 1 
+16:34:26.574 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.getBoardCount : <==      Total: 1 
+16:34:26.578 INFO  --- [http-nio-9000-exec-2] c.l.e.controller.AuthController : com.lcom_test.example.domain.Board@73fd8969 
+16:34:26.581 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : ==>  Preparing: SELECT b_id as bId, b_writer as bWriter, b_title as bTitle, b_content as bContent, b_datetime as bDateTime, b_views as bViews, b_group as bGroup, b_order as bOrder, b_depth as bDepth, u_id as username FROM vue_board ORDER BY b_group DESC, b_order ASC LIMIT ?,? 
+16:34:26.582 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : ==> Parameters: 0(Integer), 10(Integer) 
+16:34:26.594 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==    Columns: bId, bWriter, bTitle, bContent, bDateTime, bViews, bGroup, bOrder, bDepth, username 
+16:34:26.595 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 121, null, 테스트, 안녕하세요, 2021-08-20 01:28:54, 2, 121, 0, 0, qqq 
+16:34:26.597 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==      Total: 1 
+16:34:26.597 INFO  --- [http-nio-9000-exec-2] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Board@150652c1] 
+16:34:28.796 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+16:34:28.796 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+16:34:28.807 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+16:34:28.807 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+16:34:28.808 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+16:34:28.808 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+16:34:28.808 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+16:34:28.809 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+16:34:28.809 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+16:34:28.809 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+16:48:38.177 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.BoardMapper.getBoardCount : ==>  Preparing: SELECT COUNT(*) as count FROM vue_board 
+16:48:38.178 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.BoardMapper.getBoardCount : ==> Parameters:  
+16:48:38.189 TRACE --- [http-nio-9000-exec-3] c.l.e.m.BoardMapper.getBoardCount : <==    Columns: count 
+16:48:38.189 TRACE --- [http-nio-9000-exec-3] c.l.e.m.BoardMapper.getBoardCount : <==        Row: 1 
+16:48:38.190 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.BoardMapper.getBoardCount : <==      Total: 1 
+16:48:38.190 INFO  --- [http-nio-9000-exec-3] c.l.e.controller.AuthController : com.lcom_test.example.domain.Board@38a0e438 
+16:48:38.191 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.BoardMapper.selectBoardList : ==>  Preparing: SELECT b_id as bId, b_writer as bWriter, b_title as bTitle, b_content as bContent, b_datetime as bDateTime, b_views as bViews, b_group as bGroup, b_order as bOrder, b_depth as bDepth, u_id as username FROM vue_board ORDER BY b_group DESC, b_order ASC LIMIT ?,? 
+16:48:38.191 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.BoardMapper.selectBoardList : ==> Parameters: 0(Integer), 10(Integer) 
+16:48:38.204 TRACE --- [http-nio-9000-exec-3] c.l.e.m.BoardMapper.selectBoardList : <==    Columns: bId, bWriter, bTitle, bContent, bDateTime, bViews, bGroup, bOrder, bDepth, username 
+16:48:38.205 TRACE --- [http-nio-9000-exec-3] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 121, null, 테스트, 안녕하세요, 2021-08-20 01:28:54, 2, 121, 0, 0, qqq 
+16:48:38.207 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.BoardMapper.selectBoardList : <==      Total: 1 
+16:48:38.207 INFO  --- [http-nio-9000-exec-3] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Board@78bfdc46] 
+16:48:39.246 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+16:48:39.247 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+16:48:39.260 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+16:48:39.261 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+16:48:39.262 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+16:48:39.263 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+16:48:39.264 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+16:48:39.265 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+16:48:39.266 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+16:48:39.266 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+16:53:51.807 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+16:53:51.808 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+16:53:51.819 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+16:53:51.820 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+16:53:51.821 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+16:53:51.821 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+16:53:51.822 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+16:53:51.822 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+16:53:51.822 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+16:53:51.823 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+17:02:26.312 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.ProductMapper.selectHotList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id ORDER BY p_like DESC LIMIT ?,8 
+17:02:26.313 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.ProductMapper.selectHotList : ==> Parameters: admin(String), 0(Integer) 
+17:02:26.316 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.selectHotList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id ORDER BY p_like DESC LIMIT ?,8 
+17:02:26.318 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.selectHotList : ==> Parameters: admin(String), 8(Integer) 
+17:02:26.328 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.selectHotList : <==      Total: 0 
+17:02:26.328 TRACE --- [http-nio-9000-exec-10] c.l.e.m.ProductMapper.selectHotList : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, h_id, p_id, u_id, i_id, i_name, p_name, u_id, u_password, u_name, u_phone, u_datetime, u_isAccountNonExpired, u_isAccountNonLocked, u_isCredentialNonExpired, u_isEnabled 
+17:02:26.328 INFO  --- [http-nio-9000-exec-1] c.l.e.controller.AuthController : [] 
+17:02:26.329 TRACE --- [http-nio-9000-exec-10] c.l.e.m.ProductMapper.selectHotList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 202, 202108201123171.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+17:02:26.332 TRACE --- [http-nio-9000-exec-10] c.l.e.m.ProductMapper.selectHotList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 203, 202108201123172.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+17:02:26.334 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.ProductMapper.selectHotList : <==      Total: 2 
+17:02:26.334 INFO  --- [http-nio-9000-exec-10] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Product@550c1ca] 
+17:02:30.439 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectProductList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id LIMIT ?,8 
+17:02:30.440 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectProductList : ==> Parameters: admin(String), 0(Integer) 
+17:02:30.447 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectProductList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id LIMIT ?,8 
+17:02:30.447 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectProductList : ==> Parameters: admin(String), 8(Integer) 
+17:02:30.452 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectProductList : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, h_id, p_id, u_id, i_id, i_name, p_name, u_id, u_password, u_name, u_phone, u_datetime, u_isAccountNonExpired, u_isAccountNonLocked, u_isCredentialNonExpired, u_isEnabled 
+17:02:30.453 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectProductList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 202, 202108201123171.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+17:02:30.455 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectProductList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 203, 202108201123172.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+17:02:30.456 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectProductList : <==      Total: 2 
+17:02:30.457 INFO  --- [http-nio-9000-exec-2] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Product@6324ba6b] 
+17:02:30.457 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectProductList : <==      Total: 0 
+17:02:30.457 INFO  --- [http-nio-9000-exec-4] c.l.e.controller.AuthController : [] 
+17:02:44.481 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.ProductMapper.selectHotList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id ORDER BY p_like DESC LIMIT ?,8 
+17:02:44.482 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.ProductMapper.selectHotList : ==> Parameters: admin(String), 0(Integer) 
+17:02:44.492 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.ProductMapper.selectHotList : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN ( SELECT * FROM vue_heart WHERE u_id = ? ) tb ON ta.p_id = tb.p_id LEFT JOIN vue_img tc ON ta.p_name = tc.p_name LEFT JOIN userlist td ON tb.u_id = td.u_id ORDER BY p_like DESC LIMIT ?,8 
+17:02:44.493 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.ProductMapper.selectHotList : ==> Parameters: admin(String), 8(Integer) 
+17:02:44.496 TRACE --- [http-nio-9000-exec-6] c.l.e.m.ProductMapper.selectHotList : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, h_id, p_id, u_id, i_id, i_name, p_name, u_id, u_password, u_name, u_phone, u_datetime, u_isAccountNonExpired, u_isAccountNonLocked, u_isCredentialNonExpired, u_isEnabled 
+17:02:44.496 TRACE --- [http-nio-9000-exec-6] c.l.e.m.ProductMapper.selectHotList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 202, 202108201123171.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+17:02:44.499 TRACE --- [http-nio-9000-exec-6] c.l.e.m.ProductMapper.selectHotList : <==        Row: 199, Test 1, 2021-08-20 02:23:17, 30000, Test, Test , 0, 50, null, null, null, 203, 202108201123172.PNG, Test 1, null, null, null, null, null, null, null, null, null 
+17:02:44.500 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.ProductMapper.selectHotList : <==      Total: 2 
+17:02:44.501 INFO  --- [http-nio-9000-exec-6] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Product@3f360dc5] 
+17:02:44.503 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.ProductMapper.selectHotList : <==      Total: 0 
+17:02:44.504 INFO  --- [http-nio-9000-exec-7] c.l.e.controller.AuthController : [] 
+17:02:46.701 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+17:02:46.701 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+17:02:46.713 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+17:02:46.714 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+17:02:46.714 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+17:02:46.715 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+17:02:46.716 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+17:02:46.716 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+17:02:46.717 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+17:02:46.717 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+17:08:33.844 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectOrderList : ==>  Preparing: SELECT * FROM vue_order ta LEFT JOIN vue_img tb ON ta.p_name = tb.p_name WHERE ta.u_id = ? GROUP BY ta.o_num 
+17:08:33.845 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectOrderList : ==> Parameters: admin(String) 
+17:08:33.856 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectOrderList : <==      Total: 0 
+17:08:41.044 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+17:08:41.044 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+17:08:41.055 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+17:08:41.055 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+17:08:41.055 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+17:08:41.055 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+17:08:41.055 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+17:08:41.056 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+17:08:41.056 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+17:08:41.056 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+17:08:44.124 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.BoardMapper.getBoardCount : ==>  Preparing: SELECT COUNT(*) as count FROM vue_board 
+17:08:44.124 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.BoardMapper.getBoardCount : ==> Parameters:  
+17:08:44.133 TRACE --- [http-nio-9000-exec-4] c.l.e.m.BoardMapper.getBoardCount : <==    Columns: count 
+17:08:44.133 TRACE --- [http-nio-9000-exec-4] c.l.e.m.BoardMapper.getBoardCount : <==        Row: 1 
+17:08:44.133 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.BoardMapper.getBoardCount : <==      Total: 1 
+17:08:44.133 INFO  --- [http-nio-9000-exec-4] c.l.e.controller.AuthController : com.lcom_test.example.domain.Board@63650c2 
+17:08:44.134 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.BoardMapper.selectBoardList : ==>  Preparing: SELECT b_id as bId, b_writer as bWriter, b_title as bTitle, b_content as bContent, b_datetime as bDateTime, b_views as bViews, b_group as bGroup, b_order as bOrder, b_depth as bDepth, u_id as username FROM vue_board ORDER BY b_group DESC, b_order ASC LIMIT ?,? 
+17:08:44.134 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.BoardMapper.selectBoardList : ==> Parameters: 0(Integer), 10(Integer) 
+17:08:44.188 TRACE --- [http-nio-9000-exec-4] c.l.e.m.BoardMapper.selectBoardList : <==    Columns: bId, bWriter, bTitle, bContent, bDateTime, bViews, bGroup, bOrder, bDepth, username 
+17:08:44.190 TRACE --- [http-nio-9000-exec-4] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 121, null, 테스트, 안녕하세요, 2021-08-20 01:28:54, 2, 121, 0, 0, qqq 
+17:08:44.192 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.BoardMapper.selectBoardList : <==      Total: 1 
+17:08:44.192 INFO  --- [http-nio-9000-exec-4] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Board@10415f1c] 

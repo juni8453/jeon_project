@@ -46,6 +46,7 @@ import com.lcom_test.example.config.JwtUtils;
 import com.lcom_test.example.domain.Board;
 import com.lcom_test.example.domain.HomeImg;
 import com.lcom_test.example.domain.Images;
+import com.lcom_test.example.domain.Order;
 import com.lcom_test.example.domain.Pagination;
 import com.lcom_test.example.domain.Product;
 import com.lcom_test.example.domain.User;
@@ -86,8 +87,8 @@ public class AdminController {
 			@RequestPart("uploadFile") MultipartFile[] files,
 			Product product, Images images
 			){
-		String path = "C:/Users/l9-morning/Documents/lcom_test/src/vue-spring-jeon/public/images/";
-//		String path = "C:/Users/user/Documents/GitHub/lcom_test/src/vue-spring-jeon/public/images/";	
+//		String path = "C:/Users/l9-morning/Documents/lcom_test/src/vue-spring-jeon/public/images/";
+		String path = "C:/Users/user/Documents/GitHub/jeon_project/src/vue-spring-jeon/public/images/";	
 //		String path = "C:/Users/82105/Documents/GitHub/lcom_test/src/vue-spring-jeon/public/images/";
 //		String path = "/usr/share/nginx/html/images/";
 		String thumbPath = path + "thumb/";
@@ -175,7 +176,17 @@ public class AdminController {
 				return ResponseEntity.ok(
 						new ListResponse<UserInfo>(pagination, userlist));
 	}
-		
+	
+	@GetMapping({"/checkorder", "/checkorder/{pName}"})
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	public ResponseEntity<?> checkorder(Order order,
+			@PathVariable String pName){
+		order.setpName(pName);
+		List<Order> orderlist = productService.checkOrderList(order);
+		return ResponseEntity.ok(new ListResponse<Order>(orderlist));
+	}
+ 	
+	
 	@PostMapping("/deleteproduct") 
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public ResponseEntity<?> deleteProduct(

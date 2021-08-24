@@ -59,5 +59,7 @@ public interface ProductMapper {
 
 	public void insertHomeImg(HomeImg homeimg);
 
+	public List<Order> checkOrderList(Order order);
+
 
 }

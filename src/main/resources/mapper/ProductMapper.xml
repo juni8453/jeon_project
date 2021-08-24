@@ -179,6 +179,26 @@ LIMIT		#{pageOpt},8
 	GROUP BY		ta.o_num
 </select>
 
+<resultMap type = "Order" id="Order2">
+		<result column="o_num" property="oNum"/>
+		<result column="p_name" property="pName"/>
+		<result column="p_price" property="pPrice"/>
+		<result column="u_id" property="username"/>
+		<result column="r_name" property="rName"/>
+		<result column="o_name" property="oName"/>
+		<result column="o_address" property="oAddress"/>
+		<result column="o_detailaddress" property="oDetailAddress"/>
+		<result column="o_email" property="oEmail"/>
+		<result column="o_demand" property="oDemand"/>
+		<result column="o_date" property="oDate"/>
+</resultMap>
+
+<select id="checkOrderList" resultMap="Order2">
+	SELECT		*
+	FROM		vue_order
+	WHERE		p_name = #{pName}
+</select>
+
 
 <update id="updateQuantity" parameterType="Order">
 	UPDATE			vue_product

@@ -98,7 +98,6 @@ export default new Vuex.Store({
     READ_HOMEIMG_LIST(state, data){
       state.homeimglist = data.list  
     },
-
     SET_PRODUCT_LIST(state, data){
       state.productlist = state.productlist.concat(data.list)
     },

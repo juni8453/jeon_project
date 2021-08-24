@@ -21,7 +21,8 @@
                      @click="deleteProduct(
                       {
                         pId:item.pId,
-                        iId:item.listImages[0].iId
+                        iId:item.listImages[0].iId,
+                        pName:item.pName
                       }
                      )">
                       <v-icon>
@@ -78,7 +79,7 @@
                           pId: item.pId,
                           username: Userinfo.User_Id
                         })"
-                      >mdi-heart</v-icon> 
+                      >mdi-heart</v-icon>
                     </v-card>
                   </v-col>    
                 </v-row>
@@ -91,6 +92,7 @@
       <v-row>
         <v-col>
           <Footer></Footer>
+          {{checkorderlist}}
         </v-col>
       </v-row>
     </v-row>
@@ -110,6 +112,7 @@ export default {
     return {
       limit:0,
       pageOpt:8,
+      checkorderlist:[]
     }
   },
 
@@ -147,7 +150,7 @@ export default {
       console.log('likeProduct Run')
       console.log(payload)
       if(confirm('제품을 추천하시겠습니까?')===true){
-        axios.post(`http://${dev}:9000/api/auth/likeproduct/${payload.username}` ,payload)
+        axios.post(`http://${dev}:9000/api/auth/likeproduct/${payload.username}`)
         .then(Response => {         
           console.log(Response.data)
           this.$store.commit('READ_PRODUCT_LIST', Response.data)
@@ -221,22 +224,38 @@ export default {
     deleteProduct(payload){
       let dev = 'localhost'
       let sev = '3.38.87.14'
+      console.log('checkOrder의 payload는?')
+      console.log(payload)
 
       if(confirm('정말로 글을 삭제하시겠습니까?')===true){
-        console.log('deleteProduct Run')
-        console.log('deleteProduct의 payload =' + JSON.stringify(payload))
         new Promise((resolve, reject) => {
           axios.defaults.headers.common['Authorization'] = `Bearer ${this.$store.state.Userinfo.User_token}`
-          axios.post(`http://${dev}:9000/api/admin/deleteproduct`, payload)
+          axios.get(`http://${dev}:9000/api/admin/checkorder/${payload.pName}`)
           .then(Response => {
-              console.log(Response.data)
-              // this.$store.commit('READ_PRODUCT_LIST', Response.data)
-              if(Response.data === "success"){
-                console.log('deleteProduct 메서드가 성공적으로 실행되었습니다.')
-                /* Route.push('latestitems') 같은 페이지로 다시 push할 수 없기 때문에
-                  새로고침 개념을 가진 Route.go(Route.currentRoute) 사용*/
-                Route.go(Route.currentRoute)
-              }
+            console.log('checkOrder의 Response.data는 ?')
+            console.log(Response.data)
+            console.log('checkOrder 메서드가 성공적으로 실행되었습니다.')
+            this.checkorderlist = Response.data.list
+            console.log(this.checkorderlist.length)
+            if(this.checkorderlist.length != 0){
+              console.log('checkorderlist는 null이 아닙니다.')
+              alert('해당 제품은 주문내역이 존재하기 때문에 삭제할 수 없습니다.')
+            }
+            else {
+              console.log('삭제가 가능합니다.')
+              console.log('deleteProduct Run')
+              new Promise((resolve, reject) => {
+                axios.defaults.headers.common['Authorization'] = `Bearer ${this.$store.state.Userinfo.User_token}`
+                axios.post(`http://${dev}:9000/api/admin/deleteproduct`, payload)
+                .then(Response => {
+                  console.log(Response.data)
+                  if(Response.data === "success"){
+                    console.log('deleteProduct 메서드가 성공적으로 실행되었습니다.')
+                    Route.go(Route.currentRoute)
+                  }
+                })
+              })
+            }
           })
           .catch(Error => {
               console.log('error')
@@ -248,5 +267,4 @@ export default {
     }
   }
 }
-
 </script>
