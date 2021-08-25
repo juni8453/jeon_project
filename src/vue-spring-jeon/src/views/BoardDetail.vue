@@ -22,7 +22,7 @@
         </v-row>
         <v-row dense>
             <v-col cols="12" md="12" sm="12">
-                <v-card class="pa-3" outlined tile style="height:600px;" color="White">
+                <v-card class="pa-3" outlined tile color="White">
                     <v-card>
                         <v-card-text class="text-left border: 1px solid primary">
                             <strong>전체 댓글 {{commentlist.length}} 개</strong>
@@ -30,99 +30,132 @@
                     </v-card>
                     <v-row>
                         <v-col cols="12" md="12" sm="12">
-                            <v-simple-table>
-                                <tbody>
-                                    <tr
-                                        v-for="item in commentlist"
-                                        :key="item.cId"
-                                    >
-                                        <td>{{item.username}}</td>
-                                        <td v-if="item.cDepth > 0">
-                                            [답글] {{ item.cContent }}  
-                                        </td>   
-                                        <td v-else>{{item.cContent}}</td> 
-                                        <td>{{item.cDateTime}}</td>             
-                                        <td>
-                                            <v-icon
-                                                v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
-                                                @click="Show(item)"
-                                                color="amber lighten-1"
-                                            >                    
-                                            mdi-pencil
-                                            </v-icon>
-                                        </td>
-                                        <td>
-                                            <v-icon
-                                            v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
-                                            @click="CommentDelete({
-                                                bId: item.bId, 
-                                                cId: item.cId,
-                                                page: page
-                                            })"
-                                            color="red lighten-3"
-                                                fab
-                                            >mdi-delete</v-icon>
-                                        </td>
-
-                                        <td>
-                                            <v-btn
-                                                @click="ShowReply(item)"                                    
-                                                color="grey lighten-1"
-                                                fab
-                                                small
-                                                dark
+                            <v-card outlined>
+                                <v-row v-for="item in commentlist" :key="item.cId">
+                                    <v-col cols="3" class="text-center">
+                                        <v-card-text class="font-size">
+                                            {{item.username}}
+                                        </v-card-text>
+                                        <v-row>
+                                            <v-col>
+                                                <v-card-text class="font-size">
+                                                    <strong>Group[{{item.cGroup}}]</strong>
+                                                </v-card-text>
+                                            </v-col>
+                                        </v-row>
+                                    </v-col>
+                                    <v-col cols="5" class="text-center">
+                                        <v-card-text class="font-size"
+                                            v-if="item.cDepth > 0">
+                                            [답글]{{item.cContent}}
+                                        </v-card-text>
+                                        <v-card-text class="font-size"
+                                            v-else>
+                                            {{item.cContent}}
+                                        </v-card-text>
+                                    </v-col>
+                                    <v-col cols="4" class="text-right">
+                                        <v-card-text class="font-size-date">
+                                            {{item.cDateTime}}
+                                        </v-card-text>
+                                        <v-row>
+                                            <v-col cols="4" class="text-center pl-0">
+                                                <v-icon
+                                                    v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
+                                                    @click="Show(item)"
+                                                    color="amber lighten-1"
                                                 >
-                                                <v-icon>mdi-pencil</v-icon>
-                                            </v-btn>
-                                        </td>       
-
-                                        <td v-if="item.cShow2 === true">
-                                            <v-textarea
-                                                auto-grow
-                                                label="대댓글을 작성하세요"
-                                                name="cContent"
-                                                v-model="cContent"
-                                            ></v-textarea>
-                                        </td>
-                                        <td 
+                                                mdi-pencil
+                                                </v-icon>
+                                            </v-col>
+                                            <v-col cols="4" class="text-center pl-0">
+                                                <v-icon
+                                                    v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
+                                                    @click="CommentDelete({
+                                                    bId: item.bId, 
+                                                    cId: item.cId,
+                                                    page: page
+                                                    })"
+                                                    color="red lighten-3"
+                                                    fab
+                                                >
+                                                mdi-delete
+                                                </v-icon>
+                                            </v-col>
+                                            <v-col cols="4" class="text-center pl-0">
+                                                <v-icon
+                                                    @click="ShowReply(item)"                                    
+                                                    color="grey lighten-1"
+                                                    fab
+                                                    dark
+                                                >
+                                                mdi-pencil
+                                                </v-icon>
+                                            </v-col>
+                                        </v-row>
+                                    </v-col>
+                                    <v-col cols="8" md="8" sm="8"
+                                        v-if="item.cShow2 === true"
+                                    >
+                                        <v-textarea
+                                            style="width:100%"
+                                            class="ml-4"
+                                            auto-grow
+                                            outlined
+                                            label="댓글을 작성하세요."
+                                            name="cContent"
+                                            v-model="cContent"
+                                        >
+                                        </v-textarea>                                        
+                                    </v-col>
+                                    <v-col cols="4" md="4" sm="4" class="Center"
                                         v-if="item.cShow2 === true">
-                                            <v-icon
+                                        <v-icon
+                                            class="Center"
                                             @click="CommentReply({
-                                                bId: item.bId,
-                                                cId: item.cId,
-                                                cContent:cContent,
-                                                username:Userinfo.User_Id,
-                                                page: page,
-                                                cGroup:item.cGroup,
-                                                cOrder:item.cOrder,
-                                                cDepth:item.cDepth
+                                            bId: item.bId,
+                                            cId: item.cId,
+                                            cContent:cContent,
+                                            username:Userinfo.User_Id,
+                                            page: page,
+                                            cGroup:item.cGroup,
+                                            cOrder:item.cOrder,
+                                            cDepth:item.cDepth
                                             })"
-                                            >mdi-file-document-edit</v-icon>
-                                        </td>
+                                        >mdi-file-document-edit
+                                        </v-icon>
+                                    </v-col>
 
-                                        <td v-if="item.cShow === true">
-                                            <v-textarea
-                                                auto-grow
-                                                label="댓글을 수정하세요"
-                                                name="cContent"
-                                                v-model="cContent"
-                                            ></v-textarea>
-                                        </td>
-                                        <td v-if="item.cShow === true">
-                                            <v-icon
+                                    <v-col cols="8" md="8" sm="8"
+                                        v-if="item.cShow === true"
+                                    >
+                                        <v-textarea
+                                            style="width:100%"
+                                            class="ml-4"
+                                            auto-grow
+                                            outlined
+                                            label="댓글을 수정하세요."
+                                            name="cContent"
+                                            v-model="cContent"
+                                        >
+                                        </v-textarea>                                        
+                                    </v-col>
+                                    <v-col cols="4" md="4" sm="4" class="Center"
+                                        v-if="item.cShow === true">
+                                        <v-icon
                                             @click="CommentEdit({                                        
-                                                bId: item.bId,
-                                                cId: item.cId,
-                                                cContent:cContent,
-                                                username:Userinfo.User_Id,
-                                                page: page,
-                                                cShow: item.cShow
+                                            bId: item.bId,
+                                            cId: item.cId,
+                                            cContent:cContent,
+                                            username:Userinfo.User_Id,
+                                            page: page,
+                                            cShow: item.cShow
                                             })"
-                                            >mdi-file-document-edit</v-icon>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </v-simple-table>
+                                        >mdi-file-document-edit
+                                        </v-icon>
+                                    </v-col>                                    
+                                </v-row>
+                            </v-card>
                         </v-col>
                     </v-row>
                      <v-row>
@@ -188,6 +221,18 @@
     </v-container>
 </template>
 
+<style scoped>
+    html{
+        font-size:10px;
+    }
+    .font-size{
+        font-size: 80%;
+    }
+    .font-size-date{
+        font-size: 60%;
+    }
+</style>
+
 <script>
 import axios from 'axios'
 import Route from '../router/index'
@@ -204,7 +249,6 @@ export default {
             page:1,
             pageUnit:5,
             perPage:5,
-            
         }
     },
     created(){
