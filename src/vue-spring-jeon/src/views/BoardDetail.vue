@@ -2,162 +2,156 @@
     <v-container fluid>
         <BwBar></BwBar>
         <v-row dense>
-            <v-col v-for="n in 1" :key="n" cols="12" md="12" sm="12">
-                <v-card class="text-center pa-3" outlined shaped style="height: 40px;" color="White">
-                    {{board.bTitle}}
+            <v-col>
+                <v-card outlined>
+                    <v-card-text>
+                        <strong class="Center">{{board.bTitle}}</strong>
+                        <div class="text-right">{{board.username}} || {{board.bDateTime}}</div>
+                        <v-spacer></v-spacer>
+                        <div class="text-right">조회 {{board.bViews}}</div>
+                    </v-card-text>                    
                 </v-card>
             </v-col>
         </v-row>
         <v-row dense> 
-            <v-col v-for="n in 1" :key="n" cols="12" md="12" sm="12">
+            <v-col cols="12" md="12" sm="12">
                 <v-card class="text-center pa-3" outlined tile style="height: 600px;" color="Whtie">
                     {{board.bContent}}
                 </v-card>
             </v-col>
         </v-row>
         <v-row dense>
-            <v-col v-for="n in 1" :key="n" cols="12" md="12" sm="12">
+            <v-col cols="12" md="12" sm="12">
                 <v-card class="pa-3" outlined tile style="height:600px;" color="White">
-                    <v-toolbar color="#BBDEFB" rounded>
-                        <v-toolbar-title>Comment List</v-toolbar-title>
-                    </v-toolbar>
-                     <v-simple-table>
-                        <template v-slot:default>
+                    <v-card>
+                        <v-card-text class="text-left border: 1px solid primary">
+                            <strong>전체 댓글 {{commentlist.length}} 개</strong>
+                        </v-card-text>        
+                    </v-card>
+                    <v-row>
+                        <v-col cols="12" md="12" sm="12">
+                            <v-simple-table>
+                                <tbody>
+                                    <tr
+                                        v-for="item in commentlist"
+                                        :key="item.cId"
+                                    >
+                                        <td>{{item.username}}</td>
+                                        <td v-if="item.cDepth > 0">
+                                            [답글] {{ item.cContent }}  
+                                        </td>   
+                                        <td v-else>{{item.cContent}}</td> 
+                                        <td>{{item.cDateTime}}</td>             
+                                        <td>
+                                            <v-icon
+                                                v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
+                                                @click="Show(item)"
+                                                color="amber lighten-1"
+                                            >                    
+                                            mdi-pencil
+                                            </v-icon>
+                                        </td>
+                                        <td>
+                                            <v-icon
+                                            v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
+                                            @click="CommentDelete({
+                                                bId: item.bId, 
+                                                cId: item.cId,
+                                                page: page
+                                            })"
+                                            color="red lighten-3"
+                                                fab
+                                            >mdi-delete</v-icon>
+                                        </td>
 
-                            <thead>
-                                <tr>
-                                    <th class="text-left">ID</th>
-                                    <th class="text-left">Content</th>
-                                    <th class="text-left">작성일자</th>
-                                    <th class="text-left">수정</th>
-                                    <th class="text-left">삭제</th>
-                                    <th class="text-left">대댓글 작성</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr
-                                    v-for="item in commentlist"
-                                    :key="item.cId"
-                                >
-                                <td>{{item.username}}</td>
-                                <td v-if="item.cDepth > 0">
-                                    [답글] {{ item.cContent }}  
-                                </td>   
-                                <td v-else>{{item.cContent}}</td> 
-                                <td>{{item.cDateTime}}</td>             
-                                <td>
-                                    <v-icon
-                                         v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
-                                        @click="Show(item)"
-                                        color="amber lighten-1"
-                                    >                    
-                                    mdi-pencil
-                                    </v-icon>
-                                </td>
-                                <td>
-                                    <v-icon
-                                    v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
-                                    @click="CommentDelete({
-                                        bId: item.bId, 
-                                        cId: item.cId,
-                                        page: page
-                                    })"
-                                    color="red lighten-3"
-                                        fab
-                                    >mdi-delete</v-icon>
-                                </td>
+                                        <td>
+                                            <v-btn
+                                                @click="ShowReply(item)"                                    
+                                                color="grey lighten-1"
+                                                fab
+                                                small
+                                                dark
+                                                >
+                                                <v-icon>mdi-pencil</v-icon>
+                                            </v-btn>
+                                        </td>       
 
-                                <td>
-                                    <v-btn
-                                        @click="ShowReply(item)"                                    
-                                        color="grey lighten-1"
-                                        fab
-                                        small
-                                        dark
-                                        >
-                                        <v-icon>mdi-pencil</v-icon>
-                                    </v-btn>
-                                </td>       
+                                        <td v-if="item.cShow2 === true">
+                                            <v-textarea
+                                                auto-grow
+                                                label="대댓글을 작성하세요"
+                                                name="cContent"
+                                                v-model="cContent"
+                                            ></v-textarea>
+                                        </td>
+                                        <td 
+                                        v-if="item.cShow2 === true">
+                                            <v-icon
+                                            @click="CommentReply({
+                                                bId: item.bId,
+                                                cId: item.cId,
+                                                cContent:cContent,
+                                                username:Userinfo.User_Id,
+                                                page: page,
+                                                cGroup:item.cGroup,
+                                                cOrder:item.cOrder,
+                                                cDepth:item.cDepth
+                                            })"
+                                            >mdi-file-document-edit</v-icon>
+                                        </td>
 
-                                <td v-if="item.cShow2 === true">
-                                    <v-textarea
-                                        auto-grow
-                                        label="대댓글을 작성하세요"
-                                        name="cContent"
-                                        v-model="cContent"
-                                    ></v-textarea>
-                                </td>
-                                <td 
-                                v-if="item.cShow2 === true">
-                                    <v-icon
-                                    @click="CommentReply({
-                                        bId: item.bId,
-                                        cId: item.cId,
-                                        cContent:cContent,
-                                        username:Userinfo.User_Id,
-                                        page: page,
-                                        cGroup:item.cGroup,
-                                        cOrder:item.cOrder,
-                                        cDepth:item.cDepth
-                                    })"
-                                    >mdi-file-document-edit</v-icon>
-                                </td>
-
-                                <td v-if="item.cShow === true">
-                                    <v-textarea
-                                        auto-grow
-                                        label="댓글을 수정하세요"
-                                        name="cContent"
-                                        v-model="cContent"
-                                    ></v-textarea>
-                                </td>
-                                <td v-if="item.cShow === true">
-                                    <v-icon
-                                    @click="CommentEdit({                                        
-                                        bId: item.bId,
-                                        cId: item.cId,
-                                        cContent:cContent,
-                                        username:Userinfo.User_Id,
-                                        page: page,
-                                        cShow: item.cShow
-                                    })"
-                                    >mdi-file-document-edit</v-icon>
-                                </td>
-                            </tr>
-                                                     
-                            </tbody>
-                            <tfoot>
+                                        <td v-if="item.cShow === true">
+                                            <v-textarea
+                                                auto-grow
+                                                label="댓글을 수정하세요"
+                                                name="cContent"
+                                                v-model="cContent"
+                                            ></v-textarea>
+                                        </td>
+                                        <td v-if="item.cShow === true">
+                                            <v-icon
+                                            @click="CommentEdit({                                        
+                                                bId: item.bId,
+                                                cId: item.cId,
+                                                cContent:cContent,
+                                                username:Userinfo.User_Id,
+                                                page: page,
+                                                cShow: item.cShow
+                                            })"
+                                            >mdi-file-document-edit</v-icon>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </v-simple-table>
+                        </v-col>
+                    </v-row>
+                     <v-row>
+                        <v-col cols="12" md="12" sm="12">
+                            <tfoot class="Center">
                                 <v-pagination
-                                v-model="page"
-                                :length="Pagination.lastPage"
-                                circle
-                                @input="move({page:page, bId:board.bId , board:board})"
+                                    v-model="page"
+                                    :length="Pagination.lastPage"
+                                    circle
+                                    @input="move({page:page, bId:board.bId , board:board})"
                                 >
                                 </v-pagination>
                             </tfoot>
-                            
-                        </template>
-                    </v-simple-table>
+                        </v-col>
+                    </v-row>
                 </v-card>
             </v-col>
         </v-row>
-        
-        <v-row>
-            <v-col v-for="n in 1" :key="n" cols="12" md="12" sm="12">
-                <v-card class="pa-3" outlined tile style="height:100px;" color="White">
-                    미구현
-                </v-card>
-            </v-col>
-        </v-row>    
 
         <v-row dense
-            v-if="$store.state.Show === false"
+            v-if="this.$store.state.Show === false"
            >
-            <v-col v-for="n in 1" :key="n" cols="12" md="12" sm="12">
-                <v-card class="pa-3" outlined tile style="height:300px;" color="White">
-                    <v-toolbar rounded color="#BBDEFB">
-                        <v-toolbar-title>Comment Edit</v-toolbar-title>
-                    </v-toolbar>
+            <v-col cols="12" md="12" sm="12">
+                 <v-card class="pa-3" outlined tile style="height:600px;" color="White">
+                    <v-card>
+                        <v-card-text class="text-left border: 1px solid primary">
+                            <strong>댓글 작성</strong>
+                        </v-card-text>        
+                    </v-card>
                     <v-form class="pa-3">
                         <v-textarea
                             outlined
@@ -167,15 +161,23 @@
                             v-model="cContent"
                         >
                         </v-textarea>
-                        <v-btn small
-                            @click="CommentWrite(
+                        
+                        <v-row>
+                            <v-col cols="12" md="12" sm="12" class="text-right">
+                                <v-btn large outlined
+                                    @click="CommentWrite(
                                 {
                                     page:page,
                                     cContent:cContent,                                     
                                     username:Userinfo.User_Id,
                                     bId:bId
                                 })"
-                        >댓글 작성</v-btn>
+                                > 댓글 작성 완료
+                                    <v-icon>mdi-pencil</v-icon>
+                                </v-btn>
+                            </v-col>
+                        </v-row>
+                        
                     </v-form>
                 </v-card>
             </v-col>

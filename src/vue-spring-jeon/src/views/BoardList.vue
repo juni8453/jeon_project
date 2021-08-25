@@ -3,7 +3,7 @@
       <BwBar></BwBar>
       <v-row no-gutters>  
         <v-row>
-          <v-col cols="6" md="6" sm="6"
+          <v-col cols="12" md="6" sm="6"
             v-for="item in boardlist" :key="item.bId">
             <v-row>
               <v-col cols="12" md="12" sm="12"> 

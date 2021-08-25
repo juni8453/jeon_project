@@ -50,7 +50,7 @@
                       <v-col cols="4" md="4" sm="4">
                           Jeon Shopping Mall
                       </v-col>
-                      <v-col cols="2">
+                      <v-col cols="4" md="4" sm="4">
                           <v-btn text exact
                           router :to="{name:'HotItems'}"
                           >
@@ -61,7 +61,7 @@
                           </v-btn>
                       </v-col>
                       
-                      <v-col cols="2" md="4" sm="4">
+                      <v-col cols="4" md="4" sm="4">
                           <v-btn text exact
                           router :to="{name:'LatestItems'}"
                           >

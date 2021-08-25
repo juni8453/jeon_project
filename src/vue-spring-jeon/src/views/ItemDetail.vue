@@ -172,7 +172,7 @@
   </v-container>
 </template>
 
-<style>
+<style> /* style - 전역 style scoped 해당 스크립트만 */
   .Center { 
   display: grid;
   align-items: center;      /* 수직 중앙 정렬*/
