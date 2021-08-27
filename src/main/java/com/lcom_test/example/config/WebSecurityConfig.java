@@ -20,6 +20,8 @@ import com.lcom_test.example.service.UserService;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+//	 - WebSecurityConfigurerAdapter Class를 상속받는 자식 클래스
+//   - 웹 보안 기능 초기화, 설정 및 구현하는 클래스
 	
 	@Autowired
 	private UserService userService;
@@ -27,8 +29,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	private AuthEntryPointJwt unauthorizedHandler;
-	// AuthEntryPointJwt Class는 AuthenticationEntryPoint interface를 구현하는 내가 만든 Class
-	// 401 Error 처리 로직
+//	 - 401 Error 처리 클래스
+//	 - config package에 만들어놓은 클래스
 	
 	@Bean
 	public AuthTokenFilter authenticationJwtTokenFilter() {
@@ -38,11 +40,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-		authenticationManagerBuilder.userDetailsService(userService).passwordEncoder(passwordEncoder());
+		authenticationManagerBuilder
+			.userDetailsService(userService)
+			.passwordEncoder(passwordEncoder());
 	} 
-	// WebSecurityConfigurerAdapter Class 메소드 Override
-	// 인증을 담당할 AuthenticationProvider을 설정하는 메소드
-	// UserDetailsService 구현체와 PasswordEncoder 구현체를 설정
+//	 - 부모 클래스 WebSecurityConfigurerAdapter 에서 상속받은 메서드
+//	 - 스프링 시큐리티의 인증에 대한 지원을 설정하는 몇 가지의 메서드를 지원하는
+//	   AuthenticationManagerBuilder 클래스를 매개변수로 받음
+//	 1. DB에서 아이디로 사용자 정보(비밀번호 포함)을 조회
+//	 2. 입력받은 비밀번호 인코딩
+//	 3. 인코딩한 비밀번호와 사용자 정보의 비밀번호를 비교
 
 	@Bean
 	@Override

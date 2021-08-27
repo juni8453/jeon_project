@@ -10,7 +10,7 @@
                 <v-card outlined>
                   <v-row>
                     <v-col cols="8" md="8" sm="8">
-                      <v-card-text class="Center"
+                      <v-card-text
                         v-if="item.bDepth > 0"
                       >
                         <strong class="text-color">[Re]{{item.bTitle}}</strong>
@@ -34,10 +34,7 @@
                   </v-row>
                   <v-card-text>
                     <v-row>
-                      <v-col cols="6" md="6" sm="6">
-                        {{item.bDateTime}} | {{item.username}}
-                      </v-col>
-                      <v-col cols="2" md="2" sm="2" class="Center">
+                      <v-col cols="3" md="3" sm="3">
                         <v-btn outlined
                           icon
                           router :to="{name:'BoardDetail', 
@@ -46,7 +43,7 @@
                         <v-icon>mdi-file-eye</v-icon>
                         </v-btn>
                       </v-col>
-                      <v-col cols="2" md="2" sm="2" class="Center">
+                      <v-col cols="3" md="3" sm="3">
                         <v-btn outlined
                           icon
                           color="indigo"
@@ -60,17 +57,32 @@
                         }"
                         >
                         <v-icon>mdi-pencil</v-icon>
+                        </v-btn>                       
+                      </v-col>
+                      <v-col cols="3" md="3" sm="3">
+                        <v-btn outlined
+                          icon
+                          color="black"
+                          v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
+                          @click="BoardEdit({bId:item.bId})"
+                        >
+                          <v-icon>mdi-file-document-edit</v-icon>
                         </v-btn>
                       </v-col>
-                      <v-col cols="2" md="2" sm="2" class="Center">
+                        <v-col cols="3" md="3" sm="3">
                         <v-btn outlined
                           icon
                           color="red"
                           v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
                           @click="BoardDelete({bId:item.bId, page:page})"
                         >
-                        <v-icon>mdi-delete</v-icon>
+                          <v-icon>mdi-delete</v-icon>
                         </v-btn>
+                      </v-col> 
+                    </v-row>
+                    <v-row>
+                      <v-col cols="12" md="12" sm="12">
+                        {{item.bDateTime}} | {{item.username}}
                       </v-col>
                     </v-row>
                   </v-card-text>

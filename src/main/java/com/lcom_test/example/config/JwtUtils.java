@@ -26,7 +26,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class JwtUtils {
 
-	private static final String jwtSecret = "lcomputerstudyexample"; //원하는 시크릿키로 수정
+	private static final String jwtSecret = "jeonproduct"; //원하는 시크릿키
 	
 	private static final int jwtExpirationMs = 864000; // 토큰 유효시간 설정
 	

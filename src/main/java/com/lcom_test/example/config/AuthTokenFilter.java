@@ -49,7 +49,7 @@ public class AuthTokenFilter extends OncePerRequestFilter{
 				//jwt를 통한 회원 아이디 추출
 				String username = jwtUtils.getUserNameFromJwtToken(jwt);
 				
-				//security를 통한 인증 로직
+				//security를 통한 인증 
 				UserDetails userDetails = userService.loadUserByUsername(username);
 				UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
 						userDetails, null, userDetails.getAuthorities());
