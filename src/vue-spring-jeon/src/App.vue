@@ -102,7 +102,7 @@
       v-if="isLogin === true && Userinfo.User_auth.includes('ROLE_ADMIN')" 
       >
       </v-app-bar-nav-icon>
-      <v-toolbar-title>Jeon Board Page</v-toolbar-title>
+      <!-- <v-toolbar-title>Jeon Board Page</v-toolbar-title> -->
       <v-spacer></v-spacer>
       <div
        v-if="isLogin === true"

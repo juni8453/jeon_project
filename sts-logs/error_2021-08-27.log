@@ -1,0 +1,1365 @@
+10:46:46.139 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Starting LcomTestApplication on DESKTOP-CD0KHBQ with PID 11492 (C:\Users\l9-morning\Documents\lcom_test\bin\main started by l9-morning in C:\Users\l9-morning\Documents\lcom_test) 
+10:46:46.143 DEBUG --- [restartedMain] c.l.example.LcomTestApplication : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE 
+10:46:46.143 INFO  --- [restartedMain] c.l.example.LcomTestApplication : The following profiles are active: local 
+10:46:47.444 DEBUG --- [restartedMain] c.l.example.config.AuthTokenFilter : Filter 'authenticationJwtTokenFilter' configured for use 
+10:46:47.877 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Started LcomTestApplication in 2.107 seconds (JVM running for 2.862) 
+10:47:08.507 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:47:08.530 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:47:08.554 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:47:08.554 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:47:08.555 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:47:08.556 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:47:08.556 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:47:08.556 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:47:08.556 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:47:08.556 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:47:12.383 INFO  --- [http-nio-9000-exec-3] c.l.e.controller.AuthController : testLoginRequest [username=qqq, password=qqqq] 
+10:47:12.474 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:47:12.475 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:47:12.483 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:47:12.484 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:47:12.484 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:47:12.484 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:47:12.485 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:47:12.493 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:47:12.493 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:47:12.493 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:47:12.611 INFO  --- [http-nio-9000-exec-3] c.l.e.controller.AuthController : ddddUser [username=qqq, password=$2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, name=test1, phone=x, uDateTime=null, authorities=[ROLE_ADMIN], isAccountNonExpired=true, isAccountNonLocked=true, isCredentialsNonExpired=true, isEnabled=true] 
+10:47:12.689 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:47:12.690 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:47:12.698 TRACE --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:47:12.698 TRACE --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:47:12.699 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:47:12.699 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:47:12.699 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:47:12.707 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:47:12.707 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:47:12.708 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:47:12.709 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:47:12.709 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:47:12.718 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:47:12.718 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:47:12.718 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:47:12.719 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:47:12.719 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:47:12.719 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:47:12.719 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:47:12.719 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:47:17.524 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:47:17.524 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:47:17.533 TRACE --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:47:17.533 TRACE --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:47:17.534 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:47:17.535 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:47:17.537 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:47:17.546 TRACE --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:47:17.547 TRACE --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:47:17.547 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:47:17.559 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectRankList : ==>  Preparing: SELECT * FROM vue_product p LEFT JOIN vue_img i ON p.p_name = i.p_name ORDER BY p_like DESC 
+10:47:17.559 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectRankList : ==> Parameters:  
+10:47:17.567 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectRankList : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, i_id, i_name, p_name 
+10:47:17.570 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectRankList : <==        Row: 214, order, 2021-08-24 08:14:49, 2222, Test, Test, 0, 21, 221, 20210824171449쇼핑몰 예시 1 - 복사본 - 복사본.PNG, order 
+10:47:17.574 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectRankList : <==      Total: 1 
+10:47:23.394 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:47:23.395 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:47:23.403 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:47:23.403 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:47:23.403 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:47:23.403 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:47:23.404 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:47:23.404 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:47:23.405 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:47:23.405 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:47:25.260 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:47:25.260 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:47:25.269 TRACE --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:47:25.269 TRACE --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:47:25.270 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:47:25.270 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:47:25.270 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:47:25.279 TRACE --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:47:25.279 TRACE --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:47:25.279 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:47:25.280 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : ==>  Preparing: SELECT * FROM vue_product p LEFT JOIN vue_img i ON p.p_name = i.p_name ORDER BY p_like DESC 
+10:47:25.280 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : ==> Parameters:  
+10:47:25.288 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, i_id, i_name, p_name 
+10:47:25.288 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : <==        Row: 214, order, 2021-08-24 08:14:49, 2222, Test, Test, 0, 21, 221, 20210824171449쇼핑몰 예시 1 - 복사본 - 복사본.PNG, order 
+10:47:25.289 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : <==      Total: 1 
+10:47:32.229 DEBUG --- [http-nio-9000-exec-10] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:47:32.229 DEBUG --- [http-nio-9000-exec-10] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:47:32.238 TRACE --- [http-nio-9000-exec-10] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:47:32.238 TRACE --- [http-nio-9000-exec-10] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:47:32.238 DEBUG --- [http-nio-9000-exec-10] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:47:32.238 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:47:32.239 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:47:32.246 TRACE --- [http-nio-9000-exec-10] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:47:32.246 TRACE --- [http-nio-9000-exec-10] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:47:32.247 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:47:32.249 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:47:32.250 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:47:32.261 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:47:32.261 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:47:32.261 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:47:32.262 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:47:32.262 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:47:32.262 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:47:32.262 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:47:32.262 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:47:50.199 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:47:50.199 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:47:50.208 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:47:50.208 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:47:50.208 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:47:50.208 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:47:50.209 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:47:50.218 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:47:50.218 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:47:50.218 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:47:50.219 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:47:50.219 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:47:50.227 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:47:50.227 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:47:50.227 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:47:50.227 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:47:50.227 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:47:50.227 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:47:50.228 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:47:50.228 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:48:42.743 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:48:42.743 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:48:42.752 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:48:42.752 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:48:42.752 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:48:42.752 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:48:42.752 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:48:42.752 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:48:42.752 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:48:42.752 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:48:48.989 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:48:48.989 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:48:48.997 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:48:48.997 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:48:48.997 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:48:48.997 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:48:48.997 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:48:48.997 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:48:48.998 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:48:48.998 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:48:59.425 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:48:59.426 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:48:59.435 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:48:59.435 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:48:59.435 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:48:59.435 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:48:59.435 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:48:59.444 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:48:59.444 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:48:59.444 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:48:59.445 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:48:59.445 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:48:59.454 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:48:59.454 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:48:59.454 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:48:59.454 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:48:59.454 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:48:59.454 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:48:59.454 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:48:59.454 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:49:23.344 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:49:23.344 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:49:23.352 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:49:23.352 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:49:23.352 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:49:23.353 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:49:23.353 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:49:23.353 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:49:23.353 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:49:23.353 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:49:39.127 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:49:39.127 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:49:39.136 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:49:39.136 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:49:39.136 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:49:39.136 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:49:39.136 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:49:39.136 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:49:39.136 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:49:39.136 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:49:44.745 INFO  --- [http-nio-9000-exec-7] c.l.e.controller.AuthController : testLoginRequest [username=qqq, password=qqqq] 
+10:49:44.752 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:49:44.753 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:49:44.761 TRACE --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:49:44.761 TRACE --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:49:44.761 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:49:44.761 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:49:44.762 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:49:44.770 TRACE --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:49:44.770 TRACE --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:49:44.770 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:49:44.850 INFO  --- [http-nio-9000-exec-7] c.l.e.controller.AuthController : ddddUser [username=qqq, password=$2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, name=test1, phone=x, uDateTime=null, authorities=[ROLE_ADMIN], isAccountNonExpired=true, isAccountNonLocked=true, isCredentialsNonExpired=true, isEnabled=true] 
+10:49:44.900 DEBUG --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:49:44.900 DEBUG --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:49:44.908 TRACE --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:49:44.908 TRACE --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:49:44.908 DEBUG --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:49:44.908 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:49:44.908 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:49:44.917 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:49:44.917 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:49:44.917 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:49:44.918 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:49:44.918 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:49:44.927 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:49:44.927 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:49:44.927 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:49:44.927 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:49:44.927 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:49:44.927 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:49:44.927 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:49:44.927 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:49:55.087 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:49:55.087 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:49:55.096 TRACE --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:49:55.096 TRACE --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:49:55.096 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:49:55.096 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:49:55.096 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:49:55.105 TRACE --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:49:55.105 TRACE --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:49:55.105 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:49:55.106 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:49:55.106 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:49:55.115 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:49:55.115 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:49:55.115 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:49:55.115 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:49:55.115 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:49:55.115 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:49:55.115 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:49:55.115 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:50:00.721 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:50:00.722 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:50:00.730 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:50:00.730 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:50:00.730 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:50:00.730 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:50:00.730 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:50:00.730 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:50:00.730 TRACE --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:50:00.730 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:50:04.409 INFO  --- [http-nio-9000-exec-1] c.l.e.controller.AuthController : testLoginRequest [username=qqq, password=qqqq] 
+10:50:04.417 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:50:04.418 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:50:04.426 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:50:04.426 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:50:04.426 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:50:04.426 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:50:04.427 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:50:04.435 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:50:04.435 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:50:04.435 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:50:04.513 INFO  --- [http-nio-9000-exec-1] c.l.e.controller.AuthController : ddddUser [username=qqq, password=$2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, name=test1, phone=x, uDateTime=null, authorities=[ROLE_ADMIN], isAccountNonExpired=true, isAccountNonLocked=true, isCredentialsNonExpired=true, isEnabled=true] 
+10:50:04.566 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:50:04.566 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:50:04.575 TRACE --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:50:04.575 TRACE --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:50:04.575 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:50:04.575 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:50:04.575 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:50:04.584 TRACE --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:50:04.584 TRACE --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:50:04.584 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:50:04.585 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:50:04.585 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:50:04.593 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:50:04.593 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:50:04.593 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:50:04.593 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:50:04.593 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:50:04.593 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:50:04.593 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:50:04.593 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:50:11.456 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:50:11.456 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:50:11.465 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:50:11.465 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:50:11.465 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:50:11.465 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:50:11.465 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:50:11.474 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:50:11.474 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:50:11.474 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:50:11.474 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:50:11.474 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:50:11.483 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:50:11.483 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:50:11.483 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:50:11.483 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:50:11.483 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:50:11.483 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:50:11.483 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:50:11.483 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:50:43.877 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:50:43.877 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:50:43.886 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:50:43.886 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:50:43.886 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:50:43.886 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:50:43.886 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:50:43.886 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:50:43.886 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:50:43.886 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:50:51.043 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:50:51.044 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:50:51.052 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:50:51.052 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:50:51.052 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:50:51.052 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:50:51.052 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:50:51.052 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:50:51.052 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:50:51.052 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:54:57.937 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:54:57.937 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:54:57.946 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:54:57.946 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:54:57.946 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:54:57.946 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:54:57.946 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:54:57.946 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:54:57.946 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:54:57.946 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:56:19.810 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:56:19.811 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:56:19.820 TRACE --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:56:19.820 TRACE --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:56:19.820 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:56:19.820 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:56:19.820 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:56:19.829 TRACE --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:56:19.829 TRACE --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:56:19.829 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:56:19.830 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:56:19.830 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:56:19.838 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:56:19.838 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:56:19.838 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:56:19.838 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:56:19.838 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:56:19.838 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:56:19.838 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:56:19.838 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:58:47.870 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Starting LcomTestApplication on DESKTOP-CD0KHBQ with PID 9516 (C:\Users\l9-morning\Documents\lcom_test\bin\main started by l9-morning in C:\Users\l9-morning\Documents\lcom_test) 
+10:58:47.872 DEBUG --- [restartedMain] c.l.example.LcomTestApplication : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE 
+10:58:47.872 INFO  --- [restartedMain] c.l.example.LcomTestApplication : The following profiles are active: local 
+10:58:48.997 DEBUG --- [restartedMain] c.l.example.config.AuthTokenFilter : Filter 'authenticationJwtTokenFilter' configured for use 
+10:58:49.201 WARN  --- [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: role should not start with 'ROLE_' since it is automatically inserted. Got 'ROLE_ADMIN' 
+10:58:49.212 ERROR --- [restartedMain] o.s.boot.SpringApplication : Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: role should not start with 'ROLE_' since it is automatically inserted. Got 'ROLE_ADMIN'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:483)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:311)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.lcom_test.example.LcomTestApplication.main(LcomTestApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: role should not start with 'ROLE_' since it is automatically inserted. Got 'ROLE_ADMIN'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650)
+	... 27 common frames omitted
+Caused by: java.lang.IllegalArgumentException: role should not start with 'ROLE_' since it is automatically inserted. Got 'ROLE_ADMIN'
+	at org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer.hasRole(ExpressionUrlAuthorizationConfigurer.java:248)
+	at org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer.access$400(ExpressionUrlAuthorizationConfigurer.java:81)
+	at org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer$AuthorizedUrl.hasRole(ExpressionUrlAuthorizationConfigurer.java:330)
+	at com.lcom_test.example.config.WebSecurityConfig.configure(WebSecurityConfig.java:72)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.getHttp(WebSecurityConfigurerAdapter.java:231)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.init(WebSecurityConfigurerAdapter.java:322)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.init(WebSecurityConfigurerAdapter.java:94)
+	at com.lcom_test.example.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$dcbc56fd.init(<generated>)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.init(AbstractConfiguredSecurityBuilder.java:370)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:324)
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:41)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration.springSecurityFilterChain(WebSecurityConfiguration.java:104)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 28 common frames omitted
+10:59:13.865 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Starting LcomTestApplication on DESKTOP-CD0KHBQ with PID 6184 (C:\Users\l9-morning\Documents\lcom_test\bin\main started by l9-morning in C:\Users\l9-morning\Documents\lcom_test) 
+10:59:13.867 DEBUG --- [restartedMain] c.l.example.LcomTestApplication : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE 
+10:59:13.867 INFO  --- [restartedMain] c.l.example.LcomTestApplication : The following profiles are active: local 
+10:59:15.011 DEBUG --- [restartedMain] c.l.example.config.AuthTokenFilter : Filter 'authenticationJwtTokenFilter' configured for use 
+10:59:15.221 WARN  --- [restartedMain] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: role should not start with 'ROLE_' since it is automatically inserted. Got 'ROLE_ADMIN' 
+10:59:15.233 ERROR --- [restartedMain] o.s.boot.SpringApplication : Application run failed 
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'springSecurityFilterChain' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: role should not start with 'ROLE_' since it is automatically inserted. Got 'ROLE_ADMIN'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:483)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:311)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.lcom_test.example.LcomTestApplication.main(LcomTestApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.servlet.Filter]: Factory method 'springSecurityFilterChain' threw exception; nested exception is java.lang.IllegalArgumentException: role should not start with 'ROLE_' since it is automatically inserted. Got 'ROLE_ADMIN'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650)
+	... 27 common frames omitted
+Caused by: java.lang.IllegalArgumentException: role should not start with 'ROLE_' since it is automatically inserted. Got 'ROLE_ADMIN'
+	at org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer.hasRole(ExpressionUrlAuthorizationConfigurer.java:248)
+	at org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer.access$400(ExpressionUrlAuthorizationConfigurer.java:81)
+	at org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer$AuthorizedUrl.hasRole(ExpressionUrlAuthorizationConfigurer.java:330)
+	at com.lcom_test.example.config.WebSecurityConfig.configure(WebSecurityConfig.java:72)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.getHttp(WebSecurityConfigurerAdapter.java:231)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.init(WebSecurityConfigurerAdapter.java:322)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter.init(WebSecurityConfigurerAdapter.java:94)
+	at com.lcom_test.example.config.WebSecurityConfig$$EnhancerBySpringCGLIB$$266c9a77.init(<generated>)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.init(AbstractConfiguredSecurityBuilder.java:370)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:324)
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:41)
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration.springSecurityFilterChain(WebSecurityConfiguration.java:104)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 28 common frames omitted
+10:59:48.083 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Starting LcomTestApplication on DESKTOP-CD0KHBQ with PID 18072 (C:\Users\l9-morning\Documents\lcom_test\bin\main started by l9-morning in C:\Users\l9-morning\Documents\lcom_test) 
+10:59:48.084 DEBUG --- [restartedMain] c.l.example.LcomTestApplication : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE 
+10:59:48.085 INFO  --- [restartedMain] c.l.example.LcomTestApplication : The following profiles are active: local 
+10:59:49.230 DEBUG --- [restartedMain] c.l.example.config.AuthTokenFilter : Filter 'authenticationJwtTokenFilter' configured for use 
+10:59:49.631 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Started LcomTestApplication in 1.852 seconds (JVM running for 2.379) 
+10:59:56.857 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:59:56.877 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:59:56.900 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:59:56.900 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:59:56.902 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:59:56.905 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:59:56.905 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:59:56.913 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:59:56.913 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:59:56.913 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:59:56.935 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:59:56.936 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:59:56.943 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:59:56.943 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:59:56.943 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:59:56.944 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:59:56.944 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:59:56.944 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:59:56.944 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:59:56.944 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+10:59:59.470 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:59:59.470 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:59:59.478 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:59:59.478 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:59:59.478 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:59:59.478 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:59:59.479 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:59:59.486 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:59:59.486 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:59:59.486 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:59:59.501 INFO  --- [http-nio-9000-exec-3] c.l.e.controller.AuthController : testLoginRequest [username=qqq, password=qqqq] 
+10:59:59.580 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:59:59.580 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:59:59.588 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:59:59.588 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:59:59.589 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:59:59.589 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:59:59.589 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:59:59.597 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:59:59.598 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:59:59.598 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:59:59.679 INFO  --- [http-nio-9000-exec-3] c.l.e.controller.AuthController : ddddUser [username=qqq, password=$2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, name=test1, phone=x, uDateTime=null, authorities=[ROLE_ADMIN], isAccountNonExpired=true, isAccountNonLocked=true, isCredentialsNonExpired=true, isEnabled=true] 
+10:59:59.737 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+10:59:59.737 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+10:59:59.745 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+10:59:59.745 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+10:59:59.745 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+10:59:59.745 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+10:59:59.746 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+10:59:59.753 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+10:59:59.753 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+10:59:59.753 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+10:59:59.754 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+10:59:59.754 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+10:59:59.762 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+10:59:59.762 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+10:59:59.763 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+10:59:59.763 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+10:59:59.763 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+10:59:59.763 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+10:59:59.764 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+10:59:59.764 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:00:36.542 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:00:36.543 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:00:36.550 TRACE --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:00:36.550 TRACE --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:00:36.550 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:00:36.551 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:00:36.551 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:00:36.558 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:00:36.558 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:00:36.558 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:00:36.559 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:00:36.560 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:00:36.567 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:00:36.567 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:00:36.568 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:00:36.568 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:00:36.568 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:00:36.569 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:00:36.570 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:00:36.570 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:00:40.135 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:00:40.135 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:00:40.143 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:00:40.143 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:00:40.143 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:00:40.143 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:00:40.143 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:00:40.143 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:00:40.144 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:00:40.144 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:00:48.094 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:00:48.094 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:00:48.104 TRACE --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:00:48.104 TRACE --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:00:48.104 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:00:48.105 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:00:48.105 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:00:48.113 TRACE --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:00:48.113 TRACE --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:00:48.114 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:00:48.115 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:00:48.115 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:00:48.122 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:00:48.122 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:00:48.122 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:00:48.122 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:00:48.122 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:00:48.122 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:00:48.122 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:00:48.123 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:04:08.424 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Starting LcomTestApplication on DESKTOP-CD0KHBQ with PID 15012 (C:\Users\l9-morning\Documents\lcom_test\bin\main started by l9-morning in C:\Users\l9-morning\Documents\lcom_test) 
+11:04:08.426 DEBUG --- [restartedMain] c.l.example.LcomTestApplication : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE 
+11:04:08.426 INFO  --- [restartedMain] c.l.example.LcomTestApplication : The following profiles are active: local 
+11:04:09.555 DEBUG --- [restartedMain] c.l.example.config.AuthTokenFilter : Filter 'authenticationJwtTokenFilter' configured for use 
+11:04:09.959 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Started LcomTestApplication in 1.84 seconds (JVM running for 2.368) 
+11:04:17.583 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:04:17.607 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:04:17.630 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:04:17.631 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:04:17.632 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:04:17.635 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:04:17.635 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:04:17.646 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:04:17.646 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:04:17.646 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:04:17.689 INFO  --- [http-nio-9000-exec-1] c.l.e.controller.AuthController : testLoginRequest [username=qqq, password=qqqq] 
+11:04:17.770 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:04:17.771 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:04:17.780 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:04:17.780 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:04:17.780 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:04:17.780 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:04:17.781 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:04:17.789 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:04:17.789 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:04:17.789 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:04:17.874 INFO  --- [http-nio-9000-exec-1] c.l.e.controller.AuthController : ddddUser [username=qqq, password=$2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, name=test1, phone=x, uDateTime=null, authorities=[ROLE_ADMIN], isAccountNonExpired=true, isAccountNonLocked=true, isCredentialsNonExpired=true, isEnabled=true] 
+11:04:17.947 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:04:17.948 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:04:17.957 TRACE --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:04:17.957 TRACE --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:04:17.957 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:04:17.958 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:04:17.958 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:04:17.966 TRACE --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:04:17.966 TRACE --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:04:17.966 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:04:17.969 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:04:17.970 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:04:17.978 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:04:17.978 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:04:17.978 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:04:17.979 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:04:17.979 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:04:17.979 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:04:17.979 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:04:17.979 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:04:25.736 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:04:25.736 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:04:25.745 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:04:25.745 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:04:25.745 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:04:25.746 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:04:25.746 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:04:25.755 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:04:25.755 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:04:25.755 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:04:25.756 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:04:25.756 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:04:25.765 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:04:25.765 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:04:25.765 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:04:25.765 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:04:25.766 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:04:25.766 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:04:25.766 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:04:25.766 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:04:32.787 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:04:32.787 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:04:32.795 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:04:32.796 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:04:32.796 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:04:32.796 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:04:32.796 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:04:32.804 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:04:32.804 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:04:32.804 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:04:32.811 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectRankList : ==>  Preparing: SELECT * FROM vue_product p LEFT JOIN vue_img i ON p.p_name = i.p_name ORDER BY p_like DESC 
+11:04:32.811 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectRankList : ==> Parameters:  
+11:04:32.820 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectRankList : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, i_id, i_name, p_name 
+11:04:32.821 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectRankList : <==        Row: 214, order, 2021-08-24 08:14:49, 2222, Test, Test, 0, 21, 221, 20210824171449쇼핑몰 예시 1 - 복사본 - 복사본.PNG, order 
+11:04:32.823 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectRankList : <==      Total: 1 
+11:04:37.691 DEBUG --- [http-nio-9000-exec-6] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:04:37.691 DEBUG --- [http-nio-9000-exec-6] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:04:37.701 TRACE --- [http-nio-9000-exec-6] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:04:37.702 TRACE --- [http-nio-9000-exec-6] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:04:37.702 DEBUG --- [http-nio-9000-exec-6] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:04:37.702 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:04:37.702 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:04:37.711 TRACE --- [http-nio-9000-exec-6] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:04:37.711 TRACE --- [http-nio-9000-exec-6] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:04:37.712 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:04:37.718 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.getBoardCount : ==>  Preparing: SELECT COUNT(*) as count FROM vue_board 
+11:04:37.719 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.getBoardCount : ==> Parameters:  
+11:04:37.728 TRACE --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.getBoardCount : <==    Columns: count 
+11:04:37.728 TRACE --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.getBoardCount : <==        Row: 8 
+11:04:37.729 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.getBoardCount : <==      Total: 1 
+11:04:37.730 INFO  --- [http-nio-9000-exec-6] c.l.e.controller.AuthController : com.lcom_test.example.domain.Board@6057b618 
+11:04:37.730 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.selectBoardList : ==>  Preparing: SELECT b_id as bId, b_writer as bWriter, b_title as bTitle, b_content as bContent, b_datetime as bDateTime, b_views as bViews, b_group as bGroup, b_order as bOrder, b_depth as bDepth, u_id as username FROM vue_board ORDER BY b_group DESC, b_order ASC LIMIT ?,? 
+11:04:37.730 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.selectBoardList : ==> Parameters: 0(Integer), 6(Integer) 
+11:04:37.739 TRACE --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.selectBoardList : <==    Columns: bId, bWriter, bTitle, bContent, bDateTime, bViews, bGroup, bOrder, bDepth, username 
+11:04:37.739 TRACE --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 140, null, 6번글, 6, 2021-08-23 14:42:13, 150, 140, 0, 0, qqq 
+11:04:37.740 TRACE --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 143, null, 6번글의 답글, 6번글의 답글, 2021-08-24 05:56:10, 3, 140, 1, 1, qqq 
+11:04:37.741 TRACE --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 144, null, qq, qq, 2021-08-24 12:38:45, 1, 140, 2, 2, qqq 
+11:04:37.741 TRACE --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 139, null, 5번글, 5, 2021-08-23 14:42:08, 0, 139, 0, 0, qqq 
+11:04:37.742 TRACE --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 138, null, 4번글, 4, 2021-08-23 14:41:38, 0, 138, 0, 0, qqq 
+11:04:37.743 TRACE --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 137, null, 3번글, 3, 2021-08-23 14:41:33, 0, 137, 0, 0, qqq 
+11:04:37.744 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.BoardMapper.selectBoardList : <==      Total: 6 
+11:04:37.744 INFO  --- [http-nio-9000-exec-6] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Board@64610669, com.lcom_test.example.domain.Board@39db9b8b, com.lcom_test.example.domain.Board@2c34c3ee, com.lcom_test.example.domain.Board@120011d1, com.lcom_test.example.domain.Board@7e3e0fb6, com.lcom_test.example.domain.Board@1bdcc439] 
+11:04:38.756 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:04:38.756 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:04:38.765 TRACE --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:04:38.765 TRACE --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:04:38.765 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:04:38.765 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:04:38.766 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:04:38.775 TRACE --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:04:38.775 TRACE --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:04:38.775 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:04:38.776 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:04:38.776 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:04:38.784 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:04:38.785 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:04:38.785 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:04:38.785 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:04:38.785 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:04:38.786 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:04:38.786 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:04:38.786 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:04:40.606 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:04:40.606 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:04:40.614 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:04:40.614 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:04:40.614 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:04:40.614 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:04:40.615 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:04:40.615 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:04:40.615 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:04:40.615 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:04:44.032 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:04:44.032 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:04:44.041 TRACE --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:04:44.042 TRACE --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:04:44.042 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:04:44.043 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:04:44.045 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:04:44.055 TRACE --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:04:44.055 TRACE --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:04:44.056 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:04:44.057 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : ==>  Preparing: SELECT * FROM vue_product p LEFT JOIN vue_img i ON p.p_name = i.p_name ORDER BY p_like DESC 
+11:04:44.058 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : ==> Parameters:  
+11:04:44.066 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, i_id, i_name, p_name 
+11:04:44.066 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : <==        Row: 214, order, 2021-08-24 08:14:49, 2222, Test, Test, 0, 21, 221, 20210824171449쇼핑몰 예시 1 - 복사본 - 복사본.PNG, order 
+11:04:44.068 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : <==      Total: 1 
+11:04:46.265 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:04:46.265 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:04:46.274 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:04:46.274 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:04:46.274 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:04:46.274 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:04:46.274 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:04:46.283 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:04:46.283 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:04:46.283 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:04:46.286 DEBUG --- [http-nio-9000-exec-1] c.l.e.controller.AuthController : pName:order 
+11:04:46.286 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.getProduct : ==>  Preparing: SELECT * FROM vue_product ta LEFT JOIN vue_img tb ON ta.p_name = tb.p_name WHERE ta.p_name = ? 
+11:04:46.286 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.getProduct : ==> Parameters: order(String) 
+11:04:46.297 TRACE --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.getProduct : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, i_id, i_name, p_name 
+11:04:46.297 TRACE --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.getProduct : <==        Row: 214, order, 2021-08-24 08:14:49, 2222, Test, Test, 0, 21, 221, 20210824171449쇼핑몰 예시 1 - 복사본 - 복사본.PNG, order 
+11:04:46.298 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.ProductMapper.getProduct : <==      Total: 1 
+11:04:47.391 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:04:47.391 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:04:47.400 TRACE --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:04:47.400 TRACE --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:04:47.400 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:04:47.400 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:04:47.400 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:04:47.408 TRACE --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:04:47.408 TRACE --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:04:47.408 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:04:47.408 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectRankList : ==>  Preparing: SELECT * FROM vue_product p LEFT JOIN vue_img i ON p.p_name = i.p_name ORDER BY p_like DESC 
+11:04:47.409 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectRankList : ==> Parameters:  
+11:04:47.419 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectRankList : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, i_id, i_name, p_name 
+11:04:47.419 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectRankList : <==        Row: 214, order, 2021-08-24 08:14:49, 2222, Test, Test, 0, 21, 221, 20210824171449쇼핑몰 예시 1 - 복사본 - 복사본.PNG, order 
+11:04:47.420 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectRankList : <==      Total: 1 
+11:05:08.867 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:05:08.868 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:05:08.878 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:05:08.878 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:05:08.879 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:05:08.879 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:05:08.879 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:05:08.890 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:05:08.890 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:05:08.890 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:05:08.891 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:05:08.891 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:05:08.900 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:05:08.900 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:05:08.900 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:05:08.901 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:05:08.901 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:05:08.901 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:05:08.901 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:05:08.901 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:05:15.917 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:05:15.917 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:05:15.926 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:05:15.926 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:05:15.926 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:05:15.927 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:05:15.927 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:05:15.935 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:05:15.935 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:05:15.935 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:05:15.935 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:05:15.935 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:05:15.943 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:05:15.944 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:05:15.944 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:05:15.944 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:05:15.944 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:05:15.944 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:05:15.944 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:05:15.944 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:05:24.423 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:05:24.424 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:05:24.433 TRACE --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:05:24.433 TRACE --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:05:24.434 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:05:24.434 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:05:24.435 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:05:24.444 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:05:24.444 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:05:24.444 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:05:24.446 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:05:24.446 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:05:24.455 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:05:24.455 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:05:24.455 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:05:24.455 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:05:24.455 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:05:24.455 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:05:24.455 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:05:24.456 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:08:36.297 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:08:36.297 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:08:36.306 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:08:36.306 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:08:36.306 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:08:36.306 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:08:36.306 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:08:36.306 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:08:36.306 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:08:36.306 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:08:43.260 DEBUG --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:08:43.260 DEBUG --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:08:43.269 TRACE --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:08:43.269 TRACE --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:08:43.269 DEBUG --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:08:43.270 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:08:43.270 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:08:43.278 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:08:43.278 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:08:43.278 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:08:43.279 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:08:43.279 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:08:43.288 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:08:43.288 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:08:43.288 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:08:43.288 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:08:43.289 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:08:43.289 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:08:43.289 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:08:43.289 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:09:20.651 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Starting LcomTestApplication on DESKTOP-CD0KHBQ with PID 14248 (C:\Users\l9-morning\Documents\lcom_test\bin\main started by l9-morning in C:\Users\l9-morning\Documents\lcom_test) 
+11:09:20.656 DEBUG --- [restartedMain] c.l.example.LcomTestApplication : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE 
+11:09:20.656 INFO  --- [restartedMain] c.l.example.LcomTestApplication : The following profiles are active: local 
+11:09:21.949 DEBUG --- [restartedMain] c.l.example.config.AuthTokenFilter : Filter 'authenticationJwtTokenFilter' configured for use 
+11:09:22.457 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Started LcomTestApplication in 2.171 seconds (JVM running for 2.942) 
+11:10:01.782 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:10:01.804 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:10:01.833 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:10:01.833 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:10:01.834 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:10:01.838 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:10:01.839 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:10:01.850 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:10:01.850 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:10:01.850 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:10:01.875 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:10:01.875 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:10:01.887 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:10:01.887 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:10:01.887 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:10:01.887 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:10:01.888 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:10:01.888 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:10:01.888 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:10:01.888 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:21:11.404 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:21:11.404 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:21:11.416 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:21:11.416 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:21:11.417 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:21:11.417 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:21:11.417 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:21:11.418 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:21:11.418 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:21:11.418 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:21:13.538 ERROR --- [http-nio-9000-exec-4] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-27T11:18:41Z. Current time: 2021-08-27T11:21:13Z, a difference of 152537 milliseconds.  Allowed clock skew: 0 milliseconds. 
+11:21:13.544 ERROR --- [http-nio-9000-exec-4] c.l.e.config.AuthEntryPointJwt : Unauthorized error: Full authentication is required to access this resource 
+11:21:14.779 ERROR --- [http-nio-9000-exec-5] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-27T11:18:41Z. Current time: 2021-08-27T11:21:14Z, a difference of 153779 milliseconds.  Allowed clock skew: 0 milliseconds. 
+11:21:14.790 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:21:14.791 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:21:14.802 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:21:14.802 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:21:14.802 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:21:14.803 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:21:14.803 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:21:14.804 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:21:14.805 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:21:14.805 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:22:14.706 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:22:14.706 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:22:14.717 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:22:14.717 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:22:14.718 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:22:14.718 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:22:14.718 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:22:14.718 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:22:14.718 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:22:14.718 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:22:28.052 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:22:28.053 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:22:28.064 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:22:28.064 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:22:28.064 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:22:28.064 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:22:28.064 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:22:28.065 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:22:28.065 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:22:28.065 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:23:13.711 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:23:13.712 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:23:13.722 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:23:13.723 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:23:13.723 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:23:13.723 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:23:13.723 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:23:13.723 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:23:13.723 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:23:13.723 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:24:12.054 ERROR --- [http-nio-9000-exec-9] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-27T11:18:41Z. Current time: 2021-08-27T11:24:12Z, a difference of 331054 milliseconds.  Allowed clock skew: 0 milliseconds. 
+11:24:12.065 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:24:12.066 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:24:12.077 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:24:12.077 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:24:12.077 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:24:12.077 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:24:12.077 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:24:12.078 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:24:12.078 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:24:12.078 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:25:30.293 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:25:30.294 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:25:30.338 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:25:30.338 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:25:30.338 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:25:30.339 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:25:30.339 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:25:30.339 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:25:30.339 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:25:30.339 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:25:33.783 ERROR --- [http-nio-9000-exec-2] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-27T11:18:41Z. Current time: 2021-08-27T11:25:33Z, a difference of 412783 milliseconds.  Allowed clock skew: 0 milliseconds. 
+11:25:33.784 ERROR --- [http-nio-9000-exec-2] c.l.e.config.AuthEntryPointJwt : Unauthorized error: Full authentication is required to access this resource 
+11:25:35.099 ERROR --- [http-nio-9000-exec-3] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-27T11:18:41Z. Current time: 2021-08-27T11:25:35Z, a difference of 414098 milliseconds.  Allowed clock skew: 0 milliseconds. 
+11:25:35.109 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:25:35.110 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:25:35.121 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:25:35.121 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:25:35.121 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:25:35.121 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:25:35.121 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:25:35.121 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:25:35.121 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:25:35.122 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:25:43.186 ERROR --- [http-nio-9000-exec-4] c.lcom_test.example.config.JwtUtils : JWT token is expired: JWT expired at 2021-08-27T11:18:41Z. Current time: 2021-08-27T11:25:43Z, a difference of 422186 milliseconds.  Allowed clock skew: 0 milliseconds. 
+11:25:43.209 INFO  --- [http-nio-9000-exec-4] c.l.e.controller.AuthController : testLoginRequest [username=qqq, password=qqqq] 
+11:25:43.297 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:25:43.297 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:25:43.309 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:25:43.309 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:25:43.309 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:25:43.309 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:25:43.310 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:25:43.321 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:25:43.321 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:25:43.321 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:25:43.400 INFO  --- [http-nio-9000-exec-4] c.l.e.controller.AuthController : ddddUser [username=qqq, password=$2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, name=test1, phone=x, uDateTime=null, authorities=[ROLE_ADMIN], isAccountNonExpired=true, isAccountNonLocked=true, isCredentialsNonExpired=true, isEnabled=true] 
+11:25:43.461 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:25:43.461 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:25:43.472 TRACE --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:25:43.472 TRACE --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:25:43.473 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:25:43.473 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:25:43.473 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:25:43.484 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:25:43.484 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:25:43.484 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:25:43.485 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:25:43.485 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:25:43.497 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:25:43.497 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:25:43.497 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:25:43.497 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:25:43.497 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:25:43.497 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:25:43.498 TRACE --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:25:43.498 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:25:45.601 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:25:45.601 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:25:45.611 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:25:45.611 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:25:45.611 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:25:45.611 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:25:45.611 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:25:45.611 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:25:45.611 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:25:45.611 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:25:54.818 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:25:54.818 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:25:54.828 TRACE --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:25:54.829 TRACE --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:25:54.829 DEBUG --- [http-nio-9000-exec-7] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:25:54.829 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:25:54.830 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:25:54.840 TRACE --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:25:54.840 TRACE --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:25:54.840 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:25:54.841 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:25:54.842 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:25:54.852 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:25:54.853 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:25:54.853 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:25:54.853 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:25:54.853 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:25:54.853 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:25:54.853 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:25:54.853 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:26:38.062 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:26:38.062 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:26:38.074 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:26:38.074 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:26:38.074 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:26:38.074 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:26:38.074 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:26:38.074 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:26:38.074 TRACE --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:26:38.074 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:26:45.017 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:26:45.017 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:26:45.029 TRACE --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:26:45.029 TRACE --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:26:45.029 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:26:45.030 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:26:45.030 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:26:45.041 TRACE --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:26:45.041 TRACE --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:26:45.041 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:26:45.052 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : ==>  Preparing: SELECT * FROM vue_product p LEFT JOIN vue_img i ON p.p_name = i.p_name ORDER BY p_like DESC 
+11:26:45.052 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : ==> Parameters:  
+11:26:45.063 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : <==    Columns: p_id, p_name, p_date, p_price, p_from, p_brand, p_like, p_quantity, i_id, i_name, p_name 
+11:26:45.064 TRACE --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : <==        Row: 214, order, 2021-08-24 08:14:49, 2222, Test, Test, 0, 21, 221, 20210824171449쇼핑몰 예시 1 - 복사본 - 복사본.PNG, order 
+11:26:45.066 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.P.selectRankList : <==      Total: 1 
+11:26:50.825 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:26:50.825 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:26:50.836 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:26:50.837 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:26:50.837 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:26:50.837 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:26:50.837 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:26:50.848 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:26:50.848 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:26:50.848 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:27:06.461 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.getUserCount : ==>  Preparing: SELECT COUNT(*) as count FROM userlist 
+11:27:06.467 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.getUserCount : ==> Parameters:  
+11:27:06.485 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.getUserCount : <==    Columns: count 
+11:27:06.488 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.getUserCount : <==        Row: 7 
+11:27:06.519 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.getUserCount : <==      Total: 1 
+11:27:08.108 INFO  --- [http-nio-9000-exec-1] c.l.e.controller.AdminController : SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@c81135a] 
+11:27:08.524 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : ==>  Preparing: SELECT ta.u_id username, ta.u_name name, ta.u_phone phone, tb.u_auth auth FROM userlist ta LEFT JOIN ( SELECT ta.u_id, GROUP_CONCAT(ta.u_auth SEPARATOR ",") u_auth FROM userauth ta GROUP BY ta.u_id ) tb ON ta.u_id = tb.u_id LIMIT ?,? 
+11:27:08.532 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : ==> Parameters: 0(Integer), 6(Integer) 
+11:27:08.582 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==    Columns: username, name, phone, auth 
+11:27:08.585 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==        Row: 222, test2, x, <<BLOB>> 
+11:27:08.598 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==        Row: 333, test3, x, <<BLOB>> 
+11:27:08.604 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==        Row: 444, test4, x, <<BLOB>> 
+11:27:08.609 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==        Row: bbb, test2, x, <<BLOB>> 
+11:27:08.615 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==        Row: jbj9710, 전병준, 010-0000-0000, <<BLOB>> 
+11:27:08.622 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==        Row: juni8453, 전병준, 010-5592-9710, <<BLOB>> 
+11:27:08.628 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==      Total: 6 
+11:27:08.730 INFO  --- [http-nio-9000-exec-1] c.l.e.controller.AdminController : [UserInfo [username=222, password=null, name=test2, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=333, password=null, name=test3, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=444, password=null, name=test4, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=bbb, password=null, name=test2, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=jbj9710, password=null, name=전병준, phone=010-0000-0000, authorities=[ROLE_USER], auth=null], UserInfo [username=juni8453, password=null, name=전병준, phone=010-5592-9710, authorities=[ROLE_USER], auth=null]] 
+11:27:09.951 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:27:09.951 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:27:09.962 TRACE --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:27:09.962 TRACE --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:27:09.963 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:27:09.963 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:27:09.963 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:27:09.974 TRACE --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:27:09.974 TRACE --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:27:09.974 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:27:09.975 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:27:09.975 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:27:09.985 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:27:09.985 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:27:09.985 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:27:09.985 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:27:09.986 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:27:09.986 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:27:09.986 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:27:09.986 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:27:31.631 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:27:31.632 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:27:31.643 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:27:31.643 TRACE --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:27:31.644 DEBUG --- [http-nio-9000-exec-3] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:27:31.644 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:27:31.644 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:27:31.655 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:27:31.655 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:27:31.656 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:27:31.657 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.getUserCount : ==>  Preparing: SELECT COUNT(*) as count FROM userlist 
+11:27:31.657 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.getUserCount : ==> Parameters:  
+11:27:31.668 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.getUserCount : <==    Columns: count 
+11:27:31.668 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.getUserCount : <==        Row: 7 
+11:27:31.668 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.getUserCount : <==      Total: 1 
+11:27:31.668 INFO  --- [http-nio-9000-exec-3] c.l.e.controller.AdminController : SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@3e5fab41] 
+11:27:31.668 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.read_user_list : ==>  Preparing: SELECT ta.u_id username, ta.u_name name, ta.u_phone phone, tb.u_auth auth FROM userlist ta LEFT JOIN ( SELECT ta.u_id, GROUP_CONCAT(ta.u_auth SEPARATOR ",") u_auth FROM userauth ta GROUP BY ta.u_id ) tb ON ta.u_id = tb.u_id LIMIT ?,? 
+11:27:31.668 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.read_user_list : ==> Parameters: 0(Integer), 6(Integer) 
+11:27:31.681 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.read_user_list : <==    Columns: username, name, phone, auth 
+11:27:31.681 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.read_user_list : <==        Row: 222, test2, x, <<BLOB>> 
+11:27:31.681 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.read_user_list : <==        Row: 333, test3, x, <<BLOB>> 
+11:27:31.681 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.read_user_list : <==        Row: 444, test4, x, <<BLOB>> 
+11:27:31.681 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.read_user_list : <==        Row: bbb, test2, x, <<BLOB>> 
+11:27:31.681 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.read_user_list : <==        Row: jbj9710, 전병준, 010-0000-0000, <<BLOB>> 
+11:27:31.681 TRACE --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.read_user_list : <==        Row: juni8453, 전병준, 010-5592-9710, <<BLOB>> 
+11:27:31.681 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.UserMapper.read_user_list : <==      Total: 6 
+11:27:31.681 INFO  --- [http-nio-9000-exec-3] c.l.e.controller.AdminController : [UserInfo [username=222, password=null, name=test2, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=333, password=null, name=test3, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=444, password=null, name=test4, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=bbb, password=null, name=test2, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=jbj9710, password=null, name=전병준, phone=010-0000-0000, authorities=[ROLE_USER], auth=null], UserInfo [username=juni8453, password=null, name=전병준, phone=010-5592-9710, authorities=[ROLE_USER], auth=null]] 
+11:27:31.731 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:27:31.732 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:27:31.743 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:27:31.743 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:27:31.743 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:27:31.744 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:27:31.744 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:27:31.755 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:27:31.755 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:27:31.755 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:27:31.756 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:27:31.756 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:27:31.767 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:27:31.767 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:27:31.767 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:27:31.767 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:27:31.767 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:27:31.767 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:27:31.767 TRACE --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:27:31.767 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:27:35.314 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:27:35.314 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:27:35.325 TRACE --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:27:35.325 TRACE --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:27:35.326 DEBUG --- [http-nio-9000-exec-5] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:27:35.326 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:27:35.326 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:27:35.336 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:27:35.336 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:27:35.336 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:27:35.337 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.getUserCount : ==>  Preparing: SELECT COUNT(*) as count FROM userlist 
+11:27:35.337 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.getUserCount : ==> Parameters:  
+11:27:35.348 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.getUserCount : <==    Columns: count 
+11:27:35.348 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.getUserCount : <==        Row: 7 
+11:27:35.348 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.getUserCount : <==      Total: 1 
+11:27:35.349 INFO  --- [http-nio-9000-exec-5] c.l.e.controller.AdminController : SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@481c7f22] 
+11:27:35.349 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.read_user_list : ==>  Preparing: SELECT ta.u_id username, ta.u_name name, ta.u_phone phone, tb.u_auth auth FROM userlist ta LEFT JOIN ( SELECT ta.u_id, GROUP_CONCAT(ta.u_auth SEPARATOR ",") u_auth FROM userauth ta GROUP BY ta.u_id ) tb ON ta.u_id = tb.u_id LIMIT ?,? 
+11:27:35.349 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.read_user_list : ==> Parameters: 0(Integer), 6(Integer) 
+11:27:35.360 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.read_user_list : <==    Columns: username, name, phone, auth 
+11:27:35.360 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.read_user_list : <==        Row: 222, test2, x, <<BLOB>> 
+11:27:35.361 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.read_user_list : <==        Row: 333, test3, x, <<BLOB>> 
+11:27:35.361 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.read_user_list : <==        Row: 444, test4, x, <<BLOB>> 
+11:27:35.361 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.read_user_list : <==        Row: bbb, test2, x, <<BLOB>> 
+11:27:35.362 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.read_user_list : <==        Row: jbj9710, 전병준, 010-0000-0000, <<BLOB>> 
+11:27:35.362 TRACE --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.read_user_list : <==        Row: juni8453, 전병준, 010-5592-9710, <<BLOB>> 
+11:27:35.362 DEBUG --- [http-nio-9000-exec-5] c.l.e.m.UserMapper.read_user_list : <==      Total: 6 
+11:27:35.362 INFO  --- [http-nio-9000-exec-5] c.l.e.controller.AdminController : [UserInfo [username=222, password=null, name=test2, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=333, password=null, name=test3, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=444, password=null, name=test4, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=bbb, password=null, name=test2, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=jbj9710, password=null, name=전병준, phone=010-0000-0000, authorities=[ROLE_USER], auth=null], UserInfo [username=juni8453, password=null, name=전병준, phone=010-5592-9710, authorities=[ROLE_USER], auth=null]] 
+11:27:35.421 DEBUG --- [http-nio-9000-exec-6] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:27:35.422 DEBUG --- [http-nio-9000-exec-6] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:27:35.433 TRACE --- [http-nio-9000-exec-6] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:27:35.433 TRACE --- [http-nio-9000-exec-6] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:27:35.433 DEBUG --- [http-nio-9000-exec-6] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:27:35.433 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:27:35.433 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:27:35.444 TRACE --- [http-nio-9000-exec-6] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:27:35.444 TRACE --- [http-nio-9000-exec-6] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:27:35.444 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:27:35.446 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:27:35.446 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:27:35.457 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:27:35.457 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:27:35.457 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:27:35.457 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:27:35.457 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:27:35.457 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:27:35.457 TRACE --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:27:35.458 DEBUG --- [http-nio-9000-exec-6] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:28:05.358 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:28:05.358 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:28:05.369 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:28:05.369 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:28:05.369 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:28:05.369 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:28:05.369 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:28:05.370 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:28:05.370 TRACE --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:28:05.370 DEBUG --- [http-nio-9000-exec-7] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:28:10.585 DEBUG --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:28:10.585 DEBUG --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:28:10.595 TRACE --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:28:10.595 TRACE --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:28:10.595 DEBUG --- [http-nio-9000-exec-8] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:28:10.595 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:28:10.595 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:28:10.606 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:28:10.606 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:28:10.606 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:28:10.607 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.getUserCount : ==>  Preparing: SELECT COUNT(*) as count FROM userlist 
+11:28:10.607 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.getUserCount : ==> Parameters:  
+11:28:10.619 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.getUserCount : <==    Columns: count 
+11:28:10.619 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.getUserCount : <==        Row: 7 
+11:28:10.619 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.getUserCount : <==      Total: 1 
+11:28:10.619 INFO  --- [http-nio-9000-exec-8] c.l.e.controller.AdminController : SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@17781ef7] 
+11:28:10.619 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.read_user_list : ==>  Preparing: SELECT ta.u_id username, ta.u_name name, ta.u_phone phone, tb.u_auth auth FROM userlist ta LEFT JOIN ( SELECT ta.u_id, GROUP_CONCAT(ta.u_auth SEPARATOR ",") u_auth FROM userauth ta GROUP BY ta.u_id ) tb ON ta.u_id = tb.u_id LIMIT ?,? 
+11:28:10.619 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.read_user_list : ==> Parameters: 0(Integer), 6(Integer) 
+11:28:10.630 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.read_user_list : <==    Columns: username, name, phone, auth 
+11:28:10.630 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.read_user_list : <==        Row: 222, test2, x, <<BLOB>> 
+11:28:10.631 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.read_user_list : <==        Row: 333, test3, x, <<BLOB>> 
+11:28:10.631 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.read_user_list : <==        Row: 444, test4, x, <<BLOB>> 
+11:28:10.631 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.read_user_list : <==        Row: bbb, test2, x, <<BLOB>> 
+11:28:10.631 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.read_user_list : <==        Row: jbj9710, 전병준, 010-0000-0000, <<BLOB>> 
+11:28:10.631 TRACE --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.read_user_list : <==        Row: juni8453, 전병준, 010-5592-9710, <<BLOB>> 
+11:28:10.631 DEBUG --- [http-nio-9000-exec-8] c.l.e.m.UserMapper.read_user_list : <==      Total: 6 
+11:28:10.631 INFO  --- [http-nio-9000-exec-8] c.l.e.controller.AdminController : [UserInfo [username=222, password=null, name=test2, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=333, password=null, name=test3, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=444, password=null, name=test4, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=bbb, password=null, name=test2, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=jbj9710, password=null, name=전병준, phone=010-0000-0000, authorities=[ROLE_USER], auth=null], UserInfo [username=juni8453, password=null, name=전병준, phone=010-5592-9710, authorities=[ROLE_USER], auth=null]] 
+11:28:10.647 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:28:10.648 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:28:10.658 TRACE --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:28:10.658 TRACE --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:28:10.659 DEBUG --- [http-nio-9000-exec-9] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:28:10.659 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:28:10.659 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:28:10.670 TRACE --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:28:10.670 TRACE --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:28:10.671 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:28:10.675 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.getBoardCount : ==>  Preparing: SELECT COUNT(*) as count FROM vue_board 
+11:28:10.676 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.getBoardCount : ==> Parameters:  
+11:28:10.687 TRACE --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.getBoardCount : <==    Columns: count 
+11:28:10.687 TRACE --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.getBoardCount : <==        Row: 8 
+11:28:10.687 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.getBoardCount : <==      Total: 1 
+11:28:10.688 INFO  --- [http-nio-9000-exec-9] c.l.e.controller.AuthController : com.lcom_test.example.domain.Board@2a096702 
+11:28:10.688 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.selectBoardList : ==>  Preparing: SELECT b_id as bId, b_writer as bWriter, b_title as bTitle, b_content as bContent, b_datetime as bDateTime, b_views as bViews, b_group as bGroup, b_order as bOrder, b_depth as bDepth, u_id as username FROM vue_board ORDER BY b_group DESC, b_order ASC LIMIT ?,? 
+11:28:10.689 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.selectBoardList : ==> Parameters: 0(Integer), 6(Integer) 
+11:28:10.701 TRACE --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.selectBoardList : <==    Columns: bId, bWriter, bTitle, bContent, bDateTime, bViews, bGroup, bOrder, bDepth, username 
+11:28:10.702 TRACE --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 140, null, 6번글, 6, 2021-08-23 14:42:13, 150, 140, 0, 0, qqq 
+11:28:10.704 TRACE --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 143, null, 6번글의 답글, 6번글의 답글, 2021-08-24 05:56:10, 3, 140, 1, 1, qqq 
+11:28:10.706 TRACE --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 144, null, qq, qq, 2021-08-24 12:38:45, 1, 140, 2, 2, qqq 
+11:28:10.708 TRACE --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 139, null, 5번글, 5, 2021-08-23 14:42:08, 0, 139, 0, 0, qqq 
+11:28:10.710 TRACE --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 138, null, 4번글, 4, 2021-08-23 14:41:38, 0, 138, 0, 0, qqq 
+11:28:10.712 TRACE --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 137, null, 3번글, 3, 2021-08-23 14:41:33, 0, 137, 0, 0, qqq 
+11:28:10.712 DEBUG --- [http-nio-9000-exec-9] c.l.e.m.BoardMapper.selectBoardList : <==      Total: 6 
+11:28:10.713 INFO  --- [http-nio-9000-exec-9] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Board@1882576b, com.lcom_test.example.domain.Board@79d2120e, com.lcom_test.example.domain.Board@986a4d2, com.lcom_test.example.domain.Board@2b3ccf5c, com.lcom_test.example.domain.Board@210ffc5f, com.lcom_test.example.domain.Board@48a4d812] 
+11:28:18.293 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.getBoardCount : ==>  Preparing: SELECT COUNT(*) as count FROM vue_board 
+11:28:18.293 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.getBoardCount : ==> Parameters:  
+11:28:18.304 TRACE --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.getBoardCount : <==    Columns: count 
+11:28:18.304 TRACE --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.getBoardCount : <==        Row: 8 
+11:28:18.304 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.getBoardCount : <==      Total: 1 
+11:28:18.305 INFO  --- [http-nio-9000-exec-10] c.l.e.controller.AuthController : com.lcom_test.example.domain.Board@60f461fc 
+11:28:18.305 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.selectBoardList : ==>  Preparing: SELECT b_id as bId, b_writer as bWriter, b_title as bTitle, b_content as bContent, b_datetime as bDateTime, b_views as bViews, b_group as bGroup, b_order as bOrder, b_depth as bDepth, u_id as username FROM vue_board ORDER BY b_group DESC, b_order ASC LIMIT ?,? 
+11:28:18.305 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.selectBoardList : ==> Parameters: 0(Integer), 6(Integer) 
+11:28:18.315 TRACE --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.selectBoardList : <==    Columns: bId, bWriter, bTitle, bContent, bDateTime, bViews, bGroup, bOrder, bDepth, username 
+11:28:18.316 TRACE --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 140, null, 6번글, 6, 2021-08-23 14:42:13, 150, 140, 0, 0, qqq 
+11:28:18.316 TRACE --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 143, null, 6번글의 답글, 6번글의 답글, 2021-08-24 05:56:10, 3, 140, 1, 1, qqq 
+11:28:18.317 TRACE --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 144, null, qq, qq, 2021-08-24 12:38:45, 1, 140, 2, 2, qqq 
+11:28:18.318 TRACE --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 139, null, 5번글, 5, 2021-08-23 14:42:08, 0, 139, 0, 0, qqq 
+11:28:18.318 TRACE --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 138, null, 4번글, 4, 2021-08-23 14:41:38, 0, 138, 0, 0, qqq 
+11:28:18.319 TRACE --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 137, null, 3번글, 3, 2021-08-23 14:41:33, 0, 137, 0, 0, qqq 
+11:28:18.319 DEBUG --- [http-nio-9000-exec-10] c.l.e.m.BoardMapper.selectBoardList : <==      Total: 6 
+11:28:18.319 INFO  --- [http-nio-9000-exec-10] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Board@2c38d98c, com.lcom_test.example.domain.Board@1f10748c, com.lcom_test.example.domain.Board@2cf405e2, com.lcom_test.example.domain.Board@2903c592, com.lcom_test.example.domain.Board@439d8d87, com.lcom_test.example.domain.Board@5f35256c] 
+11:29:10.722 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:29:10.722 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:29:10.733 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:29:10.733 TRACE --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:29:10.733 DEBUG --- [http-nio-9000-exec-1] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:29:10.733 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:29:10.734 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:29:10.744 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:29:10.744 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:29:10.744 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:29:10.745 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.getUserCount : ==>  Preparing: SELECT COUNT(*) as count FROM userlist 
+11:29:10.745 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.getUserCount : ==> Parameters:  
+11:29:10.756 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.getUserCount : <==    Columns: count 
+11:29:10.756 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.getUserCount : <==        Row: 7 
+11:29:10.756 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.getUserCount : <==      Total: 1 
+11:29:10.756 INFO  --- [http-nio-9000-exec-1] c.l.e.controller.AdminController : SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@26f3f01b] 
+11:29:10.756 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : ==>  Preparing: SELECT ta.u_id username, ta.u_name name, ta.u_phone phone, tb.u_auth auth FROM userlist ta LEFT JOIN ( SELECT ta.u_id, GROUP_CONCAT(ta.u_auth SEPARATOR ",") u_auth FROM userauth ta GROUP BY ta.u_id ) tb ON ta.u_id = tb.u_id LIMIT ?,? 
+11:29:10.756 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : ==> Parameters: 0(Integer), 6(Integer) 
+11:29:10.768 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==    Columns: username, name, phone, auth 
+11:29:10.768 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==        Row: 222, test2, x, <<BLOB>> 
+11:29:10.768 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==        Row: 333, test3, x, <<BLOB>> 
+11:29:10.768 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==        Row: 444, test4, x, <<BLOB>> 
+11:29:10.768 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==        Row: bbb, test2, x, <<BLOB>> 
+11:29:10.768 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==        Row: jbj9710, 전병준, 010-0000-0000, <<BLOB>> 
+11:29:10.768 TRACE --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==        Row: juni8453, 전병준, 010-5592-9710, <<BLOB>> 
+11:29:10.768 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.UserMapper.read_user_list : <==      Total: 6 
+11:29:10.768 INFO  --- [http-nio-9000-exec-1] c.l.e.controller.AdminController : [UserInfo [username=222, password=null, name=test2, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=333, password=null, name=test3, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=444, password=null, name=test4, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=bbb, password=null, name=test2, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=jbj9710, password=null, name=전병준, phone=010-0000-0000, authorities=[ROLE_USER], auth=null], UserInfo [username=juni8453, password=null, name=전병준, phone=010-5592-9710, authorities=[ROLE_USER], auth=null]] 
+11:29:10.832 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:29:10.832 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:29:10.843 TRACE --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:29:10.843 TRACE --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:29:10.844 DEBUG --- [http-nio-9000-exec-2] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:29:10.844 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:29:10.844 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:29:10.854 TRACE --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:29:10.854 TRACE --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:29:10.855 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:29:10.855 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:29:10.855 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:29:10.869 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:29:10.869 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:29:10.869 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:29:10.869 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:29:10.869 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:29:10.869 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:29:10.869 TRACE --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:29:10.869 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:29:40.070 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+11:29:40.070 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+11:29:40.081 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+11:29:40.081 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+11:29:40.081 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+11:29:40.081 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+11:29:40.081 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+11:29:40.081 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+11:29:40.081 TRACE --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==        Row: 10, 20210823115216예시사진1.PNG 
+11:29:40.081 DEBUG --- [http-nio-9000-exec-3] c.l.e.m.P.selectHomeImgList : <==      Total: 6 
+11:29:42.327 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==>  Preparing: SELECT u_id as username, u_password as password, u_name as name, u_phone as phone, u_isAccountNonExpired as isAccountNonExpired, u_isAccountNonLocked as isAccountNonLocked, u_isCredentialNonExpired as isCredentialsNonExpired, u_isEnabled as isEnabled FROM userlist WHERE 1=1 AND u_id = ? 
+11:29:42.328 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : ==> Parameters: qqq(String) 
+11:29:42.339 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==    Columns: username, password, name, phone, isAccountNonExpired, isAccountNonLocked, isCredentialsNonExpired, isEnabled 
+11:29:42.339 TRACE --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==        Row: qqq, $2a$10$MvKTOLYd8oQqWqQ4HUQXiOQqjvhci.W6O.40oYrRyyKdiw16HUo62, test1, x, 1, 1, 1, 1 
+11:29:42.340 DEBUG --- [http-nio-9000-exec-4] c.l.e.mapper.UserMapper.readUser : <==      Total: 1 
+11:29:42.340 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==>  Preparing: SELECT u_auth FROM userauth WHERE 1=1 AND u_id = ? 
+11:29:42.341 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : ==> Parameters: qqq(String) 
+11:29:42.351 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==    Columns: u_auth 
+11:29:42.351 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==        Row: ROLE_ADMIN 
+11:29:42.351 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.readAuthorities : <==      Total: 1 
+11:29:42.352 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.getUserCount : ==>  Preparing: SELECT COUNT(*) as count FROM userlist 
+11:29:42.352 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.getUserCount : ==> Parameters:  
+11:29:42.364 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.getUserCount : <==    Columns: count 
+11:29:42.364 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.getUserCount : <==        Row: 7 
+11:29:42.364 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.getUserCount : <==      Total: 1 
+11:29:42.364 INFO  --- [http-nio-9000-exec-4] c.l.e.controller.AdminController : SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@1f8f05bf] 
+11:29:42.364 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.read_user_list : ==>  Preparing: SELECT ta.u_id username, ta.u_name name, ta.u_phone phone, tb.u_auth auth FROM userlist ta LEFT JOIN ( SELECT ta.u_id, GROUP_CONCAT(ta.u_auth SEPARATOR ",") u_auth FROM userauth ta GROUP BY ta.u_id ) tb ON ta.u_id = tb.u_id LIMIT ?,? 
+11:29:42.364 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.read_user_list : ==> Parameters: 0(Integer), 6(Integer) 
+11:29:42.375 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.read_user_list : <==    Columns: username, name, phone, auth 
+11:29:42.375 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.read_user_list : <==        Row: 222, test2, x, <<BLOB>> 
+11:29:42.375 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.read_user_list : <==        Row: 333, test3, x, <<BLOB>> 
+11:29:42.376 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.read_user_list : <==        Row: 444, test4, x, <<BLOB>> 
+11:29:42.376 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.read_user_list : <==        Row: bbb, test2, x, <<BLOB>> 
+11:29:42.376 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.read_user_list : <==        Row: jbj9710, 전병준, 010-0000-0000, <<BLOB>> 
+11:29:42.376 TRACE --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.read_user_list : <==        Row: juni8453, 전병준, 010-5592-9710, <<BLOB>> 
+11:29:42.376 DEBUG --- [http-nio-9000-exec-4] c.l.e.m.UserMapper.read_user_list : <==      Total: 6 
+11:29:42.376 INFO  --- [http-nio-9000-exec-4] c.l.e.controller.AdminController : [UserInfo [username=222, password=null, name=test2, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=333, password=null, name=test3, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=444, password=null, name=test4, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=bbb, password=null, name=test2, phone=x, authorities=[ROLE_USER], auth=null], UserInfo [username=jbj9710, password=null, name=전병준, phone=010-0000-0000, authorities=[ROLE_USER], auth=null], UserInfo [username=juni8453, password=null, name=전병준, phone=010-5592-9710, authorities=[ROLE_USER], auth=null]] 

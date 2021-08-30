@@ -87,7 +87,7 @@ props:['bId','bGroup', 'bOrder', 'bDepth'],
       let sev = '3.38.87.14'
 
       new Promise((resolve, reject) => {
-        axios.post(`http://${dev}:9000/api/auth/boardreply`, payload)
+        axios.post(`http://${sev}:9000/api/auth/boardreply`, payload)
         .then(Response => {
             console.log('답글 작성')            
             console.log(payload)
