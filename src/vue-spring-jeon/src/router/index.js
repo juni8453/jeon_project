@@ -22,6 +22,7 @@ import ProductRank from '../views/ProductRank'
 import MultiUploadTest from '../views/MultiUploadTest'
 import BuyProduct from '../views/BuyProduct'
 import OrderList from '../views/OrderList'
+import TestComponent from '../views/TestComponent'
 
 Vue.use(VueRouter)
 
@@ -189,7 +190,13 @@ const routes = [
     component: OrderList,
     props: true
   },
-  
+  {
+    path: '/testcomponent',
+    name: 'TestComponent',
+    component: TestComponent,
+    props: true
+  },
+
 ]
 
 const router = new VueRouter({
