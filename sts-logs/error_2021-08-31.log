@@ -1,0 +1,6 @@
+10:14:40.835 WARN  --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3d17h13m33s668ms194µs100ns). 
+10:21:38.886 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Starting LcomTestApplication on DESKTOP-1ECNFRJ with PID 14516 (C:\Users\user\Documents\GitHub\jeon_project\bin\main started by user in C:\Users\user\Documents\GitHub\jeon_project) 
+10:21:38.889 DEBUG --- [restartedMain] c.l.example.LcomTestApplication : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE 
+10:21:38.889 INFO  --- [restartedMain] c.l.example.LcomTestApplication : The following profiles are active: local 
+10:21:40.426 DEBUG --- [restartedMain] c.l.example.config.AuthTokenFilter : Filter 'authenticationJwtTokenFilter' configured for use 
+10:21:40.952 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Started LcomTestApplication in 2.494 seconds (JVM running for 3.363) 

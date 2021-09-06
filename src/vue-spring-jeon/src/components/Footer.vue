@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <v-container>    
     <v-row>
       <v-col cols="12" md="12" sm="12">
@@ -52,4 +52,69 @@
       </v-col>
     </v-row> 
   </v-container>
+</template> -->
+
+<template>
+  <body>
+    <v-container fluid>
+      <div class="footerbar">
+        <ul class="footer__high">
+          <li>CS CENTER</li>
+          <li>DELIVERY</li>
+          <li>BANK</li>
+        </ul>
+        <ul class="footer__row">
+          <li>1599 - 3120 <br>
+                MON-FRI : 10:00 ~ 17:00 <br>
+                LUNCH: 13:00 ~ 14:00 <br>
+                SAT, SUN, HOLIDAY OFF</li>
+          <li>경기도 성남시 분당구 불정로 6 (우)13561</li>
+          <li>예금주: (주)ABC <br>
+                우리 1005-123-123456 <br>
+                농협 351-3333-4444-55 <br>
+                기업 114-12342-13-333 <br>
+                국민 594401-22-323232 <br>
+                신한 140-333-13423414 <br></li>
+        </ul>
+      </div>
+    </v-container>
+  </body>
 </template>
+
+<style scoped>
+  .footerbar {
+    display: flex;
+    flex-direction: column;
+    background: #263343;
+    border-radius: 8px;
+  }
+
+  .footer__high{
+    display: flex;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .footer__high li {
+    list-style: none;
+    color: #d49466;
+    
+  }
+
+  .footer__row {
+    display: flex;
+    padding-top: 14px;
+    padding-bottom: 20px;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .footer__row li {
+    list-style: none;
+    color: #f0f4f5;
+  }
+</style>
+
+

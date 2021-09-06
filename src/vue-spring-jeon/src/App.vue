@@ -1,6 +1,7 @@
 <template>
   <v-app id="inspire">
     <v-navigation-drawer
+      v-if="isLogin === true && Userinfo.User_auth.includes('ROLE_ADMIN')"
       v-model="drawer"
       app
     >
@@ -98,28 +99,27 @@
       dark
     >
       <v-app-bar-nav-icon 
-      @click.stop="drawer = !drawer"
-      v-if="isLogin === true && Userinfo.User_auth.includes('ROLE_ADMIN')" 
+        @click.stop="drawer = !drawer"
+        v-if="isLogin === true && Userinfo.User_auth.includes('ROLE_ADMIN')" 
       >
       </v-app-bar-nav-icon>
-      <!-- <v-toolbar-title>Jeon Board Page</v-toolbar-title> -->
       <v-spacer></v-spacer>
       <div
-       v-if="isLogin === true"
+        v-if="isLogin === true"
       >
         {{Userinfo.User_Id}}님 환영합니다.
       </div>  
       <v-btn class="ml-5"
-       v-if="isLogin === true"
-       @click="logout()"
-       small
+        v-if="isLogin === true"
+        @click="logout()"
+        small
       >
         로그아웃
       </v-btn>
       <v-btn class="ml-5"
-       v-if="isLogin === false"
-       @click="login()"
-       small
+        v-if="isLogin === false"
+        @click="login()"
+        small
       >
         로그인
       </v-btn>
@@ -142,6 +142,7 @@
   </v-app>
 </template>
 
+
 <script>
 import {mapMutations, mapState} from "vuex"
 import Route from '../src/router/index'
@@ -155,10 +156,10 @@ import Route from '../src/router/index'
     methods: {
       ...mapMutations(["logout"]),
       BoardList(){
-         if(this.isLogin === false){
+        if(this.isLogin === false){
           alert('로그인이 필요한 서비스입니다.')
           Route.push("/login")
-         }
+        }
       },
       BoardWrite(){
         if(this.isLogin === false){
