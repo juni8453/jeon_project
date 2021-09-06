@@ -1,197 +1,96 @@
 <template>
-    <v-container>
-      <BwBar></BwBar>
-      <v-row no-gutters>  
-        <v-row>
-          <v-col cols="12" md="6" sm="6"
-            v-for="item in boardlist" :key="item.bId">
-            <v-row>
-              <v-col cols="12" md="12" sm="12"> 
-                <v-card outlined>
-                  <v-row>
-                    <v-col cols="8" md="8" sm="8">
-                      <v-card-text
-                        v-if="item.bDepth > 0"
-                      >
-                        <strong class="text-color">[Re]{{item.bTitle}}</strong>
-                      </v-card-text>
-                      <v-card-text class="Center"
-                        v-else
-                      >
-                        <strong>{{item.bTitle}}</strong>
-                      </v-card-text>
-                    </v-col>
+  <v-container>
+    <BwBar></BwBar>
+    <v-row no-gutters>  
+      <v-row>
+        <v-col cols="12" md="6" sm="6"
+          v-for="item in boardlist" :key="item.bId">
+          <v-row>
+            <v-col cols="12" md="12" sm="12"> 
+              <v-card outlined>
+                <v-row>
+                  <v-col cols="8" md="8" sm="8">
+                    <v-card-text
+                      v-if="item.bDepth > 0"
+                    >
+                      <strong class="text-color">[Re]{{item.bTitle}}</strong>
+                    </v-card-text>
+                    <v-card-text class="Center"
+                      v-else
+                    >
+                      <strong>{{item.bTitle}}</strong>
+                    </v-card-text>
+                  </v-col>
 
-                    <v-col cols="2" md="2" sm="2" class="Center">
-                      <v-icon>
-                        mdi-eye
-                      </v-icon>
-                      <strong>{{item.bViews}}</strong>
+                  <v-col cols="2" md="2" sm="2" class="Center">
+                    <v-icon>
+                      mdi-eye
+                    </v-icon>
+                    <strong>{{item.bViews}}</strong>
+                  </v-col>
+                  <v-col cols="2" md="2" sm="2" class="Center">
+                    <strong>[Group]<br>{{item.bGroup}}</strong>
+                  </v-col>
+                </v-row>
+                <v-card-text>
+                  <v-row>
+                    <v-col cols="3" md="3" sm="3">
+                      <v-btn outlined
+                        icon
+                        router :to="{name:'BoardDetail', 
+                        params: {bId:item.bId} }"
+                      >
+                      <v-icon>mdi-file-eye</v-icon>
+                      </v-btn>
                     </v-col>
-                    <v-col cols="2" md="2" sm="2" class="Center">
-                      <strong>[Group]<br>{{item.bGroup}}</strong>
+                    <v-col cols="3" md="3" sm="3">
+                      <v-btn outlined
+                        icon
+                        color="indigo"
+                        router :to="{name:'BoardReply',
+                        params: {
+                          bId:item.bId,
+                          bGroup:item.bGroup,
+                          bOrder:item.bOrder,
+                          bDepth:item.bDepth
+                        }
+                      }"
+                      >
+                      <v-icon>mdi-pencil</v-icon>
+                      </v-btn>                       
+                    </v-col>
+                    <v-col cols="3" md="3" sm="3">
+                      <v-btn outlined
+                        icon
+                        color="black"
+                        v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
+                        @click="BoardEdit({bId:item.bId})"
+                      >
+                        <v-icon>mdi-file-document-edit</v-icon>
+                      </v-btn>
+                    </v-col>
+                      <v-col cols="3" md="3" sm="3">
+                      <v-btn outlined
+                        icon
+                        color="red"
+                        v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
+                        @click="BoardDelete({bId:item.bId, page:page})"
+                      >
+                        <v-icon>mdi-delete</v-icon>
+                      </v-btn>
+                    </v-col> 
+                  </v-row>
+                  <v-row>
+                    <v-col cols="12" md="12" sm="12">
+                      {{item.bDateTime}} | {{item.username}}
                     </v-col>
                   </v-row>
-                  <v-card-text>
-                    <v-row>
-                      <v-col cols="3" md="3" sm="3">
-                        <v-btn outlined
-                          icon
-                          router :to="{name:'BoardDetail', 
-                          params: {bId:item.bId} }"
-                        >
-                        <v-icon>mdi-file-eye</v-icon>
-                        </v-btn>
-                      </v-col>
-                      <v-col cols="3" md="3" sm="3">
-                        <v-btn outlined
-                          icon
-                          color="indigo"
-                          router :to="{name:'BoardReply',
-                          params: {
-                            bId:item.bId,
-                            bGroup:item.bGroup,
-                            bOrder:item.bOrder,
-                            bDepth:item.bDepth
-                          }
-                        }"
-                        >
-                        <v-icon>mdi-pencil</v-icon>
-                        </v-btn>                       
-                      </v-col>
-                      <v-col cols="3" md="3" sm="3">
-                        <v-btn outlined
-                          icon
-                          color="black"
-                          v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
-                          @click="BoardEdit({bId:item.bId})"
-                        >
-                          <v-icon>mdi-file-document-edit</v-icon>
-                        </v-btn>
-                      </v-col>
-                        <v-col cols="3" md="3" sm="3">
-                        <v-btn outlined
-                          icon
-                          color="red"
-                          v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
-                          @click="BoardDelete({bId:item.bId, page:page})"
-                        >
-                          <v-icon>mdi-delete</v-icon>
-                        </v-btn>
-                      </v-col> 
-                    </v-row>
-                    <v-row>
-                      <v-col cols="12" md="12" sm="12">
-                        {{item.bDateTime}} | {{item.username}}
-                      </v-col>
-                    </v-row>
-                  </v-card-text>
-                </v-card>
-              </v-col>
-            </v-row>
-          </v-col>
-        </v-row>
-        <!-- <v-simple-table style="width:100%"
-          dense
-        >
-        <template v-slot:default>
-          <thead>
-            <tr>
-              <th class="text-center">
-                번호
-              </th>
-              <th class="text-center">
-                제목
-              </th>
-              <th class="text-center">
-                작성자
-              </th>
-             <th class="text-center">
-                작성일자
-             </th>
-              <th class="text-center">
-                조회수
-              </th>
-             <th class="text-center">
-                글 상세보기
-              </th>
-              <th class="text-center">
-                대댓글 작성  
-              </th>      
-             <th class="text-center">
-                수정
-              </th>
-              <th class="text-center">
-                삭제 
-              </th>  
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="item in boardlist"
-              :key="item.bId"
-              >
-              <td>{{ item.bId }}</td>
-
-              <td v-if="item.bDepth > 0">
-                [답글] {{ item.bTitle }}  
-              </td>       
-        
-              <td v-else>{{item.bTitle}}</td> 
-              <td>{{ item.username }}</td>
-              <td>{{ item.bDateTime}}</td>
-              <td>{{ item.bViews}}</td>             
-              <td>
-                <v-btn
-                  router :to="{name:'BoardDetail', 
-                  params: {bId:item.bId} }"
-                >
-                  <v-icon
-                  >mdi-note-search</v-icon>
-                </v-btn>
-              </td>
-
-              <td>
-                <v-btn
-                  router :to="{name:'BoardReply',
-                  params: {
-                    bId:item.bId, 
-                    bGroup: item.bGroup, 
-                    bOrder: item.bOrder, 
-                    bDepth: item.bDepth
-                    } 
-                  }"
-                >
-                  <v-icon>mdi-pencil</v-icon>
-                </v-btn>  
-              </td>  
-
-              <td>
-                <v-btn
-                  v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
-                  router :to="{name:'BoardEdit',
-                  params: {bId:item.bId} }" 
-                >
-                  <v-icon>mdi-file-document-edit</v-icon>
-                </v-btn>
-              </td>
-
-              <td>
-                <v-btn
-                v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
-                >
-                  <v-icon
-                    @click="BoardDelete({
-                    bId: item.bId, 
-                    page: page
-                    })"
-                  >mdi-delete</v-icon>
-                </v-btn>
-              </td>              
-            </tr>
-          </tbody>
-        </template>
-      </v-simple-table> -->
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
     </v-row>
     <v-row>
       <v-col cols="12" md="12" sm="12">
@@ -205,6 +104,7 @@
     </v-row>
   </v-container> 
 </template>
+
 <style scoped>
 
 div {

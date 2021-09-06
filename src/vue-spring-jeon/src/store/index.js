@@ -16,6 +16,13 @@ export default new Vuex.Store({
     dev:'localhost',
     sev:'3.38.87.14',
 
+    clickValue: 
+    {
+      CscenterValue: false,
+      DeliveryValue: false,
+      BankValue: false
+    },
+
     Userinfo:
     {
       User_Id:null,
@@ -54,6 +61,21 @@ export default new Vuex.Store({
     totalprice:0
   },
   mutations: {
+    SET_CLICK_CSCENTER_VALUE(state, payload) {
+      console.log(payload)
+      state.clickValue.CscenterValue = payload
+    },
+
+    SET_CLICK_DELIVERY_VALUE(state, payload) {
+      console.log(payload)
+      state.clickValue.DeliveryValue = payload
+    },
+
+    SET_CLICK_BANK_VALUE(state, payload) {
+      console.log(payload)
+      state.clickValue.BankValue = payload
+    },
+
     NewUsers: (state,payload) => {
       state.UserList.push(payload)
       Route.push("/login")

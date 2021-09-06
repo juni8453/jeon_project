@@ -3,7 +3,7 @@
         <body>
           <nav class="navbar">
             <div class="nav__logo">
-              <v-icon color="white">mdi-delete</v-icon>
+              <v-icon large>mdi-atlassian</v-icon>
               <a href="">Jeon Shopping Mall</a>
             </div>
 
@@ -26,6 +26,10 @@
 <style scoped>
   i {
     padding-right: 6px;
+  }
+
+  i.v-icon {
+    color: #d49466;
   }
 
   a {
