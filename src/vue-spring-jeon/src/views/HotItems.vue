@@ -8,10 +8,12 @@
           <v-col class="item__col" cols="3" v-for="item in productlist" :key="item.pId">
             <v-card class="item__card" outlined>
               <router-link :to="{name:'ItemDetail', params:{ pName:item.pName }}">
-                <v-img class="item__img"
-                  height="250"
-                  :src="`/images/thumb/${item.listImages[0].iName}`"
-                ></v-img>
+                <div class="item__img">
+                  <v-img
+                    contain
+                    :src="`/images/thumb/${item.listImages[0].iName}`"
+                  ></v-img>
+                </div>
               </router-link>
               <v-card-text>
                 <ul class="cardtext">
@@ -74,67 +76,31 @@
     list-style: none;
   }
 
+  .item__card.v-card.v-sheet.v-sheet--outlined.theme--light {
+    width: 100%;
+    height: 100%;
+    padding: 8px 8px;
+  }
+
   @media screen and (max-width:975px) {
     div.row.main {
-      width: 158rem;
-      /* width: 100%; */
+      width: 100%;
       margin: 0;
       align-items: flex-start;
       display: flex;
       flex-direction: column;
-      border-color: pink;
-      border-style: solid;
-      border-width: 1px;
     }
 
-    .item__col.col-3{
-      width: 100%;
-      padding: 5px;
-      border-color: red;
-      border-style: solid;
-      border-width: 1px;
-      
+    .item__col.col.col-3{
+      max-width: 100%; /*25% 이상 반응 없음 > max-width로 변경*/
+      padding: 14px;
     }
 
     .item__card.v-card.v-sheet.v-sheet--outlined.theme--light {
       width: 100%;
-      border-color: black;
-      border-style: solid;
-      border-width: 1px;
+      height: 50%;
+      padding: 8px 8px;
     }
-
-
-    /* .main {
-      flex-direction: column;
-    }
-
-    div.row {
-      flex-direction: column;
-      align-items: center;
-      margin: 0;
-      width: 100%;
-      border-color: pink;
-      border-style: solid;
-      border-width: 1px;
-    }
-
-    div.item__col {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      padding: 10px;
-      border-color: black;
-      border-style: solid;
-      border-width: 1px;
-    }
-
-    div.item__card.v-card {
-      flex-direction: column;
-      padding: 10px 12px;
-      border-color: red;
-      border-style: solid;
-      border-width: 1px;
-    } */
   }
 
 </style>
