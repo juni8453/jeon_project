@@ -1,5 +1,146 @@
 <template>
   <v-container fluid>
+    <body>
+      <BwBar></BwBar>
+
+      <main>
+        <v-row class="main">
+          <v-col class="item__col" cols="3" v-for="item in productlist" :key="item.pId">
+            <v-card class="item__card" outlined>
+              <router-link :to="{name:'ItemDetail', params:{ pName:item.pName }}">
+                <v-img class="item__img"
+                  height="250"
+                  :src="`/images/thumb/${item.listImages[0].iName}`"
+                ></v-img>
+              </router-link>
+              <v-card-text>
+                <ul class="cardtext">
+                  <strong><li>{{item.pName}}</li></strong>
+                  <strong><li>{{item.pPrice | comma}}원</li></strong>
+                  <li>
+                    <v-btn outlined depressed  v-if="Userinfo.User_auth.includes('ROLE_ADMIN')"
+                      @click="deleteProduct({
+                        pId:item.pId,
+                        iId:item.listImages[0].iId
+                      })"
+                    >
+                      <v-icon color="#d49466">mdi-delete</v-icon>
+                    </v-btn>
+                  </li>
+                </ul>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </main>
+      <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+
+      <Footer></Footer>
+    </body>
+  </v-container>
+</template>
+
+<style scoped>
+  .container {
+    height: 100%;
+  }
+
+  div {
+    border-radius: 8px;
+  }
+
+  div.col {
+    padding: 20px 24px;
+  }
+
+  div.v-card.v-sheet {
+    padding: 16px 20px;
+  }
+
+  div.v-card__text {
+    padding: 8px 8px;
+  }
+
+  .cardtext {
+    padding: 4px 4px;
+    list-style: none;
+  }
+
+  .cardtext li {
+    text-align: center;
+  }
+
+  .main__content li {
+    list-style: none;
+  }
+
+  @media screen and (max-width:975px) {
+    div.row.main {
+      width: 158rem;
+      /* width: 100%; */
+      margin: 0;
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      border-color: pink;
+      border-style: solid;
+      border-width: 1px;
+    }
+
+    .item__col.col-3{
+      width: 100%;
+      padding: 5px;
+      border-color: red;
+      border-style: solid;
+      border-width: 1px;
+      
+    }
+
+    .item__card.v-card.v-sheet.v-sheet--outlined.theme--light {
+      width: 100%;
+      border-color: black;
+      border-style: solid;
+      border-width: 1px;
+    }
+
+
+    /* .main {
+      flex-direction: column;
+    }
+
+    div.row {
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      width: 100%;
+      border-color: pink;
+      border-style: solid;
+      border-width: 1px;
+    }
+
+    div.item__col {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 10px;
+      border-color: black;
+      border-style: solid;
+      border-width: 1px;
+    }
+
+    div.item__card.v-card {
+      flex-direction: column;
+      padding: 10px 12px;
+      border-color: red;
+      border-style: solid;
+      border-width: 1px;
+    } */
+  }
+
+</style>
+
+<!-- <template>
+  <v-container fluid>
     <v-row dense>
       <v-col cols="12" md="12" sm="12">
         <BwBar></BwBar>  
@@ -57,7 +198,7 @@
     </v-row>
   </v-container>
 </template>
-
+-->
 <script>
 import axios from 'axios'
 import Route from '../router/index'
@@ -89,13 +230,19 @@ export default {
     Footer
   },
 
+  filters:{
+    comma(val){
+      return String(val).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  },
+
   methods: { 
     infiniteHandler($state){
       let dev = 'localhost'
       let sev = '3.38.87.14'
 
       console.log('limit+pageOpt?'+ this.limit + this.pageOpt)
-      axios.get(`http://${sev}:9000/api/auth/hotitems/${this.limit + this.pageOpt}/${this.$store.state.Userinfo.User_Id}`)
+      axios.get(`http://${dev}:9000/api/auth/hotitems/${this.limit + this.pageOpt}/${this.$store.state.Userinfo.User_Id}`)
       .then(Response => {
         console.log('infiniteHandler Response.data를 받았습니다.')
         console.log('Response.data:', JSON.stringify(Response.data))
@@ -134,7 +281,7 @@ export default {
         console.log('deleteProduct의 payload =' + JSON.stringify(payload))
         new Promise((resolve, reject) => {
           axios.defaults.headers.common['Authorization'] = `Bearer ${this.$store.state.Userinfo.User_token}`
-          axios.post(`http://${sev}:9000/api/admin/deleteproduct`, payload)
+          axios.post(`http://${dev}:9000/api/admin/deleteproduct`, payload)
           .then(Response => {
               console.log(Response.data)
               // this.$store.commit('READ_PRODUCT_LIST', Response.data)

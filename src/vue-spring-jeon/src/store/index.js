@@ -20,7 +20,8 @@ export default new Vuex.Store({
     {
       CscenterValue: false,
       DeliveryValue: false,
-      BankValue: false
+      BankValue: false,
+      bwBarValue: false
     },
 
     Userinfo:
@@ -74,6 +75,11 @@ export default new Vuex.Store({
     SET_CLICK_BANK_VALUE(state, payload) {
       console.log(payload)
       state.clickValue.BankValue = payload
+    },
+
+    SET_CLICK_BWBAR_VALUE(state, payload) {
+      console.log(payload)
+      state.clickValue.bwBarValue = payload
     },
 
     NewUsers: (state,payload) => {
@@ -197,7 +203,7 @@ export default new Vuex.Store({
       // let sev = '3.38.87.14'
       console.log(payload)
       return new Promise((resolve, reject) => {
-          axios.post(`http://${state.sev}:9000/api/auth/signin`, payload)
+          axios.post(`http://${state.dev}:9000/api/auth/signin`, payload)
               .then(Response => {
                   console.log(Response.data)
                   if (Response.data.username != null) {
@@ -222,7 +228,7 @@ export default new Vuex.Store({
    SignUp({state},payload) {
     console.log(payload)
     return new Promise((resolve, reject) => {
-        axios.post(`http://${state.sev}:9000/api/auth/signup`, payload)
+        axios.post(`http://${state.dev}:9000/api/auth/signup`, payload)
             .then(Response => {
                 console.log(payload)
                 console.log(Response.data)
@@ -243,7 +249,7 @@ export default new Vuex.Store({
   admin({commit,state}, payload) {
     return new Promise((resolve, reject) => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${state.Userinfo.User_token}`
-      axios.get(`http://${state.sev}:9000/api/admin/adminPage/${payload.page}`)
+      axios.get(`http://${state.dev}:9000/api/admin/adminPage/${payload.page}`)
           .then(Response => {
             console.log(payload) 
             console.log(Response.data)
@@ -263,7 +269,7 @@ export default new Vuex.Store({
     return new Promise((resolve, reject) => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem("token")}`
       // localStorage에 저장된 token 사용
-      axios.get(`http://${state.sev}:9000/api/auth/unpackToken`)
+      axios.get(`http://${state.dev}:9000/api/auth/unpackToken`)
           .then(Response => {
             console.log(Response.data)
             commit('SET_USER_REFRESH',Response.data)
@@ -279,7 +285,7 @@ export default new Vuex.Store({
   UserDelete({commit, state}, payload){
     return new Promise((resolve,reject) => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${state.Userinfo.User_token}`
-      axios.post(`http://${state.sev}:9000/api/admin/userdelete/${payload.page}`)
+      axios.post(`http://${state.dev}:9000/api/admin/userdelete/${payload.page}`)
         .then(Response => {
           console.log(payload)
           console.log(payload.page)
@@ -297,7 +303,7 @@ export default new Vuex.Store({
 
   BoardList({commit, state}, payload){
     return new Promise((resolve, reject) => {
-      axios.get(`http://${state.sev}:9000/api/auth/boardlist/${payload.page}`)
+      axios.get(`http://${state.dev}:9000/api/auth/boardlist/${payload.page}`)
       .then(Response => {
         console.log(payload)
         console.log(Response.data)
@@ -323,7 +329,7 @@ export default new Vuex.Store({
     // 파일 업로드 X
     if(payload.fileinput === null){
       return new Promise((resolve, reject) => {
-        axios.post(`http://${state.sev}:9000/api/auth/boardwrite`, payload)
+        axios.post(`http://${state.dev}:9000/api/auth/boardwrite`, payload)
           .then(Response => {
             console.log(Response.data)
             if(Response.data === "success") {
@@ -347,7 +353,7 @@ export default new Vuex.Store({
           formData.append('bContent', payload.bContent)
           formData.append('username', payload.username)
           formData.append('uploadFile', payload.fileinput) // key(uploadFile), value(payload)
-          axios.post(`http://${state.sev}:9000/api/auth/upload`, formData,
+          axios.post(`http://${state.dev}:9000/api/auth/upload`, formData,
             {
             headers: {
               'Content-Type': 'multipart/form-data',
@@ -371,7 +377,7 @@ export default new Vuex.Store({
 
     BoardDelete({commit, state}, payload){
       return new Promise((resolve, reject) => {
-        axios.post(`http://${state.sev}:9000/api/auth/boarddelete/${payload.page}`, payload)
+        axios.post(`http://${state.dev}:9000/api/auth/boarddelete/${payload.page}`, payload)
         .then(Response => {
           console.log(payload)
           console.log(payload.page)
@@ -389,7 +395,7 @@ export default new Vuex.Store({
 
     CommentPaginationList({commit, state}, payload){
       return new Promise((resolve, reject) => {
-        axios.get(`http://${state.sev}:9000/api/auth/boarddetail/${payload.bId}/${payload.page}`)
+        axios.get(`http://${state.dev}:9000/api/auth/boarddetail/${payload.bId}/${payload.page}`)
         .then(Response => {
           console.log(Response.data)
           
@@ -425,7 +431,7 @@ export default new Vuex.Store({
           formData.append('uploadFile', file) 
         }   
         axios.defaults.headers.common['Authorization'] = `Bearer ${state.Userinfo.User_token}`  
-        axios.post(`http://${state.sev}:9000/api/admin/insertproducttest`, formData,
+        axios.post(`http://${state.dev}:9000/api/admin/insertproducttest`, formData,
           {
             headers: {
               'Content-Type': 'multipart/form-data',
@@ -471,7 +477,7 @@ export default new Vuex.Store({
         formData.append('iName',payload.fileinput.name)           // 이미지 이름
         formData.append('iPk', iPk)    // 이미지 고유번호
   
-        axios.post(`http://${state.sev}:9000/api/admin/insertproduct`, formData,
+        axios.post(`http://${state.dev}:9000/api/admin/insertproduct`, formData,
           {
             headers: {
               'Content-Type': 'multipart/form-data',
@@ -497,7 +503,7 @@ export default new Vuex.Store({
     latestItems({commit, state}, payload){
       return new Promise((resolve, reject) => {
         console.log('payload.limit:' + payload.limit)
-        axios.get(`http://${state.sev}:9000/api/auth/latestitems/${payload.limit}/${payload.username}`)
+        axios.get(`http://${state.dev}:9000/api/auth/latestitems/${payload.limit}/${payload.username}`)
         
         .then(Response => {
           console.log('Response data를 받았습니다.')
@@ -518,7 +524,7 @@ export default new Vuex.Store({
     hotItems({commit, state}, payload){
       return new Promise((resolve, reject) => {
         console.log('payload.limit:' + payload.limit)
-        axios.get(`http://${state.sev}:9000/api/auth/hotitems/${payload.limit}/${payload.username}`)
+        axios.get(`http://${state.dev}:9000/api/auth/hotitems/${payload.limit}/${payload.username}`)
         
         .then(Response => {
           console.log('Response data를 받았습니다.')
@@ -537,7 +543,7 @@ export default new Vuex.Store({
 
     homePage({commit, state}){
       return new Promise((resolve,reject) => {
-        axios.get(`http://${state.sev}:9000/api/auth/homePage`)
+        axios.get(`http://${state.dev}:9000/api/auth/homePage`)
         .then(Response => {
           console.log('homePage의 Reponse.data를 받았습니다.')
           console.log(Response.data)
@@ -555,7 +561,7 @@ export default new Vuex.Store({
     putCartList({commit,state}, payload){
       return new Promise((resolve, reject) => {
         axios.defaults.headers.common['Authorization'] = `Bearer ${state.Userinfo.User_token}`
-        axios.get(`http://${state.sev}:9000/api/auth/putcartlist/${state.Userinfo.User_Id}/${payload.limit}`)
+        axios.get(`http://${state.dev}:9000/api/auth/putcartlist/${state.Userinfo.User_Id}/${payload.limit}`)
         .then(Response => {
           console.log('PutCartList의 Response.data를 받았습니다.')
           console.log(Response.data.list)
@@ -575,7 +581,7 @@ export default new Vuex.Store({
     productRank({commit,state}){
       return new Promise((resolve, reject) => {
         axios.defaults.headers.common['Authorization'] = `Bearer ${state.Userinfo.User_token}`
-        axios.get(`http://${state.sev}:9000/api/admin/productrank`)
+        axios.get(`http://${state.dev}:9000/api/admin/productrank`)
         .then(Response => {
           console.log('ProductRank created Response data')
           console.log(Response.data)  
@@ -592,7 +598,7 @@ export default new Vuex.Store({
 
     orderList({commit,state}){
       return new Promise((resolve, reject) => {
-        axios.get(`http://${state.sev}:9000/api/auth/orderlist/${state.Userinfo.User_Id}`)
+        axios.get(`http://${state.dev}:9000/api/auth/orderlist/${state.Userinfo.User_Id}`)
         .then(Response => {
           console.log(Response.data)
           commit('SET_ORDER_LIST', Response.data)
@@ -611,7 +617,7 @@ export default new Vuex.Store({
         console.log('deleteCart의 payload =' + JSON.stringify(payload))
         new Promise((resolve, reject) => {
           axios.defaults.headers.common['Authorization'] = `Bearer ${state.Userinfo.User_token}`
-          axios.post(`http://${state.sev}:9000/api/auth/deletecart`, payload)
+          axios.post(`http://${state.dev}:9000/api/auth/deletecart`, payload)
           .then(Response => {
               console.log(Response.data)
               if(Response.data === "success"){

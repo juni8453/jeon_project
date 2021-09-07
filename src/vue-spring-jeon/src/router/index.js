@@ -188,7 +188,15 @@ const routes = [
     path: '/orderlist',
     name: 'OrderList',
     component: OrderList,
-    props: true
+    props: true,
+    beforeEnter(to, from, next){
+      if(store.state.isLogin === false){
+        alert('로그인이 필요합니다.')
+        Route.push('/login')
+      } else {
+        next()
+      }
+    }  
   },
   {
     path: '/testcomponent',

@@ -88,9 +88,9 @@ public class AdminController {
 			Product product, Images images
 			){
 //		String path = "C:/Users/l9-morning/Documents/lcom_test/src/vue-spring-jeon/public/images/";
-//		String path = "C:/Users/user/Documents/GitHub/jeon_project/src/vue-spring-jeon/public/images/";	
+		String path = "C:/Users/user/Documents/GitHub/jeon_project/src/vue-spring-jeon/public/images/";	
 //		String path = "C:/Users/82105/Documents/GitHub/lcom_test/src/vue-spring-jeon/public/images/";
-		String path = "/usr/share/nginx/html/images/";
+//		String path = "/usr/share/nginx/html/images/";
 		String thumbPath = path + "thumb/";
 		
 		// 파일 이름 중복 방지 (년월일초 추가)
