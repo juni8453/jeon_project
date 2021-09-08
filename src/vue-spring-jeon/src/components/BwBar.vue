@@ -33,6 +33,10 @@
 </template>
 
 <style scoped>
+  body {
+    font-size: 16px;
+  }
+
   .bwBar {
     display: none;
   }
@@ -119,6 +123,12 @@
   .boardlist li {
     padding: 8px 12px;
     list-style: none;
+  }
+
+  @media (min-width: 975px) and (max-width: 1060px) {
+    .navbar{
+      font-size: 13px;
+    }
   }
 
   @media screen and (max-width:975px) {

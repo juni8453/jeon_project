@@ -50,6 +50,7 @@ export default new Vuex.Store({
       // prevPage:null,
       // pageNum:null
     },
+    OptionList: false,
     Show: false,
     isLogin: false,
     isLoginError: false,
@@ -169,6 +170,10 @@ export default new Vuex.Store({
     },
     SET_SHOW(state,data){
       state.Show = data
+    },
+
+    SET_OPTION_SHOW(state,data){
+      state.OptionList = data
     },
     
     loginSuccess(state){

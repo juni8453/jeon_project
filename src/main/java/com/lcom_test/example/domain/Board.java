@@ -13,6 +13,7 @@ public class Board {
 	private String bContent;
 	private String bWriter;
 	private String bDateTime;
+	private boolean bShow;
 	private Pagination pagination;
 	private List<Comment> commentList;
 
@@ -87,5 +88,11 @@ public class Board {
 	}
 	public void setCommentList(List<Comment> commentList) {
 		this.commentList = commentList;
+	}
+	public boolean isbShow() {
+		return bShow;
+	}
+	public void setbShow(boolean bShow) {
+		this.bShow = bShow;
 	}
 }	

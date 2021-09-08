@@ -7,12 +7,26 @@
         <v-row class="main">
           <v-col class="item__col" cols="3" v-for="item in productlist" :key="item.pId">
             <v-card class="item__card" outlined>
-              <router-link :to="{name:'ItemDetail', params:{ pName:item.pName }}">
+              <router-link @click.native="clickLink({item})" 
+                :to="{name:'ItemDetail', params:{ pName:item.pName }}">
                 <div class="item__img">
                   <v-img
+                    v-if="item.pQuantity !== 0"
                     contain
                     :src="`/images/thumb/${item.listImages[0].iName}`"
                   ></v-img>
+                  <v-img
+                    v-else
+                    contain
+                    :src="`/images/thumb/${item.listImages[0].iName}`"
+                  >
+                  <!-- 이미지 내 다른 이미지 삽입 (매진되었을 때)-->
+                    <v-img class="sold__out__img"
+                      contain
+                      :src="`/images/thumb/soldout.png`"
+                    >
+                    </v-img>
+                  </v-img> 
                 </div>
               </router-link>
               <v-card-text>
@@ -35,7 +49,8 @@
           </v-col>
         </v-row>
       </main>
-      <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+
+      <infinite-loading infinite-loading @infinite="infiniteHandler"></infinite-loading>
 
       <Footer></Footer>
     </body>
@@ -82,6 +97,19 @@
     padding: 8px 8px;
   }
 
+  .item__img {
+    height: 100%;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .sold__out__img {
+    position: relative;
+    top: 33%;
+    height: 45%;
+  }
+
   @media screen and (max-width:975px) {
     div.row.main {
       width: 100%;
@@ -101,70 +129,23 @@
       height: 50%;
       padding: 8px 8px;
     }
+
+    .item__img {
+      height: 100%;
+      border-color: black;
+      border-width: 1px;
+      border-style: solid;
+    }
+
+    .sold__out__img {
+      position: relative;
+      top: 10rem;
+      height: 30%;
+    }
   }
 
 </style>
 
-<!-- <template>
-  <v-container fluid>
-    <v-row dense>
-      <v-col cols="12" md="12" sm="12">
-        <BwBar></BwBar>  
-        <v-card class="text-center">
-          <v-row>
-            <v-col cols="3" v-for="item in productlist" :key="item.pId">
-              <v-card>
-                <v-row>
-                  <v-col>
-                    <v-card outlined>
-                      <v-card-text>
-                        <strong>
-                          {{item.pName}}
-                        </strong>  
-                      </v-card-text>  
-                    </v-card>
-                    <v-card outlined
-                     v-if="Userinfo.User_auth.includes('ROLE_ADMIN')"
-                     @click="deleteProduct(
-                      {
-                        pId:item.pId,
-                        iId:item.listImages[0].iId
-                      }
-                     )">
-                      <v-icon>mdi-delete</v-icon>
-                    </v-card>
-                    <v-card
-                     >
-                      <router-link :to="{name:'ItemDetail',
-                        params:{
-                          pName:item.pName
-                        }
-                      }"
-                      >
-                        <v-img
-                            contain
-                            height="250"
-                            :src="`/images/thumb/${item.listImages[0].iName}`"
-                        ></v-img> 
-                      </router-link> 
-                    </v-card>
-                  </v-col>    
-                </v-row>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-card>
-        <infinite-loading @infinite="infiniteHandler"></infinite-loading>
-      </v-col>
-      <v-row>
-        <v-col>
-          <Footer></Footer>
-        </v-col>
-      </v-row>
-    </v-row>
-  </v-container>
-</template>
--->
 <script>
 import axios from 'axios'
 import Route from '../router/index'
@@ -265,7 +246,19 @@ export default {
           })
         })
       }
-    }
+    },
+
+    clickLink(payload){
+      console.log('link의 payload는?')
+      console.log(payload.item.pQuantity)
+      if(payload.item.pQuantity === 0){
+        alert('해당 제품은 매진되었습니다.')
+        Route.push('/latestitems')
+        Route.go(Route.currentRoute)
+        // push 이후 페이지 동작 안되서 새로고침 넣음
+      }
+    },
+    
   }
 }
 

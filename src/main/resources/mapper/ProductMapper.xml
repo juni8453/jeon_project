@@ -70,6 +70,7 @@ LIMIT		#{pageOpt},8
 		<result column="p_from" property="pFrom"/>
 		<result column="p_brand" property="pBrand"/>
 		<result column="p_like" property="pLike"/>
+		<result column="p_quantity" property="pQuantity"/>
 		<collection property="listImages" resultMap="Images5"/>
 		<collection property="listHeart" resultMap="Heart5"/>
 		<collection property="listUserInfo" resultMap="UserInfo5"/>

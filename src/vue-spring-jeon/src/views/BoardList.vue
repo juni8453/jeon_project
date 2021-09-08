@@ -1,126 +1,124 @@
 <template>
-  <v-container>
-    <BwBar></BwBar>
-    <v-row no-gutters>  
-      <v-row>
-        <v-col cols="12" md="6" sm="6"
-          v-for="item in boardlist" :key="item.bId">
-          <v-row>
-            <v-col cols="12" md="12" sm="12"> 
-              <v-card outlined>
-                <v-row>
-                  <v-col cols="8" md="8" sm="8">
-                    <v-card-text
-                      v-if="item.bDepth > 0"
-                    >
-                      <strong class="text-color">[Re]{{item.bTitle}}</strong>
-                    </v-card-text>
-                    <v-card-text class="Center"
-                      v-else
-                    >
-                      <strong>{{item.bTitle}}</strong>
-                    </v-card-text>
-                  </v-col>
+  <v-container fluid>
+    <body>
+      <BwBar></BwBar>
 
-                  <v-col cols="2" md="2" sm="2" class="Center">
-                    <v-icon>
-                      mdi-eye
-                    </v-icon>
-                    <strong>{{item.bViews}}</strong>
-                  </v-col>
-                  <v-col cols="2" md="2" sm="2" class="Center">
-                    <strong>[Group]<br>{{item.bGroup}}</strong>
-                  </v-col>
-                </v-row>
-                <v-card-text>
-                  <v-row>
-                    <v-col cols="3" md="3" sm="3">
-                      <v-btn outlined
-                        icon
-                        router :to="{name:'BoardDetail', 
-                        params: {bId:item.bId} }"
-                      >
-                      <v-icon>mdi-file-eye</v-icon>
-                      </v-btn>
-                    </v-col>
-                    <v-col cols="3" md="3" sm="3">
-                      <v-btn outlined
-                        icon
-                        color="indigo"
-                        router :to="{name:'BoardReply',
-                        params: {
-                          bId:item.bId,
-                          bGroup:item.bGroup,
-                          bOrder:item.bOrder,
-                          bDepth:item.bDepth
-                        }
-                      }"
-                      >
-                      <v-icon>mdi-pencil</v-icon>
-                      </v-btn>                       
-                    </v-col>
-                    <v-col cols="3" md="3" sm="3">
-                      <v-btn outlined
-                        icon
-                        color="black"
-                        v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
-                        @click="BoardEdit({bId:item.bId})"
-                      >
-                        <v-icon>mdi-file-document-edit</v-icon>
-                      </v-btn>
-                    </v-col>
-                      <v-col cols="3" md="3" sm="3">
-                      <v-btn outlined
-                        icon
-                        color="red"
-                        v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
-                        @click="BoardDelete({bId:item.bId, page:page})"
-                      >
-                        <v-icon>mdi-delete</v-icon>
-                      </v-btn>
-                    </v-col> 
-                  </v-row>
-                  <v-row>
-                    <v-col cols="12" md="12" sm="12">
-                      {{item.bDateTime}} | {{item.username}}
-                    </v-col>
-                  </v-row>
-                </v-card-text>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-    </v-row>
-    <v-row>
-      <v-col cols="12" md="12" sm="12">
-        <v-pagination
+      <main>
+        <v-row class="main">
+          <v-col class="item__col" cols="12" v-for="item in boardlist" :key="item.bId">
+            <v-card class="item__card" outlined @click="optionList({item})">
+              <v-card-text class="item__text">
+                <ul class="item__no__title">
+                  <li>#{{item.bId}}</li>
+                  <li class="itme__title" v-if="item.bDepth > 0">
+                    <strong>[Re]</strong>{{item.bTitle}}
+                  </li>
+                  <li v-else>
+                    <strong>{{item.bTitle}}</strong>
+                  </li>
+                </ul>
+                <ul class="item__name__date">
+                  <li>{{item.username}}</li>
+                  <li>{{item.bDateTime}}</li>
+                </ul>
+              </v-card-text>
+            </v-card>
+            <v-card class="click__list" v-if="item.bShow === true">
+              <ul class="option">
+                <li><v-btn 
+                      router :to="{name:'BoardDetail', 
+                      params: {bId:item.bId} }" 
+                        >상세보기<v-icon color="#263343">mdi-file-eye</v-icon></v-btn>
+                </li>
+                <li><v-btn
+                      v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
+                      router :to="{name:'BoardEdit',
+                      params: {bId:item.bId}}"
+                      outlined>수정하기<v-icon color="#d49466">mdi-file-document-edit</v-icon></v-btn>
+                </li>
+                <li><v-btn
+                      router :to="{name:'BoardReply',
+                      params: {
+                        bId:item.bId,
+                        bGroup:item.bGroup,
+                        bOrder:item.bOrder,
+                        bDepth:item.bDepth
+                      }}"
+                      outlined>답글달기<v-icon color="#d49466">mdi-pencil</v-icon></v-btn>
+                </li>
+                <li><v-btn
+                      v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
+                      @click="BoardDelete({bId:item.bId, page:page})"
+                      outlined>삭제하기<v-icon color="red">mdi-delete</v-icon></v-btn>
+                </li>
+              </ul>
+            </v-card>
+          </v-col>
+        </v-row>
+        <v-pagination class="pagination"
           v-model="page"
           :length="Pagination.lastPage" 
           circle
           @input="move({page:page})"
         ></v-pagination>
-      </v-col>
-    </v-row>
-  </v-container> 
+      </main>
+
+      <Footer></Footer>
+    </body>  
+  </v-container>
 </template>
 
 <style scoped>
+  .container {
+    height: 100%;
+  }
 
-div {
-  width:100%;
- /* height:100%;*/
-  text-align: center;
-}
+  main {
+    width: 100%;
+    padding: 8px 12px;
+  }
 
-.border {
-  border-width: 3px 3px;
-  border-color: indigo indigo
-}
+  .item__card:hover {
+    background: #d49466;
+    border-radius: 4px;
+  }
 
-.text-color {
-  color: yellowgreen
-}
+  .item__col {
+    padding-bottom: 0px;
+  }
+
+  .item__text {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .item__no__title {
+    justify-content: flex-start;
+    list-style: none;
+    padding-left: 4px;
+  }
+
+  .item__name__date {
+    text-align: right;
+    list-style: none;
+    padding-left: 4px;
+  }
+
+  .option {
+    display: flex;
+    
+    justify-content: space-around;
+    padding: 8px 12px;
+  }
+
+  .option li{
+    list-style: none;
+  }
+
+  .pagination {
+    margin-top: 15px;
+  }
 
 </style>
 
@@ -134,8 +132,9 @@ export default {
     return{
       search: '',
       page:1,
-      pageUnit:5,
-      perPage:5,
+      // optionValue: false
+      // pageUnit:5,
+      // perPage:10,
     }
   },
 
@@ -157,6 +156,13 @@ export default {
         if(confirm('정말로 글을 삭제하시겠습니까?')===true){
           this.$store.dispatch('BoardDelete', payload)
         }
+      },
+
+      optionList(payload){
+        console.log('optionList Run!')
+        console.log(payload)
+        payload.item.bShow =! payload.item.bShow
+        this.$store.commit('SET_OPTION_SHOW', payload.item.bShow)
       },
 
       move(payload){

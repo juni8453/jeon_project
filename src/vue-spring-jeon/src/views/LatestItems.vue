@@ -1,102 +1,151 @@
 <template>
   <v-container fluid>
-    <v-row dense>
-      <v-col cols="12" md="12" sm="12">
-        <BwBar></BwBar>  
-        <v-card class="text-center">
-          <v-row>
-            <v-col cols="3" v-for="item in productlist" :key="item.pId">
-              <v-card>
-                <v-row>
-                  <v-col>
-                    <v-card outlined>
-                      <v-card-text>
-                        <strong>
-                        {{item.pName}}
-                        </strong>
-                      </v-card-text>
-                    </v-card>
-                    <v-card outlined
-                     v-if="Userinfo.User_auth.includes('ROLE_ADMIN')"
-                     @click="deleteProduct(
-                      {
+    <body>
+      <BwBar></BwBar>
+
+      <main>
+        <v-row class="main">
+          <v-col class="item__col" cols="3" v-for="item in productlist" :key="item.pId">
+            <v-card class="item__card" outlined>
+              <router-link @click.native="clickLink({item})" 
+                :to="{name:'ItemDetail', params:{ pName:item.pName }}">
+                <div class="item__img">
+                  <v-img
+                    v-if="item.pQuantity !== 0"
+                    contain
+                    :src="`/images/thumb/${item.listImages[0].iName}`"
+                  ></v-img>
+                  <v-img
+                    v-else
+                    contain
+                    :src="`/images/thumb/${item.listImages[0].iName}`"
+                  >
+                  <!-- 이미지 내 다른 이미지 삽입 (매진되었을 때)-->
+                    <v-img class="sold__out__img"
+                      contain
+                      :src="`/images/thumb/soldout.png`"
+                    >
+                    </v-img>
+                  </v-img> 
+                </div>
+              </router-link>
+              <v-card-text>
+                <ul class="cardtext">
+                  <strong><li>{{item.pName}}</li></strong>
+                  <strong><li>{{item.pPrice | comma}}원</li></strong>
+                  <li>
+                    <v-btn outlined depressed  v-if="Userinfo.User_auth.includes('ROLE_ADMIN')"
+                      @click="deleteProduct({
                         pId:item.pId,
-                        iId:item.listImages[0].iId,
-                        pName:item.pName
-                      }
-                     )">
-                      <v-icon>
-                        mdi-delete
-                      </v-icon>
-                    </v-card>
-                    <v-card
-                     >
-                     {{item.pId}}
-                     <!-- router-link에 @click.native로 메서드 설정-->
-                      <router-link 
-                      @click.native="clickLink({item})"
-                      :to="{name:'ItemDetail',
-                        params:{
-                          pId:item.pId,
-                          pName:item.pName
-                        }
-                      }"
-                      >
-                        <v-img
-                            v-if="item.pQuantity !== 0"
-                            contain
-                            height="250"
-                            :src="`/images/thumb/${item.listImages[0].iName}`"
-                        ></v-img>
-                        <v-img
-                            v-else
-                            contain
-                            height="250"
-                            :src="`/images/thumb/${item.listImages[0].iName}`"
-                        >
-                          <!-- 이미지 내 다른 이미지 삽입 (매진되었을 때)-->
-                          <v-img
-                            contain
-                            height="100"
-                            :src="`/images/thumb/soldout.png`"
-                          >
-                          </v-img>
-                        </v-img> 
-                      </router-link> 
-                    </v-card>
-                     <v-card outlined>
-                      <v-icon
-                        v-if="item.listHeart.find(heart => heart.username !== Userinfo.User_Id)"
-                        @click="likeProduct(
-                          {
-                            pId: item.pId,
-                            username: Userinfo.User_Id,
-                          })"
-                      >mdi-heart-outline</v-icon>
-                      <v-icon
-                        v-else
-                        @click="cancelLike({
-                          pId: item.pId,
-                          username: Userinfo.User_Id
-                        })"
-                      >mdi-heart</v-icon>
-                    </v-card>
-                  </v-col>    
-                </v-row>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-card>
-        <infinite-loading @infinite="infiniteHandler"></infinite-loading>
-      </v-col>
-      <v-row>
-        <v-col>
-          <Footer></Footer>
-        </v-col>
-      </v-row>
-    </v-row>
+                        iId:item.listImages[0].iId
+                      })"
+                    >
+                      <v-icon color="#d49466">mdi-delete</v-icon>
+                    </v-btn>
+                  </li>
+                </ul>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </main>
+
+      <infinite-loading infinite-loading @infinite="infiniteHandler"></infinite-loading>
+
+      <Footer></Footer>
+    </body>
   </v-container>
 </template>
+
+<style scoped>
+  .container {
+    height: 100%;
+  }
+
+  div {
+    border-radius: 8px;
+  }
+
+  div.col {
+    padding: 20px 24px;
+  }
+
+  div.v-card.v-sheet {
+    padding: 16px 20px;
+  }
+
+  div.v-card__text {
+    padding: 8px 8px;
+  }
+
+  .cardtext {
+    padding: 4px 4px;
+    list-style: none;
+  }
+
+  .cardtext li {
+    text-align: center;
+  }
+
+  .main__content li {
+    list-style: none;
+  }
+
+  .item__card.v-card.v-sheet.v-sheet--outlined.theme--light {
+    width: 100%;
+    height: 100%;
+    padding: 8px 8px;
+  }
+
+  .item__img {
+    height: 100%;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .sold__out__img {
+    position: relative;
+    top: 33%;
+    height: 45%;
+  }
+
+  @media screen and (max-width:975px) {
+    div.row.main {
+      width: 100%;
+      margin: 0;
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item__col.col.col-3{
+      max-width: 100%; /*25% 이상 반응 없음 > max-width로 변경*/
+      padding: 14px;
+    }
+
+    .item__card.v-card.v-sheet.v-sheet--outlined.theme--light {
+      width: 100%;
+      height: 50%;
+      padding: 8px 8px;
+    }
+
+    .item__img {
+      height: 100%;
+      border-color: black;
+      border-width: 1px;
+      border-style: solid;
+    }
+
+    .sold__out__img {
+      position: relative;
+      top: 10rem;
+      height: 30%;
+    }
+  }
+
+</style>
+
 
 <script>
 import axios from 'axios'
@@ -128,6 +177,12 @@ export default {
     InfiniteLoading,
     BwBar,
     Footer
+  },
+
+  filters:{
+    comma(val){
+      return String(val).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
   },
 
   methods: { 
@@ -263,7 +318,19 @@ export default {
           })
         })
       }
-    }
+    },
+
+    clickLink(payload){
+      console.log('link의 payload는?')
+      console.log(payload.item.pQuantity)
+      if(payload.item.pQuantity === 0){
+        alert('해당 제품은 매진되었습니다.')
+        Route.push('/latestitems')
+        Route.go(Route.currentRoute)
+        // push 이후 페이지 동작 안되서 새로고침 넣음
+      }
+    },
+    
   }
 }
 </script>

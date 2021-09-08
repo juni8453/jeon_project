@@ -1,0 +1,147 @@
+BwBar 클릭 시 메뉴바 사라지거나 나타나도록 수정 (복구 완료)
+
+주문내역 비로그인 시 접속 불가하도록 라우터 수정 (복구 완료)
+
+커뮤니티 클릭 시 커뮤니티 바로가기, 게시글 작성 칸 띄워지도록 수정 (복구 완료)
+
+이미지 크기 딱 맞추기 (조금 더 연구 필요) 
+
+795px 이하로 내려갈 때 미디어 쿼리 생성해서 폰트 사이즈 줄이기 (윗 바 수정 완료)
+
+인기 상품 매진 시 sold out 이미지 추가 (쿼리에서 pQuantity 못 가져오고 있음) (수정 완료)
+
+상품 리스트 레이아웃 수정 (수정 완료)
+
+커뮤니티 레이아웃 수정 (수정 중)
+
+Footer BwBar와 media 쿼리 맞추고 폰트 사이즈 수정
+
+optionList 클릭 > 바로 밑 칸 글 상세보기 / 수정 / 삭제 / 답글 달기 기능 나오도록 
+
+1. @click="Show(itme)" 클릭 했을 때 v-for 배열을 넘겨준다.
+2. Show 메서드에서 payload 사용해서 배열 받아주고 boolean 값을 바꿔준다.
+3. 바뀐 boolean 값을 SET_SHOW 뮤테이션에 보내준다.
+4. Show: false로 지정된 state에 바뀐 값을 저장시킨다.
+5. textarea 의 부모 태그 속성에 v-if 사용해서 item.cShow === true 사용
+
+
+
+
+장바구니 레이아웃 수정
+
+주문내역 레이아웃 수정
+
+상품 상세보기 레이아웃 수정
+
+
+
+
+
+
+커뮤니티 (BoardList) 백업 본
+<template>
+  <v-container>
+    <BwBar></BwBar>
+    <v-row no-gutters>  
+      <v-row>
+        <v-col cols="12" md="6" sm="6"
+          v-for="item in boardlist" :key="item.bId">
+          <v-row>
+            <v-col cols="12" md="12" sm="12"> 
+              <v-card outlined>
+                <v-row>
+                  <v-col cols="8" md="8" sm="8">
+                    <v-card-text
+                      v-if="item.bDepth > 0"
+                    >
+                      <strong class="text-color">[Re]{{item.bTitle}}</strong>
+                    </v-card-text>
+                    <v-card-text class="Center"
+                      v-else
+                    >
+                      <strong>{{item.bTitle}}</strong>
+                    </v-card-text>
+                  </v-col>
+
+                  <v-col cols="2" md="2" sm="2" class="Center">
+                    <v-icon>
+                      mdi-eye
+                    </v-icon>
+                    <strong>{{item.bViews}}</strong>
+                  </v-col>
+                  <v-col cols="2" md="2" sm="2" class="Center">
+                    <strong>[Group]<br>{{item.bGroup}}</strong>
+                  </v-col>
+                </v-row>
+                <v-card-text>
+                  <v-row>
+                    <v-col cols="3" md="3" sm="3">
+                      <v-btn outlined
+                        icon
+                        router :to="{name:'BoardDetail', 
+                        params: {bId:item.bId} }"
+                      >
+                      <v-icon>mdi-file-eye</v-icon>
+                      </v-btn>
+                    </v-col>
+                    <v-col cols="3" md="3" sm="3">
+                      <v-btn outlined
+                        icon
+                        color="indigo"
+                        router :to="{name:'BoardReply',
+                        params: {
+                          bId:item.bId,
+                          bGroup:item.bGroup,
+                          bOrder:item.bOrder,
+                          bDepth:item.bDepth
+                        }
+                      }"
+                      >
+                      <v-icon>mdi-pencil</v-icon>
+                      </v-btn>                       
+                    </v-col>
+                    <v-col cols="3" md="3" sm="3">
+                      <v-btn outlined
+                        icon
+                        color="black"
+                        v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
+                        @click="BoardEdit({bId:item.bId})"
+                      >
+                        <v-icon>mdi-file-document-edit</v-icon>
+                      </v-btn>
+                    </v-col>
+                      <v-col cols="3" md="3" sm="3">
+                      <v-btn outlined
+                        icon
+                        color="red"
+                        v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
+                        @click="BoardDelete({bId:item.bId, page:page})"
+                      >
+                        <v-icon>mdi-delete</v-icon>
+                      </v-btn>
+                    </v-col> 
+                  </v-row>
+                  <v-row>
+                    <v-col cols="12" md="12" sm="12">
+                      {{item.bDateTime}} | {{item.username}}
+                    </v-col>
+                  </v-row>
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-row>
+    <v-row>
+      <v-col cols="12" md="12" sm="12">
+        <v-pagination
+          v-model="page"
+          :length="Pagination.lastPage" 
+          circle
+          @input="move({page:page})"
+        ></v-pagination>
+      </v-col>
+    </v-row>
+  </v-container> 
+</template>
