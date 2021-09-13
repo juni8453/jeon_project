@@ -145,13 +145,13 @@
     </v-row>
   </v-container>      
 </template>
-<style>
+<!--<style>
   .Center { 
   display: grid;
   align-items: center;      /* 수직 중앙 정렬*/
   justify-content: center;  /* 수평 중앙 정렬*/
 }
-</style>
+</style> -->
 
 <script>
 import axios from 'axios'
@@ -248,7 +248,7 @@ export default {
       let sev = '3.38.87.14'
 
       console.log('limit+pageOpt?'+ this.limit + this.pageOpt)
-      axios.get(`http://${dev}:9000/api/auth/putcartlist/${this.$store.state.Userinfo.User_Id}/${this.limit + this.pageOpt}`)
+      axios.get(`http://${sev}:9000/api/auth/putcartlist/${this.$store.state.Userinfo.User_Id}/${this.limit + this.pageOpt}`)
         .then(Response => {
           console.log('infiniteHandler Response.data를 받았습니다.')
           console.log('Response.data:', JSON.stringify(Response.data))

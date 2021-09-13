@@ -125,7 +125,7 @@
     list-style: none;
   }
 
-  @media (min-width: 975px) and (max-width: 1060px) {
+  @media (min-width: 975px) and (max-width: 1274px) {
     .navbar{
       font-size: 13px;
     }
@@ -133,6 +133,7 @@
 
   @media screen and (max-width:975px) {
     .navbar {
+      font-size: 13px;
       flex-direction: column;
       align-items: flex-start;
     }  

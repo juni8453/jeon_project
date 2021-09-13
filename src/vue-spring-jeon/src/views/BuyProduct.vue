@@ -189,13 +189,13 @@
   </v-container>
 </template>
 
-<style>
+<!--<style>
   .Center { 
   display: grid;
   align-items: center;      /* 수직 중앙 정렬*/
   justify-content: center;  /* 수평 중앙 정렬*/
 }
-</style>
+</style> -->
 
 <script>
 import axios from 'axios'
@@ -243,7 +243,7 @@ export default {
       if(confirm('주문하겠습니까?')===true){
         new Promise((resolve, reject) => {
           axios.defaults.headers.common['Authorization'] = `Bearer ${this.$store.state.Userinfo.User_token}`
-          axios.post(`http://${dev}:9000/api/auth/buyproduct`, payload)
+          axios.post(`http://${sev}:9000/api/auth/buyproduct`, payload)
           .then(Response => {
             console.log(Response.data)
             if(Response.data === 'success'){
@@ -251,7 +251,7 @@ export default {
               if(confirm('주문내역을 확인하시겠습니까?') === true){
                 Route.push('/orderlist')
               }
-            }
+            }       
           })
           .catch(Error => {
             console.log(Error)

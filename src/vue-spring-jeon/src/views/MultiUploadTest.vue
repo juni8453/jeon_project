@@ -153,13 +153,13 @@
     </v-row>      
   </v-container>
 </template>
-<style>
+<!--<style>
   .Center { 
   display: grid;
   align-items: center;      /* 수직 중앙 정렬*/
   justify-content: center;  /* 수평 중앙 정렬*/
 }
-</style>
+</style>-->
 
 <script>
 import { mapState,mapActions } from 'vuex'

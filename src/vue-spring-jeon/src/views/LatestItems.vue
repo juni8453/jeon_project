@@ -97,13 +97,6 @@
     padding: 8px 8px;
   }
 
-  .item__img {
-    height: 100%;
-    border-color: black;
-    border-width: 1px;
-    border-style: solid;
-  }
-
   .sold__out__img {
     position: relative;
     top: 33%;
@@ -128,13 +121,6 @@
       width: 100%;
       height: 50%;
       padding: 8px 8px;
-    }
-
-    .item__img {
-      height: 100%;
-      border-color: black;
-      border-width: 1px;
-      border-style: solid;
     }
 
     .sold__out__img {
@@ -204,7 +190,7 @@ export default {
       console.log('likeProduct Run')
       console.log(payload)
       if(confirm('제품을 추천하시겠습니까?')===true){
-        axios.post(`http://${dev}:9000/api/auth/likeproduct/${payload.username}`, payload)
+        axios.post(`http://${sev}:9000/api/auth/likeproduct/${payload.username}`, payload)
         .then(Response => {         
           console.log(Response.data)
           this.$store.commit('READ_PRODUCT_LIST', Response.data)
@@ -226,7 +212,7 @@ export default {
       console.log('cancleLike Run')
       console.log(payload)
       if(confirm('제품 추천을 취소하시겠습니까?')===true){
-        axios.post(`http://${dev}:9000/api/auth/cancellike/${payload.username}` ,payload)
+        axios.post(`http://${sev}:9000/api/auth/cancellike/${payload.username}` ,payload)
         .then(Response => {         
           console.log(Response.data)
           this.$store.commit('READ_PRODUCT_LIST', Response.data)
@@ -244,7 +230,7 @@ export default {
       let sev = '3.38.87.14'
 
       console.log('limit+pageOpt?'+ this.limit + this.pageOpt)
-      axios.get(`http://${dev}:9000/api/auth/latestitems/${this.limit + this.pageOpt}/${this.$store.state.Userinfo.User_Id}`)
+      axios.get(`http://${sev}:9000/api/auth/latestitems/${this.limit + this.pageOpt}/${this.$store.state.Userinfo.User_Id}`)
       .then(Response => {
         console.log('infiniteHandler Response.data를 받았습니다.')
         console.log('Response.data:', JSON.stringify(Response.data))
@@ -284,7 +270,7 @@ export default {
       if(confirm('정말로 글을 삭제하시겠습니까?')===true){
         new Promise((resolve, reject) => {
           axios.defaults.headers.common['Authorization'] = `Bearer ${this.$store.state.Userinfo.User_token}`
-          axios.get(`http://${dev}:9000/api/admin/checkorder/${payload.pName}`)
+          axios.get(`http://${sev}:9000/api/admin/checkorder/${payload.pName}`)
           .then(Response => {
             console.log('checkOrder의 Response.data는 ?')
             console.log(Response.data)
@@ -300,7 +286,7 @@ export default {
               console.log('deleteProduct Run')
               new Promise((resolve, reject) => {
                 axios.defaults.headers.common['Authorization'] = `Bearer ${this.$store.state.Userinfo.User_token}`
-                axios.post(`http://${dev}:9000/api/admin/deleteproduct`, payload)
+                axios.post(`http://${sev}:9000/api/admin/deleteproduct`, payload)
                 .then(Response => {
                   console.log(Response.data)
                   if(Response.data === "success"){
