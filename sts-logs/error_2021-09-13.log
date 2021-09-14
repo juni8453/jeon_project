@@ -1,0 +1,35 @@
+13:51:17.011 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Starting LcomTestApplication on DESKTOP-1ECNFRJ with PID 19780 (C:\Users\user\Documents\GitHub\jeon_project\bin\main started by user in C:\Users\user\Documents\GitHub\jeon_project) 
+13:51:17.016 DEBUG --- [restartedMain] c.l.example.LcomTestApplication : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE 
+13:51:17.016 INFO  --- [restartedMain] c.l.example.LcomTestApplication : The following profiles are active: local 
+13:51:19.235 DEBUG --- [restartedMain] c.l.example.config.AuthTokenFilter : Filter 'authenticationJwtTokenFilter' configured for use 
+13:51:19.998 INFO  --- [restartedMain] c.l.example.LcomTestApplication : Started LcomTestApplication in 3.538 seconds (JVM running for 4.671) 
+13:52:32.002 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : ==>  Preparing: SELECT hi_id as hiId, hi_name as hiName FROM vue_homeimg 
+13:52:32.047 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : ==> Parameters:  
+13:52:32.087 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==    Columns: hiId, hiName 
+13:52:32.087 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 1, 바지1.PNG 
+13:52:32.094 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 4, 바지4.PNG 
+13:52:32.095 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 7, 202108231151096.PNG 
+13:52:32.096 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 8, 202108231151233.PNG 
+13:52:32.096 TRACE --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==        Row: 9, 202108231151364.PNG 
+13:52:32.096 DEBUG --- [http-nio-9000-exec-1] c.l.e.m.P.selectHomeImgList : <==      Total: 5 
+13:52:37.027 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.getBoardCount : ==>  Preparing: SELECT COUNT(*) as count FROM vue_board 
+13:52:37.027 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.getBoardCount : ==> Parameters:  
+13:52:37.036 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.getBoardCount : <==    Columns: count 
+13:52:37.036 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.getBoardCount : <==        Row: 11 
+13:52:37.037 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.getBoardCount : <==      Total: 1 
+13:52:37.038 INFO  --- [http-nio-9000-exec-2] c.l.e.controller.AuthController : com.lcom_test.example.domain.Board@29ab6041 
+13:52:37.038 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : ==>  Preparing: SELECT b_id as bId, b_writer as bWriter, b_title as bTitle, b_content as bContent, b_datetime as bDateTime, b_views as bViews, b_group as bGroup, b_order as bOrder, b_depth as bDepth, u_id as username FROM vue_board ORDER BY b_group DESC, b_order ASC LIMIT ?,? 
+13:52:37.039 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : ==> Parameters: 0(Integer), 10(Integer) 
+13:52:37.048 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==    Columns: bId, bWriter, bTitle, bContent, bDateTime, bViews, bGroup, bOrder, bDepth, username 
+13:52:37.050 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 151, null, 상세보기 테스트, 상세보기 테스트, 2021-08-27 06:13:06, 21, 150, 0, 0, qqq 
+13:52:37.052 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 155, null, 답글 작성 테스트, 답글 작성 테스트, 2021-08-28 11:04:43, 2, 150, 1, 1, 222 
+13:52:37.057 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 150, null, 게시판 리스트 테스트 1번 글, 게시판 리스트 테스트 1번 글, 2021-08-27 06:16:52, 1, 0, 0, 0, qqq 
+13:52:37.059 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 162, null, Test 7, Test 7, 2021-09-08 05:19:35, 0, 0, 0, 0, qqq 
+13:52:37.060 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 161, null, Test 6, Test 6, 2021-09-08 14:19:23, 0, 0, 0, 0, 222 
+13:52:37.061 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 160, null, Test 5, Test 5, 2021-09-08 05:19:04, 0, 0, 0, 0, 222 
+13:52:37.062 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 159, null, Test 4, Test 4, 2021-09-08 14:18:54, 0, 0, 0, 0, qqq 
+13:52:37.064 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 158, null, Test 3, Test 3, 2021-09-08 14:18:40, 0, 0, 0, 0, qqq 
+13:52:37.065 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 157, null, Test 2, Test 2, 2021-09-08 05:18:20, 0, 0, 0, 0, qqq 
+13:52:37.066 TRACE --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==        Row: 156, null, Test 1, Test 1, 2021-09-08 14:17:51, 0, 0, 0, 0, qqq 
+13:52:37.066 DEBUG --- [http-nio-9000-exec-2] c.l.e.m.BoardMapper.selectBoardList : <==      Total: 10 
+13:52:37.067 INFO  --- [http-nio-9000-exec-2] c.l.e.controller.AuthController : [com.lcom_test.example.domain.Board@2b76e077, com.lcom_test.example.domain.Board@3df010b6, com.lcom_test.example.domain.Board@770a71d1, com.lcom_test.example.domain.Board@5b0fa0db, com.lcom_test.example.domain.Board@47e69695, com.lcom_test.example.domain.Board@7a2e4b7f, com.lcom_test.example.domain.Board@5e0e2912, com.lcom_test.example.domain.Board@78a15370, com.lcom_test.example.domain.Board@b8020cf, com.lcom_test.example.domain.Board@37df773] 

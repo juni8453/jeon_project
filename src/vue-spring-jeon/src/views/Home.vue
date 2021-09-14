@@ -112,7 +112,7 @@ export default {
             formData.append('uploadFile', payload.fileinput)
             formData.append('hiName',payload.fileinput.name)           // 이미지 이름
     
-            axios.post(`http://${sev}:9000/api/admin/inserthomeimg`, formData,
+            axios.post(`http://${dev}:9000/api/admin/inserthomeimg`, formData,
             {
                 headers: {
                 'Content-Type': 'multipart/form-data',
@@ -146,7 +146,7 @@ export default {
                 if(confirm('이미지를 삭제하시겠습니까?')===true){
                     new Promise((resolve, reject) => {
                     axios.defaults.headers.common['Authorization'] = `Bearer ${this.$store.state.Userinfo.User_token}`
-                    axios.post(`http://${sev}:9000/api/admin/deletehomeimg`, payload.item)
+                    axios.post(`http://${dev}:9000/api/admin/deletehomeimg`, payload.item)
                         .then(Response => {
                             console.log(Response.data)
                             Route.go(Route.currentRoute)
