@@ -1,5 +1,209 @@
 <template>
   <v-container fluid>
+    <body>
+      <BwBar></BwBar>
+      <main>
+        <v-row>
+          <v-col cols="12">
+            <v-card>
+              <v-card-text class="main">
+                  <ul class="table__head">
+                    <v-row class="head__row">
+                      <v-col cols="1">
+                        <v-checkbox
+                          v-model="checkedAll"
+                          @click="selectAllProduct({item:cartlist})"
+                        > 전체선택
+                        </v-checkbox>
+                      </v-col>
+                      <v-col cols="3">
+                        <strong>상품 사진</strong>
+                      </v-col>  
+                      <v-col cols="3">
+                        <strong>상품명</strong>
+                      </v-col>
+                      <v-col cols="3">
+                        <strong>판매가</strong>
+                      </v-col>
+                      <v-col cols="2">
+                        <strong>비고</strong>
+                      </v-col>
+                    </v-row>
+                  </ul>
+                  <ul class="table__body">
+                    <v-row class="body__row"
+                      v-for="item in cartlist" :key="item.ctId">
+                      <v-col cols="1">
+                        <v-checkbox
+                          v-model="item.check"
+                          @click="selectOneProduct({item:item, listCart:item.listCart[0]})"
+                        >
+                        </v-checkbox>
+                      </v-col>
+                      <v-col cols="3">
+                        <v-card outlined>
+                          <router-link :to="{name:'ItemDetail',
+                            params:{
+                              pName:item.listCart[0].pName
+                            }
+                          }"
+                          >
+                          <v-img
+                            contain
+                            :src="`/images/thumb/${item.listCart[0].listImages[0].iName}`"                  
+                          >
+                          </v-img>
+                        </router-link>  
+                      </v-card>
+                      </v-col>  
+                      <v-col cols="3">
+                        {{item.listCart[0].pName}}
+                      </v-col>
+                      <v-col cols="3">
+                        {{item.listCart[0].pPrice}}
+                      </v-col>
+                      <v-col cols="2">
+                        <v-btn outlined 
+                          @click="deleteCart({
+                          ctId:item.ctId,
+                          })">
+                          <v-icon color="#d49466">
+                            mdi-delete
+                          </v-icon>
+                        </v-btn>
+                      </v-col>
+                    </v-row>
+                  </ul>
+              </v-card-text>
+            </v-card>
+            <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+            <v-card>
+              <v-card-text>
+                <v-row>
+                  <v-col cols="3" class="text-center">
+                    총 상품금액
+                  </v-col>
+                  <v-col cols="1" class="text-center">
+                    +
+                  </v-col>
+                  <v-col cols="3" class="text-center">
+                    기본 배송비
+                  </v-col>
+                  <v-col cols="1" class="text-center">
+                    =
+                  </v-col>
+                  <v-col cols="4" class="text-center">
+                    총 결제가격
+                  </v-col>
+                </v-row>
+                <v-row>
+                  <v-col cols="3" class="text-center">
+                    {{totalprice | comma}}원
+                  </v-col>
+                  <v-col cols="1" class="text-center">
+                    +
+                  </v-col>
+                  <v-col cols="3" class="text-center">
+                    {{post | comma}}원
+                  </v-col>
+                  <v-col cols="1" class="text-center">
+                    = 
+                  </v-col>
+                  <v-col cols="4" class="text-center">
+                    {{totalprice + post | comma}}원
+                  </v-col>
+                </v-row>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </main>
+      <Footer></Footer>
+    </body>
+  </v-container>
+</template>
+
+<style scoped>
+  .container {
+    height: 100%  ;
+  }
+
+  div.col.col-3 {
+    padding: 10px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div.col.col-2 {
+    padding: 10px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div.col.col-1 {
+    padding: 10px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div.col.col-12 {
+    padding: 14px 25px;
+  }
+
+  div.main {
+    padding: 16px 20px;
+  }
+
+  .head__row {
+    text-align: center;
+  }
+
+  .body__row {
+    text-align: center;
+  }
+
+  @media screen and (max-width:975px) {
+    .head__row {
+      display: flex;
+    }
+
+    .table__head {
+      padding: 0;
+    }
+
+    .table__body {
+      padding: 0;
+    }
+
+    .head__row {
+      font-size: 13px;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    div.col.col-3 {
+      padding: 0;
+      padding-bottom: 10px;
+    }
+
+    div.col.col-2 {
+      padding: 0;
+      padding-bottom: 10px;
+    }
+
+    div.col.col-1 {
+      padding: 0;
+      padding-bottom: 10px;
+    }
+  }
+
+</style>
+
+<!--<template>
+  <v-container fluid>
     <v-row dense>
       <v-col cols="12" md="12" sm="12">
         <BwBar></BwBar>
@@ -35,7 +239,7 @@
             </v-row>
 
             <v-row v-for="item in cartlist" :key="item.ctId"
-            > <!-- 여기 v-for해서 리스트 돌려뽑기-->  
+            > 
               <v-col cols="1" class="Center">
                 <v-checkbox
                   v-model="item.check"
@@ -45,7 +249,7 @@
               </v-col>
               <v-col cols="2">
                 <v-card outlined>
-                   <router-link :to="{name:'ItemDetail',
+                  <router-link :to="{name:'ItemDetail',
                         params:{
                           pName:item.listCart[0].pName
                         }
@@ -56,7 +260,7 @@
                     :src="`/images/thumb/${item.listCart[0].listImages[0].iName}`"                  
                     >
                     </v-img>
-                   </router-link>  
+                  </router-link>  
                 </v-card>
               </v-col>
               <v-col cols="3" md="3" sm="3" class="Center">
@@ -131,7 +335,7 @@
               = 
             </v-col>
             <v-col cols="4" class="text-center">
-             {{totalprice + post | comma}}원
+              {{totalprice + post | comma}}원
             </v-col>
           </v-row>
         </v-card-text>    
@@ -144,14 +348,21 @@
       </v-col>
     </v-row>
   </v-container>      
-</template>
-<!--<style>
+</template> 
+
+<style scoped>
   .Center { 
-  display: grid;
-  align-items: center;      /* 수직 중앙 정렬*/
-  justify-content: center;  /* 수평 중앙 정렬*/
-}
-</style> -->
+    display: grid;
+    align-items: center;      /* 수직 중앙 정렬*/
+    justify-content: center;  /* 수평 중앙 정렬*/
+  }
+
+  div.col {
+    padding: 8px 16px;
+  }
+
+</style> 
+-->
 
 <script>
 import axios from 'axios'

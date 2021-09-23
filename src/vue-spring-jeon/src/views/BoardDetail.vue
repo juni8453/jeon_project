@@ -1,4 +1,4 @@
-<template>
+<!--<template>
     <v-container fluid>
         <BwBar></BwBar>
         <v-row dense>
@@ -220,17 +220,233 @@
             </v-col>    
     </v-container>
 </template>
+-->
+
+<template>
+  <v-container fluid>
+    <body>
+      <BwBar></BwBar>
+      <main>
+        <v-card class="high__card">
+          <v-card-text class="card__head">
+            <ul class="head">
+              <li>{{board.bTitle}}</li>
+              <li class="head__date">{{board.bDateTime}}</li>
+              <li class="head__username">{{board.username}}</li>
+            </ul>
+          </v-card-text>
+          <v-card outlined>
+            <v-card-text class="card__content">
+              <ul class="content">
+                <li>{{board.bContent}}</li>
+              </ul>
+            </v-card-text>
+          </v-card>
+        </v-card>
+
+        <v-card outlined class="middle__card">
+          <v-card-text class="card__comment">
+            <ul class="comment__nav">
+              <strong><li>전체 댓글 {{commentlist.length}}개</li></strong>
+            </ul>
+            <ul class="comment__content" v-for="item in commentlist" :key="item.cId">
+              <li v-if="item.cDepth > 0">
+                [답글]{{item.cContent}}
+              </li>
+              <li v-else>
+                {{item.cContent}}
+              </li>
+              <li class="comment__date">{{item.cDateTime}}</li>
+              <li class="comment__username">{{item.username}}</li>
+              <li class="comment__menu">
+                <v-icon color="#d49466"
+                  v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
+                  @click="Show(item)"
+                >mdi-file-edit
+                </v-icon> 댓글 수정 
+                <v-icon color=red
+                  v-if="item.username === Userinfo.User_Id || Userinfo.User_auth.includes('ROLE_ADMIN')"
+                  @click="CommentDelete({
+                  bId: item.bId, 
+                  cId: item.cId,
+                  page: page
+                  })"
+                >mdi-delete
+                </v-icon> 삭제
+                <v-icon color="black"
+                  @click="ShowReply(item)"
+                >
+                  mdi-pencil
+                </v-icon> 답글 작성 
+              </li>
+              <li v-if="item.cShow === true">
+                <v-textarea 
+                  outlined
+                  name="cContent"
+                  v-model="cContent"
+                  label="댓글을 수정하세요."
+                  class="comment__edit">
+                </v-textarea>
+              </li>
+              <li class="edit__btn" v-if="item.cShow === true">
+                <v-icon color="#d49466"
+                  @click="CommentEdit({                                        
+                    bId: item.bId,
+                    cId: item.cId,
+                    cContent:cContent,
+                    username:Userinfo.User_Id,
+                    page: page,
+                    cShow: item.cShow
+                  })"
+                >mdi-file-edit</v-icon> 댓글 수정 완료
+              </li>
+              <li v-if="item.cShow2 === true">
+                <v-textarea
+                  outlined
+                  label="답글을 작성하세요."
+                  class="comment__edit"
+                  name="cContent"
+                  v-model="cContent"
+                ></v-textarea>
+              </li>
+              <li class="edit__btn"  v-if="item.cShow2 === true">
+                <v-icon color="#d49466"
+                  @click="CommentReply({
+                  bId: item.bId,
+                  cId: item.cId,
+                  cContent:cContent,
+                  username:Userinfo.User_Id,
+                  page: page,
+                  cShow2: item.cShow2,
+                  cGroup:item.cGroup,
+                  cOrder:item.cOrder,
+                  cDepth:item.cDepth
+                  })"
+                  >mdi-pencil
+                </v-icon> 답글 작성 완료
+              </li>
+            </ul>
+          </v-card-text>
+        </v-card>
+
+        <v-pagination class="mb-3"
+          v-model="page"
+          :length="Pagination.lastPage"
+          circle
+          @input="move({page:page, bId:board.bId , board:board})"
+        >
+        </v-pagination>
+
+        <v-card outlined v-if="this.$store.state.Show === false">
+          <v-card-text>
+            <ul class="comment__nav">
+              <strong><li>댓글 작성</li></strong>
+            </ul>
+            <ul class="write__nav">
+              <li>
+                <v-textarea
+                  outlined
+                  label="댓글을 입력하세요"
+                  name="cContent"
+                  v-model="cContent"
+                > 
+                </v-textarea>
+              </li>
+              <li>
+                <v-btn large outlined class="edit__btn"
+                  @click="CommentWrite(
+                    {
+                      page:page,
+                      cContent:cContent,                                     
+                      username:Userinfo.User_Id,
+                      bId:bId
+                    })"
+                ><v-icon>mdi-pencil</v-icon>댓글 작성 완료
+                </v-btn>
+              </li>
+            </ul>
+          </v-card-text>
+        </v-card>
+      </main>
+      <Footer></Footer>
+    </body>
+  </v-container>
+</template>
 
 <style scoped>
-    html{
-        font-size:10px;
-    }
-    .font-size{
-        font-size: 80%;
-    }
-    .font-size-date{
-        font-size: 60%;
-    }
+  .container {
+    height: 100%;
+  }
+
+  main {
+    padding: 10px 14px;
+  }
+
+  .high__card {
+    margin-bottom: 20px;
+  }
+  
+  .head {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    padding-bottom: 20px;
+  }
+
+  .head__date {
+    text-align: end;  
+  }
+
+  .head__username {
+    text-align: end;
+  }
+
+  .middle__card {
+    margin-bottom: 20px;
+  }
+  
+  .content {
+    list-style: none;
+    padding: 0;
+    padding-bottom: 20px;
+  }
+
+  .comment__nav {
+    list-style: none;
+    padding: 0;
+    padding-bottom: 20px;
+  } 
+
+  .write__nav {
+    list-style: none;
+    padding: 0;
+    padding-bottom: 20px;
+  }
+
+  .comment__content {
+    list-style: none;
+    padding: 0;
+  }
+
+  .comment__date {
+    text-align: end;
+  }
+
+  .comment__username {
+    text-align: end;
+  }
+
+  .comment__menu {
+    text-align: end;
+    margin-bottom: 25px;
+  }
+
+  .edit__btn {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
 </style>
 
 <script>
@@ -279,12 +495,17 @@ export default {
 
             console.log('CommentReply Run')
             console.log(payload)
+            console.log(payload.cShow2)
+            payload.cShow2 = !payload.cShow2 // cShow2 다시 true > false로 조정
+            console.log(payload.cShow2)
             new Promise((resolve,reject) => {
             axios.post(`http://${dev}:9000/api/auth/commentwrite/${payload.page}`, payload)
             .then(Response => {
                 console.log("Response Data를 받았습니다")
                 console.log(Response.data)
                 this.$store.commit('READ_COMMENT_LIST', Response.data)
+                this.$store.commit('SET_SHOW' ,payload.cShow2)
+                this.cContent = null // 답글 작성 후 cContent 초기화
             })
             .catch(Error => {
                 console.log('error')
@@ -367,7 +588,7 @@ export default {
                     
                     })
                 })
-             }
+            }
         },
         Show(comment){ //commentlist의 배열 인덱스 item
             comment.cShow =! comment.cShow

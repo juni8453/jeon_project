@@ -1,201 +1,136 @@
 <template>
   <v-container fluid>
-    <v-row>
+    <body>
       <BwBar></BwBar>
-      <v-col cols="12"> 
-        <v-card shaped>
-          <v-row>
-            <v-col cols="3" class="Center mt-3">
-              상품이름
-            </v-col>
-            <v-col cols="9" class="Center mt-3">
-              {{pName}}
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="12">
-              <v-card outlined>
-              </v-card>     
-            </v-col>
-          </v-row>
-
-          <v-row>
-            <v-col cols="3" class="Center">
-              <strong>배송자 정보</strong>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="3" class="Center">
-              받는사람 이름
-            </v-col>
-            <v-col cols="9" class="Center">
-              <v-text-field
-                placeholder="필수항목입니다."
-                filled
-                rounded
-                v-model="rName"
-              ></v-text-field>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="3" class="Center">
-              배송지 주소
-            </v-col>
-            <v-col cols="9" class="Center">
-              <v-text-field
-                placeholder="필수항목입니다."
-                filled
-                rounded
-                v-model="oAddress"
-              ></v-text-field>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="3" class="Center">
-              배송지 상세주소
-            </v-col>
-            <v-col cols="9" class="Center">
-              <v-text-field
-                placeholder="필수항목입니다."
-                filled
-                rounded
-                v-model="oDetailAddress"
-              ></v-text-field>
-            </v-col>
-          </v-row>
-
-          <v-row>
-            <v-col cols="12">
-              <v-card outlined>
-              </v-card>     
-            </v-col>
-          </v-row>
-
-          <v-row>
-            <v-col cols="3" class="Center">
-              <strong>주문자 정보</strong>              
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="3" class="Center">
-              이메일 주소
-            </v-col>
-            <v-col cols="9" class="Center">
-              <v-text-field
-                placeholder="필수항목입니다."
-                filled
-                rounded
-                v-model="oEmail"
-              ></v-text-field>
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="3" class="Center">
-              주문자 아이디
-            </v-col>
-            <v-col cols="9" class="Center">
-              {{Userinfo.User_Id}}
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="3" class="Center mt-7">
-              주문자 핸드폰 번호
-            </v-col>
-            <v-col cols="9" class="Center mt-5">
-              {{Userinfo.User_Phone}}
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="3" class="Center">
-              기타 요구사항
-            </v-col>
-            <v-col cols="9" class="Center">
-              <v-text-field
-                placeholder="필수항목입니다."
-                filled
-                rounded
-                v-model="oDemand"
-              ></v-text-field>
-            </v-col>
-          </v-row>
-        </v-card>
-      </v-col>
-    </v-row>
-
-    <v-row class="mt-10 mb-10">
-      <v-col cols="12">
-        <v-card shaped>
-          <v-row>
-            <v-col cols="3" class="Center">
-              <strong>결재정보</strong>
-            </v-col>
-          </v-row>
-           <v-row>
-            <v-col cols="3" class="Center mt-5">
-              주문금액
-            </v-col>
-            <v-col cols="9" class="Center mt-2">
-              {{pPrice | comma}}원
-            </v-col>
-          </v-row>
-          <v-row>
-            <v-col cols="3" class="Center">
-              입금자 명
-            </v-col>
-            <v-col cols="9" class="Center mt-3">
-              <v-text-field
-                placeholder="필수항목입니다."
-                filled
-                rounded
-                v-model="oName"
-              ></v-text-field>
-            </v-col>  
-          </v-row>
-          <v-row>
-            <v-col cols="6" class="Center">
-              <v-btn large
-                @click="buyProduct({
-                  rName:rName,
-                  oAddress:oAddress,
-                  oDetailAddress:oDetailAddress,
-                  oEmail:oEmail,
-                  oDemand:oDemand,
-                  oName:oName,
-                  pName:pName,
-                  pPrice:pPrice,
-                  pQuantity:pQuantity,
-                  username:Userinfo.User_Id
-                })"
-              > 주문 완료 {{pQuantity}}
-                <v-icon>mdi-cash</v-icon>
-              </v-btn>  
-            </v-col>
-            <v-col cols="6" class="Center">
-              <v-btn large
-                router :to="{name:'ItemDetail',
-                  params:{
-                    pName:pName
-                  }
-                }"
-              > 되돌아가기
-                <v-icon>mdi-undo</v-icon>
-              </v-btn>
-            </v-col>
-          </v-row>
-        </v-card>
-      </v-col>
-    </v-row>
-    <Footer></Footer>
+      <main>
+        <v-row>
+          <v-col cols="12">
+            <v-card>
+              <v-card-text class="main">
+                <ul class="main__right__content">
+                  <li>{{pName}}</li>
+                  <li>Delivery Infomation</li>
+                  <v-text-field v-model="rName" counter="10" label="받는분 이름"></v-text-field>
+                  <v-text-field v-model="oAddress" counter="25" label="배송지 주소"></v-text-field>
+                  <v-text-field v-model="oDetailAddress" counter="25" label="배송지 상세주소"></v-text-field>
+                  <li>Order Infomation</li>
+                  <v-text-field v-model="oEmail" counter="25" label="이메일 주소"></v-text-field>
+                  <li>{{Userinfo.User_Id}}</li>
+                  <li>{{Userinfo.User_Phone}}</li>
+                  <li>Payment Infomation</li>
+                  <li>{{pPrice | comma}}원</li>
+                  <v-text-field v-model="oName" counter="10" label="입금자 명"></v-text-field>
+                  <li>기타 요구사항</li>
+                  <li><textarea name="textarea" id="" cols="30" rows="10" v-model="oDemand"></textarea></li>
+                </ul>
+              </v-card-text>
+              <v-card-text>
+                <ul class="main__footer">
+                  <li class="left__footer"><v-icon large color="#d49466" 
+                    @click="buyProduct({
+                      rName:rName,
+                      oAddress:oAddress,
+                      oDetailAddress:oDetailAddress,
+                      oEmail:oEmail,
+                      oDemand:oDemand,
+                      oName:oName,
+                      pName:pName,
+                      pPrice:pPrice,
+                      pQuantity:pQuantity,
+                      username:Userinfo.User_Id
+                    })">mdi-cash</v-icon>구매하기</li>
+                  <li class="right__footer">
+                    <router-link :to="{ name:'ItemDetail', params:{ pName:pName }}">
+                      <v-icon color="#d49466">mdi-undo</v-icon>되돌아가기
+                    </router-link></li>                
+                </ul>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </main>
+      <Footer></Footer>
+    </body>
   </v-container>
-</template>
+</template> 
 
-<!--<style>
-  .Center { 
-  display: grid;
-  align-items: center;      /* 수직 중앙 정렬*/
-  justify-content: center;  /* 수평 중앙 정렬*/
-}
-</style> -->
+<style scoped>
+  .container {
+    height: 100%;
+  }
+
+  div.col {
+    padding: 10px 25px;
+  }
+
+  div.main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .main__left__content {
+    padding: 0;
+  }
+
+  .main__left__content li {
+    list-style: none;
+    padding-bottom: 20px;
+  }
+
+  .main__right__content {
+    padding-left: 20px;
+  }
+
+  .main__right__content li {
+    list-style: none;
+    padding-bottom: 20px;
+    text-align: center;
+    border-radius: 4px;
+  }
+
+  .main__right__content li :hover {
+    background: #d49466;
+    border-radius: 4px;
+  }
+
+  .main__footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .main__footer li {
+    list-style: none;
+  }
+
+  .right__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: #00000099;
+  }
+
+  a:visited {
+    color: #00000099;
+  }
+
+  input {
+    background: #00000099;
+    border-radius: 8px;
+    color: #f0f4f5;
+  }
+
+  textarea {
+    border-radius: 8px;
+    background: #00000099;
+    color: #f0f4f5;
+  }
+
+</style>
 
 <script>
 import axios from 'axios'

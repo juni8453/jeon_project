@@ -43,6 +43,23 @@
                       <v-icon color="#d49466">mdi-delete</v-icon>
                     </v-btn>
                   </li>
+                  <li>
+                    <v-icon
+                      v-if="item.listHeart.find(heart => heart.username !== Userinfo.User_Id)"
+                      @click="likeProduct({
+                        pId: item.pId,
+                        username: Userinfo.User_Id
+                      })">
+                      mdi-heart-outline
+                    </v-icon>
+                    <v-icon v-else color="red"
+                      @click="cancelLike({
+                        pId: item.pId,
+                        username: Userinfo.User_Id
+                      })">
+                      mdi-heart
+                    </v-icon>
+                  </li>
                 </ul>
               </v-card-text>
             </v-card>
@@ -113,7 +130,7 @@
     }
 
     .item__col.col.col-3{
-      max-width: 100%; /*25% 이상 반응 없음 > max-width로 변경*/
+      max-width: 100%; 
       padding: 14px;
     }
 

@@ -70,9 +70,9 @@
                     </li>
                     <li>
                       <v-icon color="#d49466"
-                        @click="PutCart({
+                        @click="putCart({
                         pId: itemdetaillist.pId,
-                        username: Userinfo.User_Id,
+                        username: Userinfo.User_Id
                       })">mdi-cart-arrow-down</v-icon>장바구니
                     </li>
                     <v-row>
@@ -138,9 +138,6 @@
       width: 300px;
     }
   }
-
-
-
 </style>
 
 <script>
@@ -184,15 +181,18 @@ export default {
   computed:{
     ...mapState(['productlist', 'itemdetaillist', 'Userinfo', 'heart'])
   },
+
   components:{
     BwBar,
     Footer
   },
+
   filters:{
     comma(val){
       return String(val).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
   },  
+
   methods:{
     putCart(payload){
       let dev = 'localhost'
